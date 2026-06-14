@@ -207,6 +207,9 @@ main[dir="rtl"] .language-menu > button { text-align: right; }
 .inquiry-form textarea { resize: vertical; }
 .inquiry-form input:focus, .inquiry-form select:focus, .inquiry-form textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(15,76,129,.09); }
 .submit-button { width: 100%; background: var(--green); box-shadow: none; }
+.submit-button:disabled { cursor: wait; opacity: .72; transform: none; }
+.form-honeypot { position: absolute !important; left: -10000px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; }
+.form-error { margin: 0 0 12px; padding: 10px 12px; border: 1px solid #f1b8b8; border-radius: 6px; color: #9d2424; background: #fff2f2; font-size: 12px; line-height: 1.5; }
 .submit-button:hover { background: #3c9840; }
 .form-note { margin: 10px 0 0; color: #84919b; text-align: center; font-size: 10px; }
 .form-success { min-height: 410px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }

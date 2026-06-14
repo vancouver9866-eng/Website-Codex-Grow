@@ -14,12 +14,35 @@ const formText = {
 
 export function InquiryForm({ locale = "en" }: { locale?: Locale }) {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const f = formText[locale];
   const t = getTranslations(locale);
 
-  function submit(event: FormEvent<HTMLFormElement>) {
+  async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setError("");
+
+    const form = event.currentTarget;
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      const response = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...data, source: window.location.href }),
+      });
+      const result = await response.json();
+
+      if (!response.ok) throw new Error(result.error);
+      setSubmitted(true);
+      form.reset();
+    } catch (sendError) {
+      setError(sendError instanceof Error ? sendError.message : "The inquiry could not be sent. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -35,6 +58,10 @@ export function InquiryForm({ locale = "en" }: { locale?: Locale }) {
 
   return (
     <form className="inquiry-form" onSubmit={submit}>
+      <label className="form-honeypot" aria-hidden="true">
+        Website
+        <input name="website" tabIndex={-1} autoComplete="off" />
+      </label>
       <div className="field-row">
         <label><span>{f[0]} *</span><input required name="name" autoComplete="name" placeholder={f[1]} /></label>
         <label><span>{f[2]} *</span><input required name="company" autoComplete="organization" placeholder={f[3]} /></label>
@@ -45,10 +72,13 @@ export function InquiryForm({ locale = "en" }: { locale?: Locale }) {
       </div>
       <div className="field-row">
         <label><span>{f[6]} *</span><input required name="country" autoComplete="country-name" placeholder={f[7]} /></label>
-        <label><span>{f[8]} *</span><select required defaultValue=""><option value="" disabled>{f[9]}</option>{t.products.slice(0, 3).map((item) => <option key={item[0]}>{item[0]}</option>)}<option>{t.nav[1]}</option><option>{t.applicationsTitle}</option></select></label>
+        <label><span>{f[8]} *</span><select required name="product" defaultValue=""><option value="" disabled>{f[9]}</option>{t.products.slice(0, 3).map((item) => <option key={item[0]}>{item[0]}</option>)}<option>{t.nav[1]}</option><option>{t.applicationsTitle}</option></select></label>
       </div>
       <label><span>{f[10]} *</span><textarea required name="message" rows={4} placeholder={f[11]} /></label>
-      <button className="button submit-button" type="submit">{f[12]} <Send size={18} /></button>
+      {error && <p className="form-error" role="alert">{error}</p>}
+      <button className="button submit-button" type="submit" disabled={submitting}>
+        {submitting ? "Sending..." : f[12]} <Send size={18} />
+      </button>
     </form>
   );
 }
