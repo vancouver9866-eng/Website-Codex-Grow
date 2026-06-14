@@ -53,6 +53,8 @@ export async function POST(request: Request) {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/x-www-form-urlencoded",
+        Origin: "https://growcean.com",
+        Referer: "https://growcean.com/",
       },
       body: payload,
       cache: "no-store",
@@ -60,7 +62,9 @@ export async function POST(request: Request) {
 
     const result = await response.json().catch(() => null);
 
-    if (!response.ok || result?.success === false) {
+    const accepted = result?.success === true || result?.success === "true";
+
+    if (!response.ok || !accepted) {
       return NextResponse.json({ error: "The inquiry could not be sent. Please try again." }, { status: 502 });
     }
 
