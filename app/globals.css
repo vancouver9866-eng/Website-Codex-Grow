@@ -247,6 +247,17 @@ main[dir="rtl"] .language-menu > button { text-align: right; }
 .footer h3 { margin: 0 0 17px; font-size: 14px; }
 .footer-grid a { display: block; margin: 9px 0; color: var(--muted); font-size: 12px; }
 .footer-grid a:hover { color: var(--blue); }
+.social-links { display: flex; align-items: center; gap: 10px; }
+.social-links-footer { margin-top: 22px; }
+.social-link { width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid rgba(255,190,46,.45); border-radius: 10px; color: #ffc13b; background: linear-gradient(145deg,#24272c,#090a0c); box-shadow: 0 9px 22px rgba(0,0,0,.16), inset 0 1px 0 rgba(255,255,255,.08); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, color .2s ease; }
+.social-link svg { width: 20px; height: 20px; }
+a.social-link:hover, a.social-link:focus-visible { color: #ffe39a; border-color: #ffd260; transform: translateY(-3px) scale(1.055); box-shadow: 0 14px 30px rgba(0,0,0,.22), 0 0 0 4px rgba(255,193,59,.1); outline: none; }
+.social-link-disabled { cursor: not-allowed; color: #847341; border-color: rgba(255,190,46,.18); filter: saturate(.55); opacity: .72; }
+.social-links-floating { position: fixed; z-index: 79; right: max(28px, env(safe-area-inset-right)); bottom: max(98px, calc(env(safe-area-inset-bottom) + 98px)); flex-direction: column; }
+.pd-footer-social { padding: 0 0 42px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+.pd-footer-social > div:first-child { display: grid; gap: 5px; }
+.pd-footer-social strong { color: var(--ink); font-size: 15px; }
+.pd-footer-social span { color: var(--muted); font-size: 12px; }
 .footer-bottom { min-height: 62px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; color: #7c8993; font-size: 11px; }
 
 @media (max-width: 1100px) {
@@ -334,6 +345,8 @@ main[dir="rtl"] .language-menu > button { text-align: right; }
   .osm-map-caption { align-items: flex-start; flex-direction: column; gap: 8px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 35px; }
   .footer-grid > div:first-child { grid-column: 1 / -1; }
+  .social-link { width: 42px; height: 42px; }
+  .pd-footer-social { align-items: flex-start; flex-direction: column; padding-bottom: 32px; }
   .footer-bottom { padding: 18px 0; flex-direction: column; justify-content: center; gap: 7px; text-align: center; }
 }
 

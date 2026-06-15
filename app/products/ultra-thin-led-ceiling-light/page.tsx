@@ -23,6 +23,7 @@ import { MobileMenu } from "@/components/mobile-menu";
 import { ProductConfigurator } from "@/components/product-configurator";
 import { ProductFaq } from "@/components/product-faq";
 import { ProductInquiryForm } from "@/components/product-inquiry-form";
+import { SocialLinks } from "@/components/social-links";
 
 export const metadata: Metadata = {
   title: "2.7cm Ultra-Thin LED Ceiling Light | Growcean",
@@ -113,7 +114,13 @@ export default function UltraThinProductPage() {
 
       <section className="pd-inquiry" id="product-inquiry"><div className="container pd-inquiry-grid"><div><p className="section-label light">MODEL QS-XDD-2.7XB-GLQD-090</p><h2>Request pricing, MOQ and sample terms</h2><p>Share your market and expected quantity. We will confirm suitable specifications and available customization.</p><ul><li><CheckCircle2/>Product-specific response</li><li><CheckCircle2/>Specification confirmation</li><li><CheckCircle2/>Sample and packaging discussion</li></ul></div><ProductInquiryForm /></div></section>
 
-      <footer className="footer"><div className="container footer-bottom"><span>© 2026 Guangzhou Wortianlan Business Co., Ltd.</span><a href="/">Back to Growcean homepage</a></div></footer>
+      <footer className="footer">
+        <div className="container pd-footer-social">
+          <div><strong>Connect with Growcean</strong><span>Product updates and international lighting insights</span></div>
+          <SocialLinks />
+        </div>
+        <div className="container footer-bottom"><span>© 2026 Guangzhou Wortianlan Business Co., Ltd.</span><a href="/">Back to Growcean homepage</a></div>
+      </footer>
     </main>
   );
 }

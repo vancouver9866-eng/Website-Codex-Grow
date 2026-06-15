@@ -30,6 +30,7 @@ import { MegaNavigation } from "@/components/mega-navigation";
 import { MobileMenu } from "@/components/mobile-menu";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { ProductVideoShowcase } from "@/components/product-video-showcase";
+import { SocialLinks } from "@/components/social-links";
 import { getTranslations, type Locale } from "@/lib/i18n";
 
 const products = [
@@ -300,6 +301,7 @@ export function GrowceanHome({ locale = "en" }: { locale?: Locale }) {
           <div>
             <Image src="/images/growcean-logo.png" alt="Growcean" width={190} height={50} />
             <p>{t.footerText}</p>
+            <SocialLinks />
           </div>
           <div><h3>Products</h3><a href="#products">LED Ceiling Lights</a><a href="#products">Flush Mount Lights</a><a href="#products">Smart Ceiling Lights</a></div>
           <div><h3>Solutions</h3><a href="#custom">OEM & Custom</a><a href="#applications">Applications</a><a href="/Growcean-Product-Catalog.pdf">Product Catalog</a></div>
