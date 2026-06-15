@@ -29,6 +29,7 @@ import { InquiryForm } from "@/components/inquiry-form";
 import { MegaNavigation } from "@/components/mega-navigation";
 import { MobileMenu } from "@/components/mobile-menu";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { ProductVideoShowcase } from "@/components/product-video-showcase";
 import { getTranslations, type Locale } from "@/lib/i18n";
 
 const products = [
@@ -122,6 +123,8 @@ export function GrowceanHome({ locale = "en" }: { locale?: Locale }) {
         </div>
         <div className="wave" aria-hidden="true" />
       </section>
+
+      <ProductVideoShowcase locale={locale} />
 
       <section className="section products-section" id="products">
         <div className="container">
