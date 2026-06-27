@@ -16,11 +16,18 @@ export const metadata: Metadata = {
     "Customizable LED ceiling lights and responsive export support for importers, wholesalers, distributors and project buyers.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+  params,
+}: Readonly<{
+  children: React.ReactNode;
+  params: Promise<{ locale?: string }>;
+}>) {
+  const { locale } = await params;
+  const htmlLang = locale === "es" ? "es" : "en";
+
   return (
-    <html lang="en">
+    <html lang={htmlLang}>
       <body className={manrope.variable}>
         {children}
         <WhatsAppFloat />

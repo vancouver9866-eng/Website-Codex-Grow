@@ -4,7 +4,7 @@ import { GrowceanHome } from "../page";
 import { isLocale } from "@/lib/i18n";
 
 export function generateStaticParams() {
-  return ["en", "es"].map((locale) => ({ locale }));
+  return ["es"].map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
@@ -14,13 +14,29 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
+  if (locale === "es") {
+    return {
+      title: "Growcean | Soluciones B2B de iluminación de techo",
+      description:
+        "Luces LED de techo personalizables y soporte de exportación para importadores, mayoristas, distribuidores y compradores de proyectos.",
+      alternates: {
+        canonical: "/es",
+        languages: {
+          en: "/",
+          es: "/es",
+          "x-default": "/",
+        },
+      },
+    };
+  }
 
   return {
     alternates: {
-      canonical: locale === "en" ? "/" : `/${locale}`,
+      canonical: "/",
       languages: {
         en: "/",
         es: "/es",
+        "x-default": "/",
       },
     },
   };
