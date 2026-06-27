@@ -68,8 +68,8 @@ export function ProductVideoShowcase({ locale = "en" }: { locale?: Locale }) {
               loop
               muted
               playsInline
-              preload="metadata"
-              poster="/images/ultra-thin.jpg"
+              preload="none"
+              poster="/images/growcean-video-cover.jpg"
               aria-label={content.videoLabel}
             >
               <source src="/videos/growcean-product-01.mp4" type="video/mp4" />
