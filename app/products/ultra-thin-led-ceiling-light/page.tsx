@@ -28,6 +28,9 @@ import { SocialLinks } from "@/components/social-links";
 export const metadata: Metadata = {
   title: "2.7cm Ultra-Thin LED Ceiling Light | Growcean",
   description: "Explore Growcean model QS-XDD-2.7XB-GLQD-090 with multiple sizes, Ra ≥ 98.5, RG0 low blue light and OEM customization support.",
+  alternates: {
+    canonical: "/products/ultra-thin-led-ceiling-light",
+  },
 };
 
 const specifications = [

@@ -28,10 +28,13 @@ export function LanguageSwitcher({ locale }: { locale: Locale }) {
   function selectLanguage(next: Locale) {
     const segments = pathname.split("/").filter(Boolean);
     const hasLocale = languages.some((language) => language.code === segments[0]);
-    if (hasLocale) segments[0] = next;
+    if (next === "en") {
+      if (hasLocale) segments.shift();
+    } else if (hasLocale) segments[0] = next;
     else segments.unshift(next);
     setOpen(false);
-    router.push(`/${segments.join("/")}${window.location.hash}`);
+    const nextPath = segments.length ? `/${segments.join("/")}` : "/";
+    router.push(`${nextPath}${window.location.hash}`);
   }
 
   return (

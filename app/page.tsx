@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import {
   ArrowRight,
@@ -32,6 +33,16 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import { ProductVideoShowcase } from "@/components/product-video-showcase";
 import { SocialLinks } from "@/components/social-links";
 import { getTranslations, type Locale } from "@/lib/i18n";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+    languages: {
+      en: "/",
+      es: "/es",
+    },
+  },
+};
 
 const products = [
   {

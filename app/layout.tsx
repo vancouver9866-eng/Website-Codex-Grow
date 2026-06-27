@@ -10,6 +10,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://growcean.com"),
   title: "Growcean | B2B Ceiling Lighting Solutions",
   description:
     "Customizable LED ceiling lights and responsive export support for importers, wholesalers, distributors and project buyers.",
