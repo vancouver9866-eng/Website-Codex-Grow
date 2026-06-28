@@ -92,7 +92,7 @@ const customOptions = [
 
 const applications = [
   { icon: House, label: "Home", image: "/images/hero-scene.jpg" },
-  { icon: Hotel, label: "Hotel", image: "/images/decorative.jpg" },
+  { icon: Hotel, label: "Hotel", image: "/images/catalog-products-clean/page-050.jpg" },
   { icon: Layers3, label: "Apartment", image: "/images/ultra-thin.jpg" },
   { icon: CircleGauge, label: "Office", image: "/images/smart.jpg" },
 ];
