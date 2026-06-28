@@ -54,26 +54,31 @@ const products = [
     name: "LED Ceiling Lights",
     text: "High-efficiency lighting in versatile sizes for residential and project use.",
     image: "/images/ultra-thin.jpg",
+    href: "/products/ultra-thin-led-ceiling-light",
   },
   {
     name: "Flush Mount Lights",
     text: "Slim surface-mounted designs made for clean, low-profile interiors.",
     image: "/images/flush-mount.jpg",
+    href: "/products/flush-mount-lights",
   },
   {
     name: "Smart Ceiling Lights",
     text: "Optional remote, app and adjustable lighting configurations.",
     image: "/images/smart.jpg",
+    href: "/products/smart-ceiling-lights",
   },
   {
     name: "Modern Ceiling Lamps",
     text: "Decorative forms and finishes for homes, hotels and showrooms.",
     image: "/images/modern.jpg",
+    href: "/products/modern-ceiling-lamps",
   },
   {
     name: "Vintage & Wood Styles",
     text: "Warm finishes designed for distinctive regional and retail collections.",
     image: "/images/vintage.jpg",
+    href: "/products/vintage-wood-styles",
   },
 ];
 
@@ -181,7 +186,7 @@ export function GrowceanHome({ locale = "en" }: { locale?: Locale }) {
           </div>
           <div className="product-grid">
             {products.map((product, index) => (
-              <a className="product-card" href={product.name === "LED Ceiling Lights" ? "/products/ultra-thin-led-ceiling-light" : "#inquiry"} key={product.name}>
+              <a className="product-card" href={localizedPath(product.href, locale)} key={product.name}>
                 <div className="product-image">
                   <Image src={product.image} alt={t.products[index][0]} fill sizes="(max-width: 700px) 90vw, 20vw" />
                 </div>

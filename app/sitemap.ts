@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { categoryDefinitions, localizedPath, products } from "@/lib/catalog";
 import { locales, type Locale } from "@/lib/i18n";
+import { productCollections } from "@/lib/product-collections";
 
 const siteUrl = "https://growcean.com";
 
@@ -24,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/",
     "/products",
     "/blog/how-to-choose-ceiling-lights",
+    ...productCollections.map((collection) => `/products/${collection.slug}`),
     ...categoryDefinitions.map((category) => `/category/${category.slug}`),
     ...products.map((product) => `/product/${product.slug}`),
   ];
