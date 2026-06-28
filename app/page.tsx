@@ -357,7 +357,7 @@ export function GrowceanHome({ locale = "en" }: { locale?: Locale }) {
         </div>
         <div className="container footer-bottom">
           <span>© 2026 Guangzhou Wortianlan Business Co., Ltd.</span>
-          <span>Growcean · Growing Light Across Oceans</span>
+          <span>Growcean · LIGHTING THE FUTURE.</span>
         </div>
       </footer>
     </main>
