@@ -148,7 +148,7 @@ export function GrowceanHome({ locale = "en" }: { locale?: Locale }) {
           <div className="section-heading">
             <div>
               <p className="section-label">PDF CATALOG DATABASE</p>
-              <h2>107 SKU lighting catalog built for B2B sourcing</h2>
+              <h2>Lighting Catalog Built for B2B Sourcing</h2>
             </div>
             <p>Browse Growcean ceiling lights, corridor lights, waterproof lights, decorative styles and whole-house packages by wattage, size, material and recommended space.</p>
           </div>
