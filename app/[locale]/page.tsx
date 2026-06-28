@@ -4,7 +4,7 @@ import { GrowceanHome } from "../page";
 import { isLocale } from "@/lib/i18n";
 
 export function generateStaticParams() {
-  return ["es"].map((locale) => ({ locale }));
+  return ["es", "fr", "ar", "ru"].map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
@@ -13,7 +13,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  if (!isLocale(locale)) return {};
+  if (!isLocale(locale) || locale === "en") return {};
   if (locale === "es") {
     return {
       title: "Growcean | Soluciones B2B de iluminación de techo",
@@ -31,11 +31,17 @@ export async function generateMetadata({
   }
 
   return {
+    title: "Growcean | B2B Ceiling Lighting Solutions",
+    description:
+      "Customizable LED ceiling lights and export support for importers, wholesalers, distributors and project buyers.",
     alternates: {
-      canonical: "/",
+      canonical: `/${locale}`,
       languages: {
         en: "/",
         es: "/es",
+        fr: "/fr",
+        ar: "/ar",
+        ru: "/ru",
         "x-default": "/",
       },
     },
@@ -48,6 +54,6 @@ export default async function LocalizedHome({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  if (!isLocale(locale)) notFound();
+  if (!isLocale(locale) || locale === "en") notFound();
   return <GrowceanHome locale={locale} />;
 }

@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/en/:path*",
+        destination: "/:path*",
+        permanent: true,
+      },
+      {
         source: "/:path*",
         has: [
           {

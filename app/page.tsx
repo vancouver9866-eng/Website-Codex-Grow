@@ -33,6 +33,7 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import { ProductVideoShowcase } from "@/components/product-video-showcase";
 import { SocialLinks } from "@/components/social-links";
 import { getTranslations, type Locale } from "@/lib/i18n";
+import { categoryDefinitions, categoryNameByLocale, localizedPath, products as catalogProducts } from "@/lib/catalog";
 
 export const metadata: Metadata = {
   alternates: {
@@ -40,6 +41,9 @@ export const metadata: Metadata = {
     languages: {
       en: "/",
       es: "/es",
+      fr: "/fr",
+      ar: "/ar",
+      ru: "/ru",
       "x-default": "/",
     },
   },
@@ -138,6 +142,35 @@ export function GrowceanHome({ locale = "en" }: { locale?: Locale }) {
       </section>
 
       <ProductVideoShowcase locale={locale} />
+
+      <section className="section catalog-home-section" id="catalog">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <p className="section-label">PDF CATALOG DATABASE</p>
+              <h2>107 SKU lighting catalog built for B2B sourcing</h2>
+            </div>
+            <p>Browse Growcean ceiling lights, corridor lights, waterproof lights, decorative styles and whole-house packages by wattage, size, material and recommended space.</p>
+          </div>
+          <div className="catalog-home-categories">
+            {categoryDefinitions.map((category) => (
+              <a href={localizedPath(`/category/${category.slug}`, locale)} key={category.slug}>
+                <span>{categoryNameByLocale[locale][category.slug]}</span>
+                <small>{catalogProducts.filter((product) => product.category === category.slug).length} SKU</small>
+              </a>
+            ))}
+          </div>
+          <div className="catalog-home-products">
+            {catalogProducts.slice(0, 8).map((product) => (
+              <a href={localizedPath(`/product/${product.slug}`, locale)} key={product.id}>
+                <strong>{product.name}</strong>
+                <span>{product.model}</span>
+              </a>
+            ))}
+          </div>
+          <a className="button catalog-home-button" href={localizedPath("/products", locale)}>View full product database</a>
+        </div>
+      </section>
 
       <section className="section products-section" id="products">
         <div className="container">

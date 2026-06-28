@@ -12,5 +12,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/es"],
+  matcher: ["/", "/((?!_next|api|images|videos|.*\\..*).*)"],
 };

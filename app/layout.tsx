@@ -24,10 +24,12 @@ export default async function RootLayout({
 }>) {
   const requestHeaders = await headers();
   const pathname = requestHeaders.get("x-pathname") ?? "";
-  const htmlLang = pathname === "/es" || pathname.startsWith("/es/") ? "es" : "en";
+  const locale = pathname.split("/").filter(Boolean)[0];
+  const htmlLang = ["es", "fr", "ar", "ru"].includes(locale) ? locale : "en";
+  const htmlDir = htmlLang === "ar" ? "rtl" : "ltr";
 
   return (
-    <html lang={htmlLang}>
+    <html lang={htmlLang} dir={htmlDir}>
       <body className={manrope.variable}>
         {children}
         <WhatsAppFloat />
