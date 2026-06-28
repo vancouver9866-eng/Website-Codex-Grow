@@ -1,6 +1,6 @@
 {
   "generated_from": "0628-Catalog.pdf",
-  "product_count": 106,
+  "product_count": 105,
   "products": [
     {
       "id": "catalog-page-001",
@@ -424,96 +424,6 @@
       ],
       "catalog_pdf": "/Growcean-Product-Catalog.pdf",
       "raw_text": "Indoor/Ceiling Light Series Walnut-colored thin side lighting QS-XDD-GLQD-HTM-XBCFG-092 Product name：Walnut-colored thin side lighting;Explicitly：Ra≥97; Material： Iron + aluminum+Rhombic crystal plate;Blue light：RG0 low blue light;Voltage： 220V ;Color： Walnut color;Style：Three-color changing light (without remote control) / Connected to Mi Home APP (with remote control) / Tmall Jing (with remote control) Picture Size Power Space Material Applicable 110*60*3cm 160w 25-30m² 90*50*3cm 126w 18-25㎡ Iron + Living room, 50*50*3cm 72w 12-16㎡ aluminum+ dining room, 60*60*3cm 96w 15-20㎡ Rhombic Bedroom, crystal study room, φ40*3cm 48w 8-12㎡ plate etc. φ50*3cm 64w 10-15㎡ φ60*3cm 72w 12-16㎡"
-    },
-    {
-      "id": "catalog-page-006",
-      "page": 6,
-      "series": "Ultra-Thin Ceiling Light Series",
-      "source_series_name": "Medieval style thin ceiling lamp",
-      "category": "ceiling-lights",
-      "model": "QS-XDD-2.7XB-HTM-080",
-      "name": "Medieval style thin ceiling lamp",
-      "slug": "qs-xdd-2-7xb-htm-080-medieval-style-thin-ceiling-lamp",
-      "wattage": "126W, 96W, 64W, 72W, 36W, 48W, 58W",
-      "size": [
-        "110*60*2.7cm",
-        "90*50*2.7cm",
-        "50*50*2.7cm",
-        "60*60*2.7cm",
-        "φ40*2.7cm",
-        "φ50*2.7cm",
-        "φ60*2.7cm"
-      ],
-      "size_options": [
-        {
-          "size": "110*60*2.7cm",
-          "power": "126W",
-          "space": "18-25㎡"
-        },
-        {
-          "size": "90*50*2.7cm",
-          "power": "96W",
-          "space": "15-20㎡"
-        },
-        {
-          "size": "50*50*2.7cm",
-          "power": "64W",
-          "space": "8-13㎡"
-        },
-        {
-          "size": "60*60*2.7cm",
-          "power": "72W",
-          "space": "12-16㎡"
-        },
-        {
-          "size": "φ40*2.7cm",
-          "power": "36W",
-          "space": "6-10㎡"
-        },
-        {
-          "size": "φ50*2.7cm",
-          "power": "48W",
-          "space": "8-12㎡"
-        },
-        {
-          "size": "φ60*2.7cm",
-          "power": "58W",
-          "space": "10-15㎡"
-        }
-      ],
-      "material": "Water transfer aluminum material + Rhombic Crystal Board",
-      "space_range": "18-25㎡, 15-20㎡, 8-13㎡, 12-16㎡, 6-10㎡, 8-12㎡, 10-15㎡",
-      "features": [
-        "Flicker-free constant current driver",
-        "RG0 low blue light",
-        "High CRI Ra:80",
-        "Smart control compatible",
-        "2 years warranty"
-      ],
-      "voltage": "220V (can be custom made for wide voltage)",
-      "color_options": [
-        "Walnut color"
-      ],
-      "style": "Three-color changing light, Tmall dimmable, Mi Home direct connection",
-      "ra": "Ra:80",
-      "blue_light": "RG0 low blue light",
-      "warranty": "2 years",
-      "certifications": [
-        "CE",
-        "RoHS"
-      ],
-      "applications": [
-        "Living room",
-        "Bedroom",
-        "Dining room",
-        "Study room",
-        "Corridor"
-      ],
-      "images": [
-        "/images/catalog-products-clean/page-006.jpg"
-      ],
-      "catalog_pdf": "/Growcean-Product-Catalog.pdf",
-      "raw_text": "Indoor/Ceiling Light Series Medieval style thin ceiling lamp QS-XDD-2.7XB-HTM-080 Product name：Medieval style thin ceiling lamp; Power：Constant current no flicker drive;Explicitly：Ra:80;Blue light：RG0 low blue light;Voltage： 220V (can be custom made for wide voltage);Color：Walnut color;Style：Three-color changing light, Tmall dimmable, Mi Home direct connection; Warranty：2 years Material：Water transfer aluminum material + Rhombic Crystal Board Picture Size Power Space Material Applicable 110*60*2.7cm 126w 18-25㎡ 90*50*2.7cm 96w 15-20㎡ Water transfer Living room, 50*50*2.7cm 64w 8-13㎡ aluminum dining room, 60*60*2.7cm 72w 12-16㎡ material+ Bedroom, Rhombic study room, φ40*2.7cm 36w 6-10㎡ crystal etc. plate φ50*2.7cm 48w 8-12㎡ φ60*2.7cm 58w 10-15㎡"
     },
     {
       "id": "catalog-page-007",
