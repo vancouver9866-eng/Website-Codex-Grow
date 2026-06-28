@@ -165,7 +165,7 @@ main[dir="rtl"] .language-menu > button { text-align: right; }
 .product-spotlight > img { object-fit: cover; }
 .spotlight-note { position: absolute; left: 18px; right: 18px; bottom: 18px; padding: 12px 15px; color: var(--blue-dark); background: rgba(255,255,255,.92); border-radius: 8px; display: flex; align-items: center; gap: 9px; font-size: 12px; font-weight: 800; }
 
-.application-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.application-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .application-card { height: 300px; position: relative; overflow: hidden; border-radius: 10px; background: var(--blue-dark); }
 .application-card > img { object-fit: cover; transition: transform .45s; }
 .application-card:hover > img { transform: scale(1.06); }
@@ -303,7 +303,6 @@ a.social-link:hover, a.social-link:focus-visible { color: #ffe39a; border-color:
   .custom-layout, .founder-layout, .faq-layout, .inquiry-layout { grid-template-columns: 1fr; }
   .custom-layout { gap: 45px; }
   .application-grid { grid-template-columns: 1fr 1fr; }
-  .application-card:last-child { grid-column: 1 / -1; }
   .process-grid { grid-template-columns: 1fr 1fr; }
   .process-step:nth-child(2n)::after { display: none; }
   .process-step:nth-child(3)::after { display: block; }
