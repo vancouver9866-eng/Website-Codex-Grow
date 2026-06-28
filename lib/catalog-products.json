@@ -1,6 +1,6 @@
 {
   "generated_from": "0628-Catalog.pdf",
-  "product_count": 107,
+  "product_count": 106,
   "products": [
     {
       "id": "catalog-page-001",
@@ -6170,76 +6170,6 @@
       ],
       "catalog_pdf": "/Growcean-Product-Catalog.pdf",
       "raw_text": "t Indoor/Ceiling Light Series Waterproof Ceiling Lamp QS-XDD-FSFX-028 Product name：Waterproof Ceiling Lamp;Material：ABS Base + PC Lampshade; Power：Conatant-curent isolated drive;Light source： Sanan chips;Waterproof： IP65;Light Color：White Light/Natural Light/Warm Light;Voltage：220V ;Warranty： 2 years Picture Size Power Space Material Applicable 23*23*5.5cm 18w 3-6㎡ Bathroom, 28*28*5.5cm 24w 5-8㎡ Kitchen, Tollet 33*33*5.5cm 36w 8-12㎡ Room ABS+PC φ23*H5.5cm 18w 3-6㎡ Balcony, φ28*H5.5cm 24w 5-8㎡ Garage, φ33*H5.5cm 36w 8-12㎡ Basemen,etc. This model fers optional functions including standard low yoltage,emergeny, sound and ight control sensing, infrared human body detection, and micowaveradar sensing"
-    },
-    {
-      "id": "catalog-page-090",
-      "page": 90,
-      "series": "Waterproof Series",
-      "source_series_name": "Waterproof Ceiling Lamp",
-      "category": "waterproof-lights",
-      "model": "QS-XDD-DS-SF-030",
-      "name": "Waterproof Ceiling Lamp",
-      "slug": "qs-xdd-ds-sf-030-waterproof-ceiling-lamp",
-      "wattage": "20W, 24W, 36W, 56W",
-      "size": [
-        "5cm",
-        "5cm",
-        "5cm",
-        "5cm"
-      ],
-      "size_options": [
-        {
-          "size": "5cm",
-          "power": "20W",
-          "space": "3-6㎡"
-        },
-        {
-          "size": "5cm",
-          "power": "24W",
-          "space": "5-8㎡"
-        },
-        {
-          "size": "5cm",
-          "power": "36W",
-          "space": "8-12㎡"
-        },
-        {
-          "size": "5cm",
-          "power": "56W",
-          "space": "10-15㎡"
-        }
-      ],
-      "material": "PP",
-      "space_range": "3-6㎡, 5-8㎡, 8-12㎡, 10-15㎡",
-      "features": [
-        "High CRI lighting",
-        "Isolated driver power supply",
-        "2 years warranty"
-      ],
-      "voltage": "220V",
-      "color_options": [
-        "White Light"
-      ],
-      "style": "",
-      "ra": "",
-      "blue_light": "",
-      "warranty": "2 years",
-      "certifications": [
-        "CE",
-        "RoHS"
-      ],
-      "applications": [
-        "Living room",
-        "Bedroom",
-        "Dining room",
-        "Study room",
-        "Corridor"
-      ],
-      "images": [
-        "/images/catalog-products-clean/page-090.jpg"
-      ],
-      "catalog_pdf": "/Growcean-Product-Catalog.pdf",
-      "raw_text": "室内/吸顶灯系列 Waterproof Ceiling Lamp QS-XDD-DS-SF-030 Product name：Waterproof Ceiling Lamp;Material：PP;Power：Conatant- curent isolated drive;Light source： Sanan chips;Waterproof： IP65;Light Color：White Light;Voltage：220V 图片 尺寸 功率 空间 材质 适用 φ23*H5cm 20w 3-6㎡ Bathroom, Kitchen, φ30*H5cm 24w 5-8㎡ PP Tollet Room φ37*H5cm 36w 8-12㎡ Balcony, φ47*H5cm 56w 10-15㎡ Garage, Basemen,etc."
     },
     {
       "id": "catalog-page-091",
