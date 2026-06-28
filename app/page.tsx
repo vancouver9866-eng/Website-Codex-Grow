@@ -18,7 +18,6 @@ import {
   PackageCheck,
   Palette,
   Ruler,
-  ShoppingBag,
   SlidersHorizontal,
   Sparkles,
   SunMedium,
@@ -96,7 +95,6 @@ const applications = [
   { icon: Hotel, label: "Hotel", image: "/images/decorative.jpg" },
   { icon: Layers3, label: "Apartment", image: "/images/ultra-thin.jpg" },
   { icon: CircleGauge, label: "Office", image: "/images/smart.jpg" },
-  { icon: ShoppingBag, label: "Retail", image: "/images/modern.jpg" },
 ];
 
 const process = [
