@@ -17,7 +17,7 @@ const translations = {
   en: {
     nav: ["Products", "OEM & Custom", "Applications", "Resources", "About Us"],
     quote: "Get a Quote",
-    heroTitle: <>LIGHTING THE<br />FUTURE.</>,
+    heroTitle: <>LIGHTING THE<br />FUTURE</>,
     heroLead: "B2B Ceiling Lighting Solutions for Global Buyers",
     heroCopy: "Customizable LED ceiling lights, responsive export support and practical solutions for wholesale, private-label and project requirements.",
     viewProducts: "View Products",
@@ -81,7 +81,7 @@ const translations = {
   es: {
     nav: ["Productos", "OEM y personalización", "Aplicaciones", "Recursos", "Nosotros"],
     quote: "Solicitar cotización",
-    heroTitle: <>LIGHTING THE<br />FUTURE.</>,
+    heroTitle: <>LIGHTING THE<br />FUTURE</>,
     heroLead: "Soluciones B2B de iluminación de techo para compradores globales",
     heroCopy: "Luminarias LED personalizables, soporte de exportación ágil y soluciones prácticas para mayoristas, marcas privadas y proyectos.",
     viewProducts: "Ver productos",
@@ -102,7 +102,7 @@ const translations = {
   },
   fr: {
     nav: ["Produits", "OEM et sur mesure", "Applications", "Ressources", "À propos"], quote: "Demander un devis",
-    heroTitle: <>LIGHTING THE<br />FUTURE.</>, heroLead: "Solutions B2B d’éclairage de plafond pour acheteurs internationaux",
+    heroTitle: <>LIGHTING THE<br />FUTURE</>, heroLead: "Solutions B2B d’éclairage de plafond pour acheteurs internationaux",
     heroCopy: "Plafonniers LED personnalisables, accompagnement export réactif et solutions concrètes pour grossistes, marques privées et projets.", viewProducts: "Voir les produits",
     productLabel: "GAMME DE PRODUITS", productTitle: "Un éclairage conçu autour de vos besoins", productIntro: "Des collections ciblées pour la distribution, le commerce et les projets.", explore: "Découvrir",
     products: [["Plafonniers LED","Éclairage performant en plusieurs dimensions pour le résidentiel et les projets."],["Plafonniers en saillie","Designs fins et discrets pour des intérieurs épurés."],["Plafonniers intelligents","Options de télécommande, application et réglage."],["Luminaires modernes","Formes et finitions décoratives pour maisons, hôtels et showrooms."],["Styles vintage et bois","Finitions chaleureuses pour collections régionales et retail."]],
@@ -119,7 +119,7 @@ const translations = {
   },
   ar: {
     nav: ["المنتجات", "التصنيع والتخصيص", "الاستخدامات", "الموارد", "من نحن"], quote: "اطلب عرض سعر",
-    heroTitle: <>LIGHTING THE<br />FUTURE.</>, heroLead: "حلول إضاءة سقفية B2B للمشترين حول العالم",
+    heroTitle: <>LIGHTING THE<br />FUTURE</>, heroLead: "حلول إضاءة سقفية B2B للمشترين حول العالم",
     heroCopy: "مصابيح سقف LED قابلة للتخصيص، ودعم سريع للتصدير، وحلول عملية لتجارة الجملة والعلامات الخاصة والمشاريع.", viewProducts: "عرض المنتجات",
     productLabel: "مجموعة المنتجات", productTitle: "إضاءة سقفية مصممة لاحتياجات المشتري", productIntro: "مجموعات مختارة للتوزيع والتجزئة والمشاريع التجارية.", explore: "استكشف المجموعة",
     products: [["مصابيح سقف LED","إضاءة عالية الكفاءة بمقاسات متعددة للمنازل والمشاريع."],["مصابيح سقفية سطحية","تصاميم نحيفة ومنخفضة الارتفاع للديكورات العصرية."],["مصابيح سقف ذكية","خيارات التحكم عن بُعد والتطبيق وضبط الإضاءة."],["مصابيح سقف حديثة","أشكال وتشطيبات للمنازل والفنادق وصالات العرض."],["طرازات كلاسيكية وخشبية","تشطيبات دافئة للمجموعات الإقليمية ومتاجر التجزئة."]],
@@ -136,7 +136,7 @@ const translations = {
   },
   ru: {
     nav: ["Продукция", "OEM и кастомизация", "Применение", "Ресурсы", "О компании"], quote: "Получить расчет",
-    heroTitle: <>LIGHTING THE<br />FUTURE.</>, heroLead: "B2B-решения для потолочного освещения по всему миру",
+    heroTitle: <>LIGHTING THE<br />FUTURE</>, heroLead: "B2B-решения для потолочного освещения по всему миру",
     heroCopy: "Настраиваемые LED-светильники, оперативная экспортная поддержка и практичные решения для опта, частных марок и проектов.", viewProducts: "Смотреть продукцию",
     productLabel: "АССОРТИМЕНТ", productTitle: "Потолочное освещение под задачи покупателя", productIntro: "Подборки для дистрибуции, розницы и коммерческих проектов.", explore: "Смотреть серию",
     products: [["LED-потолочные светильники","Энергоэффективные модели разных размеров для жилья и проектов."],["Накладные светильники","Тонкие модели для лаконичных интерьеров."],["Умные светильники","Пульт, приложение и регулируемые параметры света."],["Современные светильники","Декоративные формы и отделки для домов, отелей и шоурумов."],["Винтаж и дерево","Теплые отделки для региональных и розничных коллекций."]],

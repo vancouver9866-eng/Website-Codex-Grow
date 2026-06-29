@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 import { headers } from "next/headers";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 import "./globals.css";
@@ -8,6 +8,12 @@ const manrope = Manrope({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-manrope",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -30,7 +36,7 @@ export default async function RootLayout({
 
   return (
     <html lang={htmlLang} dir={htmlDir}>
-      <body className={manrope.variable}>
+      <body className={`${manrope.variable} ${inter.variable}`}>
         {children}
         <WhatsAppFloat />
       </body>
