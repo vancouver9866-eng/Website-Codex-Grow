@@ -1,13 +1,14 @@
 import { NextResponse } from "next/server";
 
 const MAX_FIELD_LENGTH = 5000;
+const DEFAULT_INQUIRY_RECIPIENT = "mike@growcean.com";
 
 function clean(value: unknown, maxLength = MAX_FIELD_LENGTH) {
   return typeof value === "string" ? value.trim().slice(0, maxLength) : "";
 }
 
 export async function POST(request: Request) {
-  const recipient = process.env.INQUIRY_RECIPIENT;
+  const recipient = DEFAULT_INQUIRY_RECIPIENT;
 
   if (!recipient) {
     return NextResponse.json({ error: "Inquiry email is not configured." }, { status: 503 });
@@ -65,11 +66,19 @@ export async function POST(request: Request) {
     const accepted = result?.success === true || result?.success === "true";
 
     if (!response.ok || !accepted) {
+      console.error("Inquiry delivery rejected", {
+        status: response.status,
+        recipient,
+        result,
+      });
+
       return NextResponse.json({ error: "The inquiry could not be sent. Please try again." }, { status: 502 });
     }
 
     return NextResponse.json({ success: true });
-  } catch {
+  } catch (error) {
+    console.error("Inquiry delivery failed", error);
+
     return NextResponse.json({ error: "The inquiry could not be sent. Please try again." }, { status: 500 });
   }
 }
