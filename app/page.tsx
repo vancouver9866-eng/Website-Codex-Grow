@@ -334,27 +334,27 @@ export function GrowceanHome({ locale = "en" }: { locale?: Locale }) {
             <p>{t.inquiryIntro}</p>
             <div className="contact-list">
               <a href="https://wa.me/8615602224748"><MessageCircle /> WhatsApp: +86 156 0222 4748</a>
-              <a href="mailto:Vancouver9866@gmail.com"><Mail /> Vancouver9866@gmail.com</a>
+              <a href="mailto:mike@growcean.com"><Mail /> mike@growcean.com</a>
               <span>
                 <MapPin />
-                Block B, Room 201, No. 61 Courtyard, Dongpu 2nd Road,
-                Tianhe District, Guangzhou, Guangdong, China
+                2nd Floor, Jinyue Building, No. 183 Nanzhou Road,
+                Haizhu District, Guangzhou, Guangdong, China
               </span>
             </div>
             <div className="osm-map-card">
               <iframe
                 title="Growcean office location on OpenStreetMap"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=113.385%2C23.095%2C113.415%2C23.125&layer=mapnik&marker=23.11%2C113.40"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=113.275%2C23.045%2C113.305%2C23.075&layer=mapnik&marker=23.06%2C113.29"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
               <div className="osm-map-caption">
                 <div>
                   <strong>{t.office}</strong>
-                  <span>23.11° N, 113.40° E</span>
+                  <span>23.06° N, 113.29° E</span>
                 </div>
                 <a
-                  href="https://www.openstreetmap.org/?mlat=23.11&mlon=113.40#map=16/23.11/113.40"
+                  href="https://www.openstreetmap.org/?mlat=23.06&mlon=113.29#map=16/23.06/113.29"
                   target="_blank"
                   rel="noreferrer"
                 >

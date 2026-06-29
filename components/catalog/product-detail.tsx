@@ -119,7 +119,7 @@ export function ProductDetail({ product, locale }: { product: Product; locale: L
           <div><p className="section-label light">{product.model}</p><h2>{copy.quote}</h2><p>Share destination market, quantity, target voltage and packaging requirements. Growcean will confirm product feasibility, MOQ and sample terms.</p></div>
           <div className="catalog-cta-panel">
             <a className="button" href={`https://wa.me/8615602224748?text=${whatsappText}`}>{copy.whatsapp}</a>
-            <a className="button button-outline" href="mailto:Vancouver9866@gmail.com">{copy.quote}</a>
+            <a className="button button-outline" href="mailto:mike@growcean.com">{copy.quote}</a>
             <a className="button button-outline" href="/Growcean-Product-Catalog.pdf">{copy.download}</a>
           </div>
         </div>
