@@ -555,12 +555,40 @@ a.social-link:hover, a.social-link:focus-visible { color: #ffe39a; border-color:
 .catalog-faq-list p { margin: 0; padding: 0 18px 18px; color: var(--muted); line-height: 1.7; }
 .catalog-cta-panel { padding: 30px; display: grid; gap: 13px; border: 1px solid rgba(255,255,255,.18); border-radius: 16px; background: rgba(255,255,255,.08); }
 
+.blog-hero .catalog-lead { max-width: 900px; }
+.blog-layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 48px; align-items: start; }
+.blog-toc { position: sticky; top: 105px; display: grid; gap: 10px; padding: 18px; border: 1px solid var(--line); border-radius: 16px; background: white; box-shadow: 0 18px 42px rgba(13,91,150,.08); }
+.blog-toc strong { margin-bottom: 6px; color: var(--blue-dark); font-size: 13px; text-transform: uppercase; letter-spacing: .1em; }
+.blog-toc a { color: #5d6d7a; font-size: 13px; font-weight: 800; }
+.blog-content { max-width: 840px; color: #273949; font-size: 17px; line-height: 1.82; }
+.blog-content > p { margin: 0 0 22px; }
+.blog-content h2 { margin: 48px 0 16px; color: var(--blue-dark); font-size: clamp(28px, 3vw, 42px); line-height: 1.1; letter-spacing: -.035em; }
+.blog-content h3 { margin: 30px 0 10px; color: #102235; font-size: 22px; line-height: 1.25; }
+.blog-image-wide { position: relative; min-height: 430px; margin: 0 0 10px; overflow: hidden; border-radius: 20px; background: #eef5fa; }
+.blog-image-wide img { object-fit: cover; object-position: center; }
+.blog-caption { margin: 0 0 30px !important; color: #718293; font-size: 13px; line-height: 1.6; }
+.blog-cta { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: center; margin: 42px 0; padding: 28px; border-radius: 22px; color: white; background: linear-gradient(125deg, #06365f, #0d5b96); box-shadow: 0 24px 60px rgba(13,91,150,.22); }
+.blog-cta h2 { margin: 6px 0 10px; color: white; font-size: clamp(28px, 3vw, 38px); }
+.blog-cta p { margin: 0; color: rgba(255,255,255,.86); }
+.blog-cta .section-label { color: #7fe18a; }
+.blog-cta-final { grid-template-columns: 1fr; }
+.blog-comparison-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 22px 0 34px; }
+.blog-comparison-grid > div { padding: 22px; border: 1px solid var(--line); border-radius: 16px; background: white; }
+.blog-comparison-grid h3 { margin-top: 0; }
+.blog-checklist { display: grid; gap: 12px; padding: 0; margin: 22px 0 28px; list-style: none; }
+.blog-checklist li { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: white; font-weight: 760; line-height: 1.55; }
+.blog-checklist svg { flex: none; width: 20px; margin-top: 2px; color: var(--green); }
+.blog-image-plan { margin-top: 50px; padding: 28px; border: 1px solid var(--line); border-radius: 20px; background: #f8fbfd; }
+.blog-image-plan ol { margin-bottom: 0; }
+
 @media (max-width: 980px) {
   .catalog-listing, .product-detail-grid, .product-detail-layout { grid-template-columns: 1fr; }
   .catalog-filters { position: static; }
   .catalog-card-grid, .catalog-feature-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .catalog-home-categories { grid-template-columns: repeat(2,1fr); }
   .catalog-home-products { grid-template-columns: repeat(2,1fr); }
+  .blog-layout { grid-template-columns: 1fr; gap: 28px; }
+  .blog-toc { position: static; }
 }
 
 @media (max-width: 620px) {
@@ -568,4 +596,7 @@ a.social-link:hover, a.social-link:focus-visible { color: #ffe39a; border-color:
   .catalog-hero { padding: 70px 0 56px; }
   .product-detail-image { min-height: 330px; }
   .catalog-actions .button { width: 100%; }
+  .blog-image-wide { min-height: 320px; }
+  .blog-cta { grid-template-columns: 1fr; }
+  .blog-comparison-grid { grid-template-columns: 1fr; }
 }

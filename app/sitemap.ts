@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/",
     "/products",
     "/blog/how-to-choose-ceiling-lights",
+    "/blog/how-to-choose-led-ceiling-lights-for-b2b-projects",
     ...productCollections.map((collection) => `/products/${collection.slug}`),
     ...categoryDefinitions.map((category) => `/category/${category.slug}`),
     ...products.map((product) => `/product/${product.slug}`),
