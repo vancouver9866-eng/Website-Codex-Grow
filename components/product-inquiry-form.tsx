@@ -3,6 +3,8 @@
 import { CheckCircle2, Send } from "lucide-react";
 import { FormEvent, useState } from "react";
 
+const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/mike%40growcean.com";
+
 export function ProductInquiryForm() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -15,17 +17,40 @@ export function ProductInquiryForm() {
     setError("");
 
     const form = event.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
+    const formData = new FormData(form);
+
+    if (formData.get("website")) {
+      setSubmitted(true);
+      form.reset();
+      setSubmitting(false);
+      return;
+    }
+
+    const payload = new URLSearchParams();
+    formData.forEach((value, key) => {
+      payload.append(key, String(value));
+    });
+    payload.set("product", String(formData.get("model") || "Product inquiry"));
+    payload.set("phone", String(formData.get("whatsapp") || ""));
+    payload.set("source", window.location.href);
+    payload.set("_subject", `New Growcean product inquiry: ${formData.get("company") || formData.get("model") || "Website Lead"}`);
+    payload.set("_template", "table");
+    payload.set("_replyto", String(formData.get("email") || ""));
+    payload.set("_captcha", "false");
 
     try {
-      const response = await fetch("/api/inquiry", {
+      const response = await fetch(FORMSUBMIT_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, source: window.location.href }),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: payload,
       });
       const result = await response.json();
+      const accepted = result?.success === true || result?.success === "true";
 
-      if (!response.ok) throw new Error(result.error);
+      if (!response.ok || !accepted) throw new Error(result?.message || result?.error);
       setSubmitted(true);
       form.reset();
     } catch (sendError) {

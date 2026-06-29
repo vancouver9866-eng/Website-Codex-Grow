@@ -3,6 +3,8 @@
 import { FormEvent, useState } from "react";
 import { CheckCircle2, Send } from "lucide-react";
 
+const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/mike%40growcean.com";
+
 export function AdsLeadForm({ compact = false }: { compact?: boolean }) {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -14,22 +16,40 @@ export function AdsLeadForm({ compact = false }: { compact?: boolean }) {
     setError("");
 
     const form = event.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
+    const formData = new FormData(form);
+
+    if (formData.get("website")) {
+      setSubmitted(true);
+      form.reset();
+      setSubmitting(false);
+      return;
+    }
+
+    const payload = new URLSearchParams();
+    formData.forEach((value, key) => {
+      payload.append(key, String(value));
+    });
+    payload.set("company", String(formData.get("company") || "Google Ads landing page lead"));
+    payload.set("country", String(formData.get("country") || "Not provided"));
+    payload.set("product", "LED Ceiling Lights Manufacturer - Google Ads");
+    payload.set("source", window.location.href);
+    payload.set("_subject", `New Growcean Google Ads lead: ${formData.get("name") || "Website Lead"}`);
+    payload.set("_template", "table");
+    payload.set("_replyto", String(formData.get("email") || ""));
+    payload.set("_captcha", "false");
 
     try {
-      const response = await fetch("/api/inquiry", {
+      const response = await fetch(FORMSUBMIT_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...data,
-          company: data.company || "Google Ads landing page lead",
-          country: data.country || "Not provided",
-          product: "LED Ceiling Lights Manufacturer - Google Ads",
-          source: window.location.href,
-        }),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: payload,
       });
       const result = await response.json();
-      if (!response.ok) throw new Error(result.error);
+      const accepted = result?.success === true || result?.success === "true";
+      if (!response.ok || !accepted) throw new Error(result?.message || result?.error);
       setSubmitted(true);
       form.reset();
     } catch (sendError) {
