@@ -9,6 +9,7 @@ function clean(value: unknown, maxLength = MAX_FIELD_LENGTH) {
 
 export async function POST(request: Request) {
   const recipient = DEFAULT_INQUIRY_RECIPIENT;
+  const debug = new URL(request.url).searchParams.get("debug") === "1";
 
   if (!recipient) {
     return NextResponse.json({ error: "Inquiry email is not configured." }, { status: 503 });
@@ -71,6 +72,17 @@ export async function POST(request: Request) {
         recipient,
         result,
       });
+
+      if (debug) {
+        return NextResponse.json(
+          {
+            error: "The inquiry could not be sent. Please try again.",
+            providerStatus: response.status,
+            providerResult: result,
+          },
+          { status: 502 },
+        );
+      }
 
       return NextResponse.json({ error: "The inquiry could not be sent. Please try again." }, { status: 502 });
     }
