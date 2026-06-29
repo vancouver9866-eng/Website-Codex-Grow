@@ -62,7 +62,7 @@ const menuContent = {
     text: "Use practical product information and direct communication to clarify your next project.",
     links: [
       { icon: FileText, title: "Product Catalog", text: "Download the current ceiling-light range", href: "/Growcean-Product-Catalog.pdf" },
-      { icon: BookOpen, title: "Buyer FAQ", text: "MOQ, samples, lead time and shipping", href: "/#resources" },
+      { icon: BookOpen, title: "B2B Buyer Guide", text: "How to choose LED ceiling lights", href: "/blog/how-to-choose-led-ceiling-lights-for-b2b-projects" },
       { icon: Lightbulb, title: "Selection Support", text: "Compare styles and suitable configurations", href: "/#inquiry" },
       { icon: Globe2, title: "Export Coordination", text: "Discuss destination and order requirements", href: "/#inquiry" },
     ],

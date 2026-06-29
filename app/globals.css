@@ -150,6 +150,17 @@ main[dir="rtl"] .language-menu > button { text-align: right; }
 .product-body p { min-height: 66px; margin: 10px 0 18px; color: var(--muted); font-size: 13px; line-height: 1.65; }
 .product-body span, .text-link { color: var(--blue); display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 900; }
 
+.home-insights-section { background: white; }
+.home-blog-card { display: grid; grid-template-columns: .9fr 1.1fr; gap: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(125deg, #f8fbfd, #fff); box-shadow: 0 24px 70px rgba(15,76,129,.1); }
+.home-blog-card:hover { transform: translateY(-3px); box-shadow: 0 28px 80px rgba(15,76,129,.14); }
+.home-blog-image { position: relative; min-height: 360px; background: #eaf3fa; }
+.home-blog-image img { object-fit: cover; }
+.home-blog-body { padding: clamp(28px, 5vw, 54px); display: flex; flex-direction: column; justify-content: center; }
+.home-blog-body span { color: var(--green); font-size: 12px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+.home-blog-body h3 { margin: 12px 0 16px; color: var(--blue-dark); font-size: clamp(30px, 4vw, 50px); line-height: 1.08; letter-spacing: -.045em; }
+.home-blog-body p { margin: 0 0 24px; color: var(--muted); line-height: 1.75; }
+.home-blog-body strong { display: inline-flex; align-items: center; gap: 8px; color: var(--blue); font-size: 14px; }
+
 .custom-section { background: linear-gradient(125deg, #f4f9fd, #eaf5fc); overflow: hidden; }
 .custom-layout { display: grid; grid-template-columns: 1.05fr 1.3fr .8fr; gap: 54px; align-items: center; }
 .custom-copy > p { margin: 20px 0; }
@@ -300,6 +311,8 @@ a.social-link:hover, a.social-link:focus-visible { color: #ffe39a; border-color:
   .section-heading { display: block; }
   .section-heading > p { margin-top: 16px; }
   .product-grid { grid-template-columns: 1fr 1fr; }
+  .home-blog-card { grid-template-columns: 1fr; }
+  .home-blog-image { min-height: 300px; }
   .custom-layout, .founder-layout, .faq-layout, .inquiry-layout { grid-template-columns: 1fr; }
   .custom-layout { gap: 45px; }
   .application-grid { grid-template-columns: 1fr 1fr; }

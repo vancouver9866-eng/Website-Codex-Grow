@@ -175,6 +175,29 @@ export function GrowceanHome({ locale = "en" }: { locale?: Locale }) {
         </div>
       </section>
 
+      <section className="section home-insights-section" id="insights">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <p className="section-label">BUYER INSIGHTS</p>
+              <h2>Practical guides for lighting sourcing decisions</h2>
+            </div>
+            <p>Use engineering parameters, application scenes and shipment checks to choose the right ceiling light range before requesting a quote.</p>
+          </div>
+          <a className="home-blog-card" href={localizedPath("/blog/how-to-choose-led-ceiling-lights-for-b2b-projects", locale)}>
+            <div className="home-blog-image">
+              <Image src="/images/hero-scene.jpg" alt="LED ceiling light buyer guide for B2B sourcing" fill sizes="(max-width: 900px) 92vw, 34vw" />
+            </div>
+            <div className="home-blog-body">
+              <span>Featured buyer guide</span>
+              <h3>How to Choose LED Ceiling Lights for B2B Projects</h3>
+              <p>Compare CRI, RG0 low blue light, flicker-free drivers, wattage, size, smart control and supplier checks for wholesale and project sourcing.</p>
+              <strong>Read the guide <ArrowRight size={17} /></strong>
+            </div>
+          </a>
+        </div>
+      </section>
+
       <section className="section products-section" id="products">
         <div className="container">
           <div className="section-heading centered">
@@ -353,7 +376,7 @@ export function GrowceanHome({ locale = "en" }: { locale?: Locale }) {
           </div>
           <div><h3>Products</h3><a href="#products">LED Ceiling Lights</a><a href="#products">Flush Mount Lights</a><a href="#products">Smart Ceiling Lights</a></div>
           <div><h3>Solutions</h3><a href="#custom">OEM & Custom</a><a href="#applications">Applications</a><a href="/Growcean-Product-Catalog.pdf">Product Catalog</a></div>
-          <div><h3>Company</h3><a href="#about">About Growcean</a><a href="#resources">Resources</a><a href="#inquiry">Contact Us</a></div>
+          <div><h3>Company</h3><a href="#about">About Growcean</a><a href={localizedPath("/blog/how-to-choose-led-ceiling-lights-for-b2b-projects", locale)}>Buyer Guide</a><a href="#inquiry">Contact Us</a></div>
         </div>
         <div className="container footer-bottom">
           <span>© 2026 Guangzhou Wortianlan Business Co., Ltd.</span>
