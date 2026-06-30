@@ -30,10 +30,10 @@ type MenuKey = "products" | "custom" | "applications" | "resources" | "about";
 const menuKeys: MenuKey[] = ["products", "custom", "applications", "resources", "about"];
 
 const productLinks = [
-  { title: "Ultra-Thin Lights", text: "Clean profiles for modern interiors", image: "/images/ultra-thin.jpg" },
-  { title: "Flush Mount Lights", text: "Low-profile surface-mounted designs", image: "/images/flush-mount.jpg" },
-  { title: "Smart Ceiling Lights", text: "Remote and app-control options", image: "/images/smart.jpg" },
-  { title: "Modern Collections", text: "Decorative forms for retail programs", image: "/images/modern.jpg" },
+  { title: "LED Lighting", text: "Manufacturer and supplier range for B2B buyers", image: "/images/ultra-thin.jpg", href: "/products/led-lighting" },
+  { title: "Commercial Fixtures", text: "Ceiling and corridor fixtures for projects", image: "/images/flush-mount.jpg", href: "/products/commercial-lighting-fixtures" },
+  { title: "Pendant & Decorative", text: "Visual fixture families for hospitality", image: "/images/modern.jpg", href: "/products/pendant-lights" },
+  { title: "Outdoor & Waterproof", text: "Practical waterproof fixture sourcing", image: "/images/factory-optimized/growcean-balcony-lighting-application-768.webp", href: "/products/outdoor-wall-lights" },
 ];
 
 const menuContent = {
@@ -52,9 +52,9 @@ const menuContent = {
     text: "Start from the room, project type and buyer requirement instead of browsing an endless catalog.",
     links: [
       { icon: House, title: "Residential", text: "Home and apartment lighting", href: "/#applications" },
-      { icon: Hotel, title: "Hospitality", text: "Hotel and guest-room solutions", href: "/#applications" },
+      { icon: Hotel, title: "Hotel Lighting", text: "Guest-room and public-area solutions", href: "/solutions/hotel-lighting" },
       { icon: CircleGauge, title: "Office", text: "Clean, comfortable workplace lighting", href: "/#applications" },
-      { icon: ShoppingBag, title: "Retail", text: "Lighting for stores and showrooms", href: "/#applications" },
+      { icon: ShoppingBag, title: "Restaurant & Retail", text: "Lighting for dining, stores and showrooms", href: "/solutions/restaurant-lighting" },
     ],
   },
   resources: {
@@ -125,7 +125,7 @@ export function MegaNavigation({ locale = "en" }: { locale?: Locale }) {
               </div>
               <div className="mega-product-grid">
                 {productLinks.map((product) => (
-                  <a href="/#products" className="mega-product" key={product.title} onClick={closeMenu}>
+                  <a href={product.href} className="mega-product" key={product.title} onClick={closeMenu}>
                     <div className="mega-product-image">
                       <Image src={product.image} alt={`${product.title} product collection`} fill sizes="170px" />
                     </div>

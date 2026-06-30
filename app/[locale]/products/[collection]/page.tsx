@@ -16,8 +16,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const collection = getProductCollection(slug);
   if (!isLocale(locale) || locale === "en" || !collection) return {};
   const hero = getCollectionHeroProduct(collection);
-  const title = `${collection.title} | Growcean Lighting`;
-  const description = `${collection.description} Featured catalog model ${hero?.model ?? ""} with Growcean B2B sourcing, OEM/ODM and export inquiry support.`;
+  const title = collection.seoTitle ?? `${collection.title} | Growcean Lighting`;
+  const description =
+    collection.seoDescription ??
+    `${collection.description} Featured catalog model ${hero?.model ?? ""} with Growcean B2B sourcing, OEM/ODM and export inquiry support.`;
 
   return {
     title,

@@ -3,6 +3,8 @@ import { products, type Product } from "./catalog";
 export type ProductCollection = {
   slug: string;
   title: string;
+  seoTitle?: string;
+  seoDescription?: string;
   eyebrow: string;
   description: string;
   heroModel: string;
@@ -13,6 +15,101 @@ export type ProductCollection = {
 };
 
 export const productCollections: ProductCollection[] = [
+  {
+    slug: "led-lighting",
+    title: "LED Lighting Manufacturer",
+    seoTitle: "LED Lighting Manufacturer and Supplier | Growcean",
+    seoDescription:
+      "Growcean supplies LED lighting for B2B projects, wholesale buyers and commercial spaces. Compare ceiling light ranges, OEM options and request a quote.",
+    eyebrow: "LED LIGHTING MANUFACTURER",
+    description:
+      "LED lighting selections for importers, wholesalers, distributors and project buyers who need stable product ranges, OEM/ODM support and export-ready quotation communication. This collection focuses on ceiling light models that can support commercial projects, retail programs and private-label sourcing.",
+    heroModel: "QS-XDD-2.7XB-080",
+    productPages: [1, 2, 4, 7, 8, 9, 11, 12, 23, 27, 28, 29],
+    features: ["Factory-direct LED ceiling light supply", "Multiple wattage, size and shape options", "OEM/ODM packaging and label support", "Model selection for wholesale and project buyers"],
+    applications: ["Wholesale distribution", "Commercial interiors", "Apartments", "Hotels", "Retail lighting programs"],
+    faq: [
+      { q: "Is Growcean an LED lighting manufacturer or supplier?", a: "Growcean supports B2B LED lighting sourcing through selected manufacturing partners, catalog-backed model selection, OEM/ODM communication and export order follow-up." },
+      { q: "Can LED lighting be customized for private-label orders?", a: "Logo, label, manual and packaging customization can be discussed by model, order quantity and market requirement." },
+      { q: "Which LED lighting models should I request first?", a: "Share your target market, quantity, wattage, installation style and price level. Growcean can shortlist practical LED ceiling light models for sampling and quotation." },
+    ],
+  },
+  {
+    slug: "commercial-lighting-fixtures",
+    title: "Commercial Lighting Fixtures",
+    seoTitle: "Commercial Lighting Fixtures Manufacturer | Growcean",
+    seoDescription:
+      "Commercial lighting fixtures for project buyers, wholesalers and importers. Review Growcean ceiling lights, corridor lights and decorative fixtures before requesting a quote.",
+    eyebrow: "COMMERCIAL LIGHTING FIXTURES",
+    description:
+      "Commercial lighting fixture options for hotels, apartments, offices, retail showrooms and distribution programs. This range helps buyers compare LED ceiling lights, corridor lights, decorative fixtures and practical package choices before submitting a clear project inquiry.",
+    heroModel: "QS-XDD-XBCFG-092",
+    productPages: [8, 9, 11, 12, 13, 15, 27, 28, 29, 30, 57, 84],
+    features: ["Commercial-grade product range planning", "Ceiling, corridor and decorative fixture options", "Specification confirmation before quotation", "Wholesale and project order support"],
+    applications: ["Hotels", "Apartments", "Offices", "Retail stores", "Commercial corridors", "Distributor product lines"],
+    faq: [
+      { q: "What commercial lighting fixtures can Growcean supply?", a: "Growcean can help buyers compare ceiling lights, corridor lights, waterproof lights, decorative fixtures and package sets from the catalog." },
+      { q: "Can one inquiry include several fixture types?", a: "Yes. Project and wholesale buyers can share a room list or product range plan so Growcean can recommend practical model combinations." },
+      { q: "Are these fixtures suitable for project procurement?", a: "They can be selected for commercial projects after confirming wattage, size, CCT, voltage, quantity and installation requirements by model." },
+    ],
+  },
+  {
+    slug: "pendant-lights",
+    title: "Pendant Lights and Decorative Fixtures",
+    seoTitle: "Pendant Lights Manufacturer and Wholesale Supplier | Growcean",
+    seoDescription:
+      "Pendant lights and decorative lighting fixtures for hospitality, retail and commercial interiors. Request Growcean catalog options and B2B quotation support.",
+    eyebrow: "PENDANT & DECORATIVE LIGHTING",
+    description:
+      "Decorative lighting selections for buyers searching pendant-style, statement and visual fixture options for hospitality, retail and commercial interiors. The catalog is strongest in decorative ceiling lamps and can support buyers who need coordinated visual families, private-label packaging and project sourcing support.",
+    heroModel: "QS-XDD-TWNGD-085",
+    productPages: [24, 31, 32, 48, 49, 50, 51, 52, 53, 54, 55, 56],
+    features: ["Decorative fixture families for visual differentiation", "Useful options for hotels, showrooms and retail collections", "Finish, size and packaging confirmation by model", "Private-label and wholesale range support"],
+    applications: ["Hotels", "Restaurants", "Retail showrooms", "Apartments", "Decorative product collections"],
+    faq: [
+      { q: "Does Growcean supply pendant lights?", a: "Growcean's current catalog focuses on ceiling and decorative lighting. Pendant-style or decorative fixture needs can be discussed by target design, quantity and project requirement." },
+      { q: "Can decorative lighting be used for hotel or restaurant projects?", a: "Yes, selected decorative fixtures can support hospitality interiors after confirming size, brightness, style and sample details." },
+      { q: "Can I build a decorative lighting range for wholesale?", a: "Yes. Growcean can help buyers shortlist several visual families for private-label or distributor programs." },
+    ],
+  },
+  {
+    slug: "outdoor-wall-lights",
+    title: "Outdoor Wall Lights and Waterproof Fixtures",
+    seoTitle: "Outdoor Wall Lights Manufacturer | Growcean",
+    seoDescription:
+      "Outdoor wall lights and waterproof fixture sourcing support for B2B buyers. Discuss application, protection needs, quantity and quotation with Growcean.",
+    eyebrow: "OUTDOOR & WATERPROOF FIXTURE SOURCING",
+    description:
+      "Waterproof and practical lighting options for buyers who search outdoor wall lights, balcony lights or damp-area fixtures. Growcean helps B2B buyers clarify the actual application environment, protection expectations, model feasibility and order requirements before quotation.",
+    heroModel: "QS-XDD-FSYZ-029",
+    productPages: [82, 86, 87, 88, 89, 85, 71, 73, 76, 77],
+    features: ["Waterproof and practical fixture options", "Application-based model confirmation", "Balcony, damp-area and corridor use cases", "Packaging and documentation discussion by order"],
+    applications: ["Balconies", "Bathrooms", "Utility spaces", "Commercial damp areas", "Outdoor-adjacent corridors"],
+    faq: [
+      { q: "Can Growcean support outdoor wall light inquiries?", a: "Growcean can discuss outdoor-adjacent and waterproof fixture needs, then confirm suitable catalog models or sourcing feasibility by application." },
+      { q: "What information is needed for waterproof lighting?", a: "Share installation area, protection expectation, wattage, quantity, voltage, CCT and destination market before quotation." },
+      { q: "Are samples recommended?", a: "Yes. Samples are useful when protection, brightness and installation environment matter." },
+    ],
+  },
+  {
+    slug: "chandeliers",
+    title: "Chandelier Manufacturer for Hospitality Projects",
+    seoTitle: "Chandelier Manufacturer for Hospitality Projects | Growcean",
+    seoDescription:
+      "Custom chandelier and decorative lighting sourcing for hotels, restaurants and commercial interiors. Discuss style, quantity, packaging and project quotation.",
+    eyebrow: "HOSPITALITY DECORATIVE LIGHTING",
+    description:
+      "Decorative lighting support for buyers searching chandelier manufacturers for hotels, restaurants and commercial interiors. Growcean can help clarify style direction, catalog alternatives, sample needs, packaging expectations and order communication for hospitality lighting projects.",
+    heroModel: "QS-XDD-SJXK-070",
+    productPages: [31, 32, 48, 50, 52, 53, 54, 55, 56, 98, 99],
+    features: ["Hospitality-oriented decorative fixture selection", "Hotel and restaurant visual style support", "Sample confirmation before bulk order", "OEM packaging and project communication"],
+    applications: ["Hotel guest rooms", "Hotel public areas", "Restaurants", "Showrooms", "Commercial decorative interiors"],
+    faq: [
+      { q: "Can Growcean help with chandelier-style project lighting?", a: "Yes. Growcean can discuss chandelier-style and decorative fixture needs, then recommend catalog-backed options or confirm sourcing feasibility." },
+      { q: "What should I send for a hotel chandelier inquiry?", a: "Send room type, target style, size expectation, quantity, finish preference, budget level and project timeline." },
+      { q: "Can samples be reviewed before production?", a: "Sample review is recommended for decorative project lighting where finish, scale and visual effect matter." },
+    ],
+  },
   {
     slug: "flush-mount-lights",
     title: "Flush Mount Lights",

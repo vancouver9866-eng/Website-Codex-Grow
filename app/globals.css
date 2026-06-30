@@ -516,7 +516,7 @@ a.social-link:hover, a.social-link:focus-visible { color: #ffe39a; border-color:
 .catalog-hero h1 { max-width: 980px; margin: 0; font-size: clamp(42px,5vw,72px); line-height: 1.02; letter-spacing: -.055em; }
 .catalog-lead { max-width: 900px; margin: 22px 0 0; color: rgba(255,255,255,.78); font-size: 16px; line-height: 1.78; }
 .catalog-actions, .catalog-category-pills { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-.catalog-category-pills a { padding: 11px 15px; border: 1px solid rgba(255,255,255,.22); border-radius: 999px; background: rgba(255,255,255,.08); color: white; font-size: 12px; font-weight: 850; }
+.catalog-category-pills a, .catalog-category-pills span { padding: 11px 15px; border: 1px solid rgba(255,255,255,.22); border-radius: 999px; background: rgba(255,255,255,.08); color: white; font-size: 12px; font-weight: 850; }
 .catalog-section { background: #f8fafc; }
 .catalog-listing { display: grid; grid-template-columns: 280px 1fr; gap: 28px; align-items: start; }
 .catalog-filters { position: sticky; top: 100px; padding: 22px; border: 1px solid var(--line); border-radius: 16px; background: white; box-shadow: 0 14px 35px rgba(15,76,129,.07); }
@@ -546,7 +546,7 @@ a.social-link:hover, a.social-link:focus-visible { color: #ffe39a; border-color:
 .catalog-home-categories span { font-weight: 900; }
 .catalog-home-categories small { color: var(--green); font-weight: 900; }
 .catalog-home-products { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
-.catalog-home-products a { padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: white; }
+.catalog-home-products a, .catalog-home-products > div { padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: white; }
 .catalog-home-products strong { display: block; min-height: 42px; font-size: 13px; line-height: 1.4; }
 .catalog-home-products span { display: block; margin-top: 8px; color: var(--blue); font-size: 11px; font-weight: 900; }
 .catalog-home-button { margin-top: 28px; }
