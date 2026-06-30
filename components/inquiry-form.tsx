@@ -2,10 +2,10 @@
 
 import { FormEvent, useState } from "react";
 import { CheckCircle2, Send } from "lucide-react";
-import { getTranslations, type Locale } from "@/lib/i18n";
+import { type Locale } from "@/lib/i18n";
 
 const formText = {
-  en: ["Name", "Your name", "Company", "Company name", "Business email", "WhatsApp / Phone", "Country / Region", "Your market", "Product interest", "Select a category", "Requirements", "Tell us the product, quantity, size, wattage, application and customization needed.", "Send Inquiry", "Thank you for your inquiry.", "Our sales team will review your requirements and contact you.", "Send another inquiry"],
+  en: ["Name", "Your name", "Company", "Company name", "Business email", "WhatsApp", "Country / Region", "Your market", "Product type", "Select a category", "Message", "Tell us the product, quantity, size, wattage, application and customization needed.", "Send Inquiry", "Thank you for your inquiry.", "Our sales team will review your requirements and contact you.", "Send another inquiry"],
   es: ["Nombre", "Su nombre", "Empresa", "Nombre de empresa", "Correo empresarial", "WhatsApp / Teléfono", "País / Región", "Su mercado", "Producto de interés", "Seleccione una categoría", "Requisitos", "Indique producto, cantidad, tamaño, potencia, aplicación y personalización.", "Enviar consulta", "Gracias por su consulta.", "Nuestro equipo comercial revisará sus requisitos y le contactará.", "Enviar otra consulta"],
   fr: ["Nom", "Votre nom", "Entreprise", "Nom de l’entreprise", "E-mail professionnel", "WhatsApp / Téléphone", "Pays / Région", "Votre marché", "Produit recherché", "Choisir une catégorie", "Besoins", "Précisez produit, quantité, dimensions, puissance, application et personnalisation.", "Envoyer la demande", "Merci pour votre demande.", "Notre équipe commerciale étudiera vos besoins et vous contactera.", "Envoyer une autre demande"],
   ar: ["الاسم", "اسمك", "الشركة", "اسم الشركة", "البريد الإلكتروني للعمل", "واتساب / الهاتف", "الدولة / المنطقة", "السوق المستهدف", "المنتج المطلوب", "اختر فئة", "المتطلبات", "اذكر المنتج والكمية والمقاس والقدرة والاستخدام والتخصيص.", "إرسال الاستفسار", "شكراً لاستفسارك.", "سيراجع فريق المبيعات متطلباتك ويتواصل معك.", "إرسال استفسار آخر"],
@@ -19,7 +19,8 @@ export function InquiryForm({ locale = "en" }: { locale?: Locale }) {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const f = formText[locale];
-  const t = getTranslations(locale);
+  const productTypes = ["LED ceiling lights", "Flush mount lights", "Smart ceiling lights", "Decorative ceiling lamps", "Waterproof lights", "Corridor lights", "Package sets"];
+  const applications = ["Home", "Hotel", "Apartment", "Office", "Retail", "Other"];
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -95,8 +96,17 @@ export function InquiryForm({ locale = "en" }: { locale?: Locale }) {
       </div>
       <div className="field-row">
         <label><span>{f[6]} *</span><input required name="country" autoComplete="country-name" placeholder={f[7]} /></label>
-        <label><span>{f[8]} *</span><select required name="product" defaultValue=""><option value="" disabled>{f[9]}</option>{t.products.slice(0, 3).map((item) => <option key={item[0]}>{item[0]}</option>)}<option>{t.nav[1]}</option><option>{t.applicationsTitle}</option></select></label>
+        <label><span>{f[8]} *</span><select required name="product" defaultValue=""><option value="" disabled>{f[9]}</option>{productTypes.map((item) => <option key={item}>{item}</option>)}</select></label>
       </div>
+      <div className="field-row">
+        <label><span>Target quantity</span><input name="quantity" placeholder="e.g. 500 pcs / 1 container / project quantity" /></label>
+        <label><span>Wattage / size requirements</span><input name="wattage_size" placeholder="e.g. 24W, 36W, 300mm, 600mm" /></label>
+      </div>
+      <div className="field-row">
+        <label><span>CCT requirement</span><select name="cct" defaultValue=""><option value="">To be confirmed</option><option>3000K warm white</option><option>4000K neutral white</option><option>6500K cool white</option><option>Three-color CCT</option><option>Other / mixed</option></select></label>
+        <label><span>Application</span><select name="application" defaultValue=""><option value="">Select application</option>{applications.map((item) => <option key={item}>{item}</option>)}</select></label>
+      </div>
+      <label><span>Need OEM packaging?</span><select name="oem_packaging" defaultValue=""><option value="">To be confirmed</option><option>Yes</option><option>No</option><option>Need logo / label / manual discussion</option></select></label>
       <label><span>{f[10]} *</span><textarea required name="message" rows={4} placeholder={f[11]} /></label>
       {error && <p className="form-error" role="alert">{error}</p>}
       <button className="button submit-button" type="submit" disabled={submitting}>

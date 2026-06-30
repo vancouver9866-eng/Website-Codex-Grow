@@ -67,6 +67,109 @@ export const categoryDefinitions = [
 
 export type CategorySlug = (typeof categoryDefinitions)[number]["slug"];
 
+export type CategorySeoContent = {
+  h1: string;
+  intro: string[];
+  applications: string[];
+  customization: string[];
+  faqs: Array<{ q: string; a: string }>;
+  cta: string;
+};
+
+export const categorySeoContent: Record<CategorySlug, CategorySeoContent> = {
+  "ceiling-lights": {
+    h1: "Wholesale LED Ceiling Lights for B2B Projects",
+    intro: [
+      "Growcean supplies LED ceiling lights for importers, wholesalers, distributors and project buyers looking for reliable, customizable lighting products. Our ceiling light range covers slim designs, decorative finishes, multiple wattage options, CCT choices and packaging customization for different residential, hotel, apartment and commercial applications.",
+      "For B2B sourcing teams, the buying decision is rarely about one single fixture. Buyers need a stable product range, clear specification confirmation, sample communication, packaging options and models that can match local market preferences. Growcean helps buyers compare ceiling light shapes, power options, materials, recommended room areas and visible finish details before quotation, so procurement teams can shortlist suitable products with fewer back-and-forth messages.",
+      "Use this category to review ceiling lights for wholesale distribution, private-label programs, project supply and room-by-room lighting packages. Final wattage, size, CCT, dimming, smart control and packaging details should be confirmed by model, quantity and destination market before production.",
+      "When planning a ceiling light order, buyers should share target room size, preferred shape, expected price level, packaging style and local sales channel. This helps Growcean recommend practical models instead of sending a generic catalog list. The goal is to support importers and distributors with clearer model selection, safer sample confirmation and product ranges that can be sold repeatedly in their own markets.",
+    ],
+    applications: ["Residential rooms", "Hotels", "Apartments", "Offices", "Showrooms", "Wholesale product ranges"],
+    customization: ["Size and shape selection", "Wattage configuration by room area", "CCT requirement confirmation", "Dimming or smart-control options by model", "Logo, label, manual and packaging support", "Market-specific product range planning"],
+    faqs: [
+      { q: "What wattage options are available?", a: "Available wattage depends on the selected model and size. Many catalog ceiling light families include multiple wattage options, and Growcean can help match wattage to room area and market requirements." },
+      { q: "Can you customize CCT, packaging or logo?", a: "Yes. CCT, logo, label, manual and packaging requirements can be discussed for OEM or private-label orders. Final feasibility is confirmed by model and quantity." },
+      { q: "What is the MOQ for wholesale ceiling lights?", a: "MOQ is confirmed by product model, customization level and packaging requirements. Send your target model, quantity and market so the team can provide a practical quotation." },
+      { q: "Are samples available before bulk orders?", a: "Sample availability is confirmed by model. For project or wholesale orders, samples help verify size, light effect, finish and packaging before bulk production." },
+      { q: "Which ceiling lights are suitable for hotels or apartments?", a: "Slim ceiling lights, flush mount lights and decorative ceiling lamps are often used in hotels and apartments. The best option depends on room size, ceiling height, design style and target wattage." },
+    ],
+    cta: "Send us your target wattage, size, CCT, quantity, packaging requirement and destination market. Growcean will help you shortlist suitable LED ceiling light models for your wholesale or project order.",
+  },
+  "corridor-lights": {
+    h1: "Corridor Lights for Wholesale and Project Lighting Buyers",
+    intro: [
+      "Growcean corridor lights are designed for B2B buyers sourcing compact lighting solutions for passages, aisles, hallways, apartments, hotels and commercial circulation spaces. The catalog includes multiple forms and finishes so buyers can compare output, size and installation appearance before requesting a quote.",
+      "For distributors and project buyers, corridor lighting should be easy to specify, visually consistent and practical for repeat purchase. Growcean supports model selection, wattage confirmation and packaging discussion for wholesale ranges and project supply.",
+      "Corridor projects often require stable visual continuity across many repeated spaces. Importers and contractors may need different lengths, shapes, light effects or color temperatures depending on whether the project is a hotel hallway, apartment corridor, office passage or residential aisle. Growcean helps buyers prepare a clearer request by confirming application area, quantity, wattage expectations, CCT requirements and packaging needs before quotation.",
+      "For wholesale buyers, corridor lights can also work as a focused product line inside a larger ceiling lighting range. A practical sourcing plan should compare compact models, decorative models and simple surface-mounted options so local buyers can choose by room style and budget. Final product details, sample availability and MOQ should be confirmed by selected model and order plan.",
+    ],
+    applications: ["Hotel corridors", "Apartment hallways", "Office passages", "Residential aisles", "Commercial circulation areas"],
+    customization: ["Length and shape selection", "Wattage confirmation", "CCT requirement", "Surface finish options by model", "Private-label packaging", "Project quantity planning"],
+    faqs: [
+      { q: "Can corridor lights be used in hotel projects?", a: "Yes. Corridor lights can be selected for hotels, apartments and commercial passages after confirming size, wattage and installation requirements." },
+      { q: "Can I mix several corridor light models in one order?", a: "Model combinations can be discussed for project packages or wholesale ranges. Final MOQ and packing details are confirmed by order plan." },
+      { q: "Do corridor lights support different CCT options?", a: "CCT availability depends on the model. Share your target color temperature and market requirements before quotation." },
+      { q: "Are samples recommended?", a: "Samples are useful for checking brightness, finish and installation appearance before bulk orders." },
+    ],
+    cta: "Share the corridor length, target wattage, CCT, quantity and project type. Growcean will recommend suitable corridor light models for your order.",
+  },
+  "waterproof-lights": {
+    h1: "Waterproof Ceiling Lights for Practical B2B Applications",
+    intro: [
+      "Growcean waterproof lights support buyers who need practical lighting products for humid or demanding application areas. These products are suitable for importers, distributors and project buyers comparing waterproof or three-proof ceiling light options for specific local market needs.",
+      "Because waterproof requirements depend on the installation environment, each order should confirm product type, application area, expected protection level, wattage, size and packaging before quotation. Growcean helps buyers prepare these details clearly for sample and bulk-order discussion.",
+      "Waterproof lighting procurement should avoid vague requests. A buyer should explain whether the product is intended for bathrooms, utility spaces, balconies, commercial wet areas or general practical lighting. Different environments may require different product structures and confirmation steps, so Growcean keeps the sourcing conversation focused on application, quantity, installation conditions and market expectations rather than unsupported claims.",
+      "For distributors, waterproof lights can strengthen a catalog by covering use cases that standard decorative fixtures cannot address. For project buyers, the value is in matching the right model to the real environment and confirming packaging, sample and order details before production. Technical protection requirements should always be confirmed by model and project condition.",
+    ],
+    applications: ["Bathrooms", "Utility spaces", "Balconies", "Commercial wet areas", "Project lighting supply"],
+    customization: ["Wattage and size confirmation", "Application-based model selection", "CCT requirement", "Packaging and label support", "Market documentation discussion"],
+    faqs: [
+      { q: "Where can waterproof ceiling lights be used?", a: "They can be considered for humid or practical application areas after confirming the model and installation environment." },
+      { q: "Can Growcean confirm the suitable model for my project?", a: "Yes. Send the application area, quantity, target wattage and market requirements for model selection support." },
+      { q: "Is packaging customization available?", a: "Private-label packaging can be discussed based on model and order quantity." },
+      { q: "Should I request samples first?", a: "Samples are recommended when the application environment or market requirement is specific." },
+    ],
+    cta: "Tell us the application area, target wattage, size, quantity and market. Growcean will help confirm suitable waterproof lighting options.",
+  },
+  "decorative-lights": {
+    h1: "Decorative Ceiling Lamps for Wholesale Lighting Ranges",
+    intro: [
+      "Growcean decorative ceiling lamps help importers, wholesalers and distributors build differentiated lighting ranges for homes, hotels, apartments, showrooms and retail programs. The category includes modern, vintage, cloud, star, moon, bamboo and iron art styles that can support market-specific product positioning.",
+      "Decorative products require careful visual confirmation. Buyers should compare product shape, finish, room style, wattage, size and packaging expectations before sampling. Growcean supports private-label and project discussions without overstating technical details that must be confirmed by model.",
+      "For B2B buyers, decorative ceiling lamps are often selected to create a clear retail story or project style instead of only meeting a basic lighting function. A distributor may need several shapes and finishes for different price points, while a hotel or apartment buyer may prefer a more consistent visual family. Growcean helps buyers review the catalog by style, application, visible finish and packaging requirement.",
+      "Because decorative appearance can strongly affect customer acceptance, samples are especially useful before bulk orders. Buyers should share target market, preferred design direction, expected wattage, room type and whether OEM packaging is needed. Growcean can then help narrow the range and confirm which product options are practical for quotation and follow-up.",
+    ],
+    applications: ["Living rooms", "Bedrooms", "Children's rooms", "Hotels", "Apartments", "Showrooms"],
+    customization: ["Visual style selection", "Color and finish confirmation", "Wattage and size planning", "CCT by model", "Logo and packaging discussion", "Range building for local markets"],
+    faqs: [
+      { q: "Can decorative lamps be used for private-label programs?", a: "Yes. Logo, label and packaging support can be discussed by model, quantity and market requirement." },
+      { q: "Can I choose different shapes in one range?", a: "Yes, Growcean can help buyers build a range across modern, vintage, cloud, moon or other decorative styles." },
+      { q: "Are product images enough for final confirmation?", a: "Images help shortlisting, but samples are recommended before bulk orders when finish and appearance are important." },
+      { q: "Can decorative lamps be used in hotels?", a: "Many decorative ceiling lamps are suitable for hotel rooms or apartments after confirming size, brightness and design style." },
+    ],
+    cta: "Send your preferred style, target market, quantity, wattage and packaging requirements. Growcean will help build a decorative ceiling lamp range.",
+  },
+  "package-sets": {
+    h1: "Ceiling Light Package Sets for Whole-House and Project Supply",
+    intro: [
+      "Growcean package sets are built for buyers who need matched ceiling lighting combinations for whole-house retail programs, apartment projects, hotel rooms or distributor product bundles. Package buying helps simplify model selection across living rooms, bedrooms, dining areas, corridors and other spaces.",
+      "For B2B orders, package configuration should be confirmed by room type, preferred style, wattage, size, CCT, packaging and target market. Growcean supports product matching and export communication so buyers can prepare a clearer quotation request.",
+      "Package sets are useful when a buyer wants to sell or install a coordinated lighting solution rather than individual models. Importers may use package sets for retail bundles, while project buyers may use them for repeated apartments, hotel rooms or whole-house supply. The key is to define each room, the desired light style, target brightness level and whether the package should include private-label packaging.",
+      "Growcean can help organize a package plan by combining ceiling lights, corridor lights and decorative options where suitable. Final model selection, quantity, sample terms and packaging structure are confirmed after the buyer shares room requirements and market positioning. This reduces random model selection and makes quotation more useful for real procurement decisions.",
+    ],
+    applications: ["Whole-house lighting", "Apartment packages", "Hotel room packages", "Distributor bundles", "Retail product sets"],
+    customization: ["Room-by-room model matching", "Package composition", "Wattage and CCT planning", "Private-label packaging", "Manual and label support"],
+    faqs: [
+      { q: "Can Growcean help build a whole-house lighting set?", a: "Yes. Share room types, target style, budget range and quantity so the team can suggest suitable combinations." },
+      { q: "Can package sets include different product categories?", a: "Yes, package sets may combine ceiling lights, corridor lights and decorative models depending on project requirements." },
+      { q: "Is OEM packaging available for package sets?", a: "Packaging customization can be discussed based on package structure, quantity and brand requirements." },
+      { q: "Are package sets suitable for apartments or hotels?", a: "Yes. Package sets are useful when buyers need consistent lighting across repeated rooms or units." },
+    ],
+    cta: "Send your room list, target style, quantity, CCT and packaging requirements. Growcean will help plan a practical ceiling light package set.",
+  },
+};
+
 export function getProduct(slug: string) {
   return products.find((product) => product.slug === slug);
 }
@@ -269,7 +372,7 @@ export function productSeoTitle(product: Product, locale: Locale) {
   if (locale === "fr") return `${product.name} | Éclairage Growcean`;
   if (locale === "ar") return `${product.name} | إضاءة Growcean`;
   if (locale === "ru") return `${product.name} | Освещение Growcean`;
-  return `${product.name} | Growcean Lighting`;
+  return `${product.name} LED Ceiling Light for Wholesale and Project Buyers | Growcean`;
 }
 
 export function productMetaDescription(product: Product, locale: Locale) {
@@ -279,7 +382,7 @@ export function productMetaDescription(product: Product, locale: Locale) {
   if (locale === "fr") return `${product.model} ${product.name}. ${tech}. Fabrication OEM/ODM et demande de devis.`;
   if (locale === "ar") return `${product.model} ${product.name}. ${tech}. تصنيع OEM/ODM واستفسار عبر واتساب.`;
   if (locale === "ru") return `${product.model} ${product.name}. ${tech}. OEM/ODM поставка и запрос цены.`;
-  return base;
+  return `${product.model} ${product.name} for B2B buyers. Compare wattage, size, material, application and customization options before requesting a Growcean quotation.`;
 }
 
 export function productLongDescription(product: Product, locale: Locale) {

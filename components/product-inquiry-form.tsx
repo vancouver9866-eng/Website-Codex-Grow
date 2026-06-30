@@ -79,6 +79,14 @@ export function ProductInquiryForm() {
         <label><span>Estimated quantity *</span><input required name="quantity" placeholder="e.g. 500 pcs" /></label>
         <label><span>WhatsApp</span><input name="whatsapp" placeholder="+00 000 000 000" /></label>
       </div>
+      <div className="field-row">
+        <label><span>Wattage / size requirements</span><input name="wattage_size" placeholder="e.g. 36W, 48W, 300mm, 600mm" /></label>
+        <label><span>CCT requirement</span><select name="cct" defaultValue=""><option value="">To be confirmed</option><option>3000K warm white</option><option>4000K neutral white</option><option>6500K cool white</option><option>Three-color CCT</option></select></label>
+      </div>
+      <div className="field-row">
+        <label><span>Application</span><select name="application" defaultValue=""><option value="">Select application</option><option>Home</option><option>Hotel</option><option>Apartment</option><option>Office</option><option>Retail</option><option>Other</option></select></label>
+        <label><span>Need OEM packaging?</span><select name="oem_packaging" defaultValue=""><option value="">To be confirmed</option><option>Yes</option><option>No</option><option>Need logo / label / manual discussion</option></select></label>
+      </div>
       <label><span>Requirements *</span><textarea required name="message" rows={4} defaultValue="I am interested in model QS-XDD-2.7XB-GLQD-090. Please share pricing, MOQ, available specifications and sample terms." /></label>
       {error && <p className="form-error" role="alert">{error}</p>}
       <button className="button submit-button" type="submit" disabled={submitting}>

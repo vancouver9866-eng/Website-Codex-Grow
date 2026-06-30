@@ -35,6 +35,9 @@ import { getTranslations, type Locale } from "@/lib/i18n";
 import { categoryDefinitions, categoryNameByLocale, localizedPath, products as catalogProducts } from "@/lib/catalog";
 
 export const metadata: Metadata = {
+  title: "Growcean | B2B LED Ceiling Lights & Custom Lighting Solutions",
+  description:
+    "Growcean supplies customizable LED ceiling lights, flush mount lights, smart ceiling lights and decorative lighting solutions for importers, wholesalers, distributors and project buyers worldwide.",
   alternates: {
     canonical: "/",
     languages: {

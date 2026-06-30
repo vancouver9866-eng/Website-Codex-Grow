@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getCategory, getLocaleFromParam } from "@/lib/catalog";
+import { categorySeoContent, getCategory, getLocaleFromParam } from "@/lib/catalog";
 import { isLocale } from "@/lib/i18n";
 import { CategoryView } from "@/components/catalog/category-view";
 
@@ -14,9 +14,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale, slug } = await params;
   const category = getCategory(slug);
   if (!isLocale(locale) || locale === "en" || !category) return {};
+  const seo = categorySeoContent[category.slug];
   return {
-    title: `${category.name} | Growcean Lighting`,
-    description: category.description,
+    title: `${seo.h1} | Growcean Lighting`,
+    description: seo.intro[0],
     alternates: {
       canonical: `/${locale}/category/${slug}`,
       languages: {

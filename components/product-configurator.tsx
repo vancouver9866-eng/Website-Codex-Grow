@@ -28,7 +28,7 @@ export function ProductConfigurator() {
         <div className="pd-thumbnails" aria-label="Product gallery">
           {gallery.map((item, index) => (
             <button className={image === index ? "active" : ""} key={item.src} onClick={() => setImage(index)}>
-              <Image src={item.src} alt="" fill sizes="100px" />
+              <Image src={item.src} alt={`${item.alt} thumbnail`} fill sizes="100px" />
             </button>
           ))}
         </div>

@@ -16,9 +16,9 @@ export async function generateMetadata({
   if (!isLocale(locale) || locale === "en") return {};
   if (locale === "es") {
     return {
-      title: "Growcean | Soluciones B2B de iluminación de techo",
+      title: "Growcean | B2B LED Ceiling Lights & Custom Lighting Solutions",
       description:
-        "Luces LED de techo personalizables y soporte de exportación para importadores, mayoristas, distribuidores y compradores de proyectos.",
+        "Growcean supplies customizable LED ceiling lights, flush mount lights, smart ceiling lights and decorative lighting solutions for importers, wholesalers, distributors and project buyers worldwide.",
       alternates: {
         canonical: "/es",
         languages: {
@@ -31,9 +31,9 @@ export async function generateMetadata({
   }
 
   return {
-    title: "Growcean | B2B Ceiling Lighting Solutions",
+    title: "Growcean | B2B LED Ceiling Lights & Custom Lighting Solutions",
     description:
-      "Customizable LED ceiling lights and export support for importers, wholesalers, distributors and project buyers.",
+      "Growcean supplies customizable LED ceiling lights, flush mount lights, smart ceiling lights and decorative lighting solutions for importers, wholesalers, distributors and project buyers worldwide.",
     alternates: {
       canonical: `/${locale}`,
       languages: {

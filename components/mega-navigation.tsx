@@ -127,7 +127,7 @@ export function MegaNavigation({ locale = "en" }: { locale?: Locale }) {
                 {productLinks.map((product) => (
                   <a href="/#products" className="mega-product" key={product.title} onClick={closeMenu}>
                     <div className="mega-product-image">
-                      <Image src={product.image} alt="" fill sizes="170px" />
+                      <Image src={product.image} alt={`${product.title} product collection`} fill sizes="170px" />
                     </div>
                     <div>
                       <h3>{product.title}</h3>

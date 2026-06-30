@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { CategoryView } from "@/components/catalog/category-view";
-import { getCategory } from "@/lib/catalog";
+import { categorySeoContent, getCategory } from "@/lib/catalog";
 
 export function generateStaticParams() {
   return ["ceiling-lights", "corridor-lights", "waterproof-lights", "decorative-lights", "package-sets"].map((slug) => ({ slug }));
@@ -10,9 +10,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const category = getCategory(slug);
   if (!category) return {};
+  const seo = categorySeoContent[category.slug];
   return {
-    title: `${category.name} | Growcean Lighting Catalog`,
-    description: category.description,
+    title: `${seo.h1} | Growcean`,
+    description: seo.intro[0],
     alternates: {
       canonical: `/category/${slug}`,
       languages: {

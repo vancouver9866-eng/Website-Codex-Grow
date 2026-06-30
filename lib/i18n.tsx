@@ -17,9 +17,9 @@ const translations = {
   en: {
     nav: ["Products", "OEM & Custom", "Applications", "Resources", "About Us"],
     quote: "Get a Quote",
-    heroTitle: <>LIGHTING THE<br />FUTURE</>,
-    heroLead: "B2B Ceiling Lighting Solutions for Global Buyers",
-    heroCopy: "Customizable LED ceiling lights, responsive export support and practical solutions for wholesale, private-label and project requirements.",
+    heroTitle: <>B2B LED Ceiling Lighting<br />Solutions for Global Buyers</>,
+    heroLead: "Custom Lighting Supply for Importers, Wholesalers and Project Buyers",
+    heroCopy: "Growcean supplies customizable LED ceiling lights, flush mount lights, smart ceiling lights and decorative lighting solutions for importers, wholesalers, distributors and project buyers.",
     viewProducts: "View Products",
     productLabel: "PRODUCT RANGE",
     productTitle: "Ceiling Lighting Built Around Buyer Needs",
