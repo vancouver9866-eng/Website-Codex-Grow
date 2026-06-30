@@ -10,6 +10,7 @@ import {
 } from "@/lib/catalog";
 import type { Locale } from "@/lib/i18n";
 import { CatalogProductCard } from "./product-card";
+import { TrustBadges } from "@/components/sections/TrustBadges";
 
 export function ProductDetail({ product, locale }: { product: Product; locale: Locale }) {
   const copy = catalogCopy[locale];
@@ -92,6 +93,19 @@ export function ProductDetail({ product, locale }: { product: Product; locale: L
           </div>
           <div className="catalog-feature-grid">
             {product.features.map((feature) => <div className="catalog-feature" key={feature}><PackageCheck /><span>{feature}</span></div>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="section product-trust-strip-section">
+        <div className="container">
+          <TrustBadges compact />
+          <div className="product-market-cta">
+            <div>
+              <h2>Need this model for your market?</h2>
+              <p>Send us your target wattage, size, voltage, quantity, and market. We will help match the suitable configuration.</p>
+            </div>
+            <a className="button" href="#product-inquiry">Get Quote</a>
           </div>
         </div>
       </section>

@@ -23,6 +23,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticPaths = [
     "/",
+    "/about",
+    "/factory-tour",
+    "/quality-control",
     "/products",
     "/blog/how-to-choose-ceiling-lights",
     "/blog/how-to-choose-led-ceiling-lights-for-b2b-projects",

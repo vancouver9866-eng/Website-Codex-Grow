@@ -30,6 +30,8 @@ import { MegaNavigation } from "@/components/mega-navigation";
 import { MobileMenu } from "@/components/mobile-menu";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { ProductVideoShowcase } from "@/components/product-video-showcase";
+import { FactoryTrustSection } from "@/components/sections/FactoryTrustSection";
+import { QualityControlProcess } from "@/components/sections/QualityControlProcess";
 import { SocialLinks } from "@/components/social-links";
 import { getTranslations, type Locale } from "@/lib/i18n";
 import { categoryDefinitions, categoryNameByLocale, localizedPath, products as catalogProducts } from "@/lib/catalog";
@@ -224,6 +226,10 @@ export function GrowceanHome({ locale = "en" }: { locale?: Locale }) {
           </div>
         </div>
       </section>
+
+      <FactoryTrustSection locale={locale} />
+
+      <QualityControlProcess compact />
 
       <section className="section custom-section" id="custom">
         <div className="container custom-layout">
