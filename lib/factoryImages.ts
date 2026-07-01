@@ -40,11 +40,8 @@ export const factoryImages: FactoryImage[] = [
 
 export const homepageFactoryImages = [
   factoryImages.find((item) => item.id === "assembly-check")!,
-  factoryImages.find((item) => item.id === "qc-inspection")!,
   factoryImages.find((item) => item.id === "export-packaging")!,
   factoryImages.find((item) => item.id === "shipment-loading")!,
-  factoryImages.find((item) => item.id === "showroom-wall")!,
-  factoryImages.find((item) => item.id === "decorative-showroom")!,
 ];
 
 export const factoryGroups: Array<{ key: FactoryImageGroup; label: string }> = [
