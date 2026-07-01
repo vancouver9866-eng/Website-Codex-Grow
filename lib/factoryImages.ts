@@ -36,12 +36,14 @@ export const factoryImages: FactoryImage[] = [
   image("showroom-wall", "showroom", "growcean-lighting-showroom-wall", "Wall display of ceiling light samples in partner showroom", "Showroom", "Product samples and lighting designs for buyer selection.", 1200, 900),
   image("product-display", "showroom", "growcean-ceiling-light-product-display", "Ceiling light product display wall for buyer comparison", "Showroom", "Product samples and lighting designs for buyer selection.", 1200, 900),
   image("sample-showroom", "showroom", "growcean-lighting-sample-showroom", "Lighting sample showroom with ceiling lamp display wall", "Showroom", "Product samples and lighting designs for buyer selection.", 1200, 900),
+  image("showroom-selection-wall", "showroom", "growcean-lighting-showroom-selection-wall", "Growcean Lighting showroom wall with decorative ceiling light samples for buyer selection", "Showroom", "Sample displays help buyers compare decorative ceiling light styles, sizes, and lighting effects.", 1200, 900),
 ];
 
 export const homepageFactoryImages = [
   factoryImages.find((item) => item.id === "assembly-check")!,
   factoryImages.find((item) => item.id === "export-packaging")!,
   factoryImages.find((item) => item.id === "shipment-loading")!,
+  factoryImages.find((item) => item.id === "showroom-selection-wall")!,
 ];
 
 export const factoryGroups: Array<{ key: FactoryImageGroup; label: string }> = [
