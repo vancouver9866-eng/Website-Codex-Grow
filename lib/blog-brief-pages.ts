@@ -15,7 +15,137 @@ export type BlogBriefPage = {
   sections: Array<{ heading: string; paragraphs: string[] }>;
 };
 
+function createLightingTrendBlog({
+  slug,
+  targetKeyword,
+  title,
+  seoTitle,
+  description,
+  cta,
+  intro,
+  topicNotes,
+  image = "/images/factory-optimized/growcean-lighting-showroom-selection-wall-1200.webp",
+  imageAlt = "Growcean LED ceiling lighting selection reference for B2B buyers",
+}: {
+  slug: string;
+  targetKeyword: string;
+  title: string;
+  seoTitle: string;
+  description: string;
+  cta: string;
+  intro: string;
+  topicNotes: string[];
+  image?: string;
+  imageAlt?: string;
+}): BlogBriefPage {
+  return {
+    slug,
+    url: `/blog/${slug}`,
+    targetKeyword,
+    contentType: "B2B Sourcing",
+    title,
+    seoTitle,
+    description,
+    intro,
+    image,
+    imageAlt,
+    cta,
+    internalLinks: ["/products/", "/solutions/hotel-lighting/", "/solutions/retail-lighting/", "/contact/"],
+    faq: [
+      `What should buyers confirm about ${targetKeyword}?`,
+      "Can Growcean discuss OEM or ODM requirements?",
+      "Can I request a catalog or samples before bulk orders?",
+      "What information is needed for a quotation?",
+      "How should project buyers compare LED ceiling lighting options?",
+    ],
+    sections: [
+      {
+        heading: "Why This Topic Matters for B2B Lighting Buyers",
+        paragraphs: [
+          topicNotes[0],
+          "For importers, wholesalers, contractors and project buyers, the value of a lighting discussion is not only about unit price. Buyers also need to confirm product fit, installation context, control requirements, packaging expectations, sample review and after-sales communication before moving toward a bulk order.",
+        ],
+      },
+      {
+        heading: "What Importers and Project Buyers Should Check",
+        paragraphs: [
+          topicNotes[1],
+          "A practical inquiry should include application area, quantity, target market, voltage expectation, wattage or size range, CCT preference, dimming or smart-control needs, packaging requirements and whether samples are needed before a larger order.",
+        ],
+      },
+      {
+        heading: "How This Relates to LED Ceiling Lights and Commercial Lighting",
+        paragraphs: [
+          topicNotes[2],
+          "LED ceiling lights, flush mount lights, smart ceiling lights, corridor lights and decorative ceiling lamps can play different roles in a commercial project. A hotel room, office area, apartment corridor and retail showroom may require different priorities even when the product category looks similar.",
+        ],
+      },
+      {
+        heading: "Questions to Ask Before Sourcing",
+        paragraphs: [
+          "Before requesting a quote, buyers should ask whether the model fits the installation area, what specifications must be confirmed by sample, which packaging or label details are required, and whether the supplier can discuss OEM or ODM requirements by model and order quantity.",
+          "For project buyers, it is useful to share drawings, room lists, target lighting style, project schedule and any control or packaging requirement. Growcean can then help shortlist catalog-backed options for catalog review, sample discussion or quotation.",
+        ],
+      },
+    ],
+  };
+}
+
 export const blogBriefPages: BlogBriefPage[] = [
+  createLightingTrendBlog({
+    slug: "commercial-lighting-energy-savings-hvac-integration",
+    targetKeyword: "commercial lighting energy savings with HVAC integration",
+    title: "Commercial Lighting Energy Savings with HVAC Integration",
+    seoTitle: "Commercial Lighting Energy Savings with HVAC Integration | Growcean",
+    description:
+      "Growcean shares practical B2B lighting guidance on commercial lighting energy savings with HVAC integration. Contact us for catalogs, samples, quotes, or project lighting discussions.",
+    cta: "Get Project Lighting Plan",
+    intro:
+      "Commercial lighting and HVAC coordination is becoming a useful discussion point for project teams that want better control planning and more efficient building operation. This guide explains the buyer questions to prepare without making unsupported energy-saving claims.",
+    image: "/images/factory-optimized/growcean-lighting-application-display-1200.webp",
+    imageAlt: "Commercial LED ceiling lighting application for project planning",
+    topicNotes: [
+      "The LightNOW trend topic on lighting systems and HVAC integration points to a broader project reality: lighting is increasingly discussed as part of building systems, controls and occupancy-based operation rather than as a standalone fixture purchase.",
+      "Buyers should confirm whether the project requires simple switching, dimming, sensors, smart-control compatibility or coordination with building management requirements. Any expected energy result should be verified by the project engineer or system integrator.",
+      "For Growcean ceiling lighting inquiries, this topic connects to LED ceiling light selection, control method, dimming requirement, room-by-room application and the information a contractor should prepare before asking for a project lighting plan.",
+    ],
+  }),
+  createLightingTrendBlog({
+    slug: "color-rendering-metrics-led-ceiling-lights",
+    targetKeyword: "color rendering metrics for LED ceiling lights",
+    title: "Color Rendering Metrics for LED Ceiling Lights",
+    seoTitle: "Color Rendering Metrics for LED Ceiling Lights | Growcean",
+    description:
+      "Growcean shares practical B2B lighting guidance on color rendering metrics for LED ceiling lights. Contact us for catalogs, samples, quotes, or project lighting discussions.",
+    cta: "Get Catalog",
+    intro:
+      "Color rendering affects how people perceive surfaces, products, food, fabric, skin tones and interior finishes. This B2B guide explains how buyers should discuss color rendering before sourcing LED ceiling lights, without assuming unsupported product metrics.",
+    image: "/images/catalog-products-clean/page-001.jpg",
+    imageAlt: "LED ceiling light reference for color rendering discussion",
+    topicNotes: [
+      "The LightNOW trend topic reviewing color rendering metrics is relevant because many buyers only ask for wattage and price, while project quality often depends on how light makes materials and colors appear in the actual space.",
+      "Buyers should confirm which color rendering metric is required by the project, whether sample review is needed, how the fixture will be used, and whether the requested metric is available for the selected model. Growcean should not claim a specific value unless it is confirmed by product data.",
+      "For LED ceiling lights and commercial lighting, color rendering questions are especially important for hotels, retail spaces, showrooms, offices, apartments and decorative interiors where visual comfort and material appearance matter.",
+    ],
+  }),
+  createLightingTrendBlog({
+    slug: "import-led-lighting-from-china-tariff-considerations",
+    targetKeyword: "import LED lighting from China tariff considerations",
+    title: "Import LED Lighting from China: Tariff Questions for Buyers",
+    seoTitle: "Import LED Lighting from China: Tariff Questions for Buyers | Growcean",
+    description:
+      "Growcean shares practical B2B lighting guidance on import LED lighting from China tariff considerations. Contact us for catalogs, samples, quotes, or project lighting discussions.",
+    cta: "Request a Quote",
+    intro:
+      "Tariff and duty questions can affect the landed cost of imported LED lighting. This guide gives B2B buyers a practical checklist for discussion while reminding them to verify duty, tax and classification questions with their customs broker.",
+    image: "/images/factory-optimized/growcean-lighting-export-packaging-1200.webp",
+    imageAlt: "Export packaging for LED lighting import planning",
+    topicNotes: [
+      "The LightNOW tariff update topic is a reminder that importers should not evaluate lighting orders only by ex-factory price. Landed cost may also depend on destination market, product classification, shipment method and customs documentation.",
+      "Buyers should confirm HS code discussion, destination country requirements, invoice information, packaging details, product description, shipment terms and whether their customs broker needs additional documents. Growcean does not provide legal or tax advice.",
+      "For LED ceiling lights and commercial lighting, tariff-related questions should be handled early in the sourcing conversation so buyers can compare samples, quotation terms, packaging requirements and import planning more realistically.",
+    ],
+  }),
   {
     slug: "commercial-lighting-fixtures-supplier-vs-manufacturer",
     url: "/blog/commercial-lighting-fixtures-supplier-vs-manufacturer",

@@ -67,26 +67,26 @@ export const solutionPages: SolutionPage[] = [
   },
   {
     slug: "hotel-lighting",
-    title: "Hotel Lighting Solutions from Guest Rooms to Public Areas",
-    seoTitle: "Hotel Lighting Manufacturer for Hospitality Projects | Growcean",
+    title: "Hotel Lighting for Hospitality Projects",
+    seoTitle: "Hotel Lighting for Hospitality Projects | Growcean",
     seoDescription:
-      "Hotel lighting solutions for hospitality projects. Growcean helps buyers source LED ceiling lights, decorative fixtures and room lighting packages.",
+      "Growcean shares practical B2B lighting guidance on hotel lighting for experience driven hospitality projects. Contact us for catalogs, samples, quotes, or project lighting discussions.",
     eyebrow: "HOTEL LIGHTING PROJECTS",
     lead:
-      "Growcean supports hotel lighting buyers who need practical model selection, decorative consistency, OEM packaging discussion and export follow-up for guest rooms, corridors, apartments and hospitality public areas.",
+      "Growcean supports international project buyers sourcing ceiling lighting for hotel rooms, corridors, lobby-adjacent spaces, apartment-style units and renovation projects. The goal is to help buyers prepare clear model, sample, packaging and quotation requirements without unsupported project claims.",
     image: "/images/catalog-products-clean/page-050.jpg",
-    primaryKeyword: "chandelier manufacturer for hotels",
+    primaryKeyword: "hotel lighting for experience driven hospitality projects",
     relatedKeywords: [
-      "hotel lighting manufacturer",
+      "hotel lighting for hospitality projects",
       "commercial lighting fixtures for hotels",
       "decorative lighting for hotel rooms",
       "led lighting supplier for hospitality projects",
     ],
     buyerNeeds: [
-      "A coordinated product range for guest rooms, corridors and public spaces",
-      "Decorative ceiling lamps or chandelier-style fixtures that match the interior design direction",
-      "Clear wattage, size, CCT and sample confirmation before bulk production",
-      "Responsive communication for project timelines, packaging and export documentation",
+      "Ceiling lighting choices that support guest room comfort, corridor visibility and consistent renovation planning",
+      "Product options for standard rooms, apartment-style units, corridors and lobby-adjacent spaces",
+      "Clear wattage, size, CCT, finish and sample confirmation before bulk order discussion",
+      "OEM or ODM packaging and label questions prepared before quotation",
     ],
     productMix: [
       "LED ceiling lights for guest rooms and apartment-style hotel units",
@@ -102,16 +102,74 @@ export const solutionPages: SolutionPage[] = [
     ],
     faqs: [
       {
-        q: "Can Growcean support hotel lighting projects?",
-        a: "Yes. Growcean can help hotel and hospitality buyers shortlist ceiling lights, corridor lights and decorative fixtures from the catalog, then confirm samples, quotation details and export follow-up.",
+        q: "What should buyers confirm about hotel lighting for experience driven hospitality projects?",
+        a: "Buyers should confirm room type, installation area, preferred visual style, wattage or size expectation, CCT, voltage, quantity, sample needs, packaging requirements and project schedule.",
       },
       {
-        q: "What information should I send for a hotel lighting quote?",
-        a: "Send the room list, quantity, preferred style, wattage or brightness expectation, CCT, voltage, installation area and project timeline.",
+        q: "Can Growcean discuss OEM or ODM requirements?",
+        a: "Yes. OEM or ODM requirements such as logo, packaging, labeling, manual, CCT, voltage or product range planning can be discussed by model, quantity and feasibility.",
       },
       {
-        q: "Can decorative fixtures be matched across a hotel project?",
-        a: "Growcean can help build a consistent visual direction by selecting related decorative ceiling lamps or chandelier-style alternatives from the catalog.",
+        q: "Can I request a catalog or samples before bulk orders?",
+        a: "Yes. Catalog review and sample confirmation are recommended when hotel buyers need to compare appearance, brightness, finish, installation effect or packaging details.",
+      },
+      {
+        q: "What information is needed for a quotation?",
+        a: "Share room list, quantity, application area, wattage or size, CCT, voltage, preferred style, packaging needs, target market and expected sample requirements.",
+      },
+      {
+        q: "How should project buyers compare LED ceiling lighting options?",
+        a: "Compare by application area, installation style, size, wattage, CCT, dimming or smart-control needs, sample appearance, packaging requirements and quotation terms.",
+      },
+    ],
+  },
+  {
+    slug: "retail-lighting",
+    title: "Retail Lighting Solutions for B2B Buyers",
+    seoTitle: "Retail Lighting Solutions for B2B Buyers | Growcean",
+    seoDescription:
+      "Retail lighting sourcing support for showrooms, stores and distributor product ranges. Discuss LED ceiling lights, decorative fixtures, catalogs, samples and quotes.",
+    eyebrow: "RETAIL LIGHTING PROJECTS",
+    lead:
+      "Growcean helps retail lighting buyers compare LED ceiling lights, decorative ceiling lamps, flush mount fixtures and commercial lighting options for stores, showrooms and wholesale product ranges.",
+    image: "/images/factory-optimized/growcean-lighting-showroom-selection-wall-1200.webp",
+    primaryKeyword: "retail lighting solutions",
+    relatedKeywords: [
+      "retail ceiling lighting supplier",
+      "commercial lighting for retail spaces",
+      "LED ceiling lights for showrooms",
+      "decorative lighting for retail buyers",
+    ],
+    buyerNeeds: [
+      "Lighting models that support product display, customer comfort and store atmosphere",
+      "Ceiling light options for showrooms, retail chains, distributor displays and renovation projects",
+      "Sample confirmation for visual effect, brightness, color appearance and fixture finish",
+      "OEM packaging, labeling and catalog discussion for wholesale or private-label programs",
+    ],
+    productMix: [
+      "LED ceiling lights for general retail illumination",
+      "Flush mount ceiling lights for clean low-profile store interiors",
+      "Decorative ceiling lamps for display areas and differentiated retail collections",
+      "Smart or dimmable ceiling light options when control requirements are confirmed by model",
+    ],
+    process: [
+      "Share retail space type, fixture quantity, ceiling height and target lighting style",
+      "Compare catalog models by wattage, size, CCT, appearance and installation method",
+      "Request samples when visual effect, finish or packaging needs confirmation",
+      "Discuss quotation, OEM packaging, labels, manuals and export requirements",
+    ],
+    faqs: [
+      {
+        q: "Can Growcean support retail lighting projects?",
+        a: "Yes. Growcean can help B2B buyers compare LED ceiling lights, flush mount lights and decorative ceiling lamps for retail spaces, showrooms and distributor product ranges.",
+      },
+      {
+        q: "What should I send for a retail lighting quote?",
+        a: "Send store type, application area, quantity, wattage or size expectation, CCT, voltage, preferred design style, packaging needs and destination market.",
+      },
+      {
+        q: "Can I request catalog or samples first?",
+        a: "Yes. Catalog review and samples are useful when buyers need to compare visual effect, brightness, finish, installation appearance or packaging details.",
       },
     ],
   },

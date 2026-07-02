@@ -55,7 +55,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
               {page.relatedKeywords.slice(0, 2).map((keyword) => <span key={keyword}>{keyword}</span>)}
             </div>
             <div className="catalog-actions">
-              <a className="button" href="#solution-inquiry">Request project quote <ArrowRight size={18} /></a>
+              <a className="button" href="#solution-inquiry">Get Project Lighting Plan <ArrowRight size={18} /></a>
               <a className="button button-outline-dark" href={`https://wa.me/8615602224748?text=${whatsappText}`}><MessageCircle size={18} />WhatsApp inquiry</a>
             </div>
           </div>
@@ -69,13 +69,14 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
         <div className="container product-detail-layout">
           <div>
             <p className="section-label">BUYER NEEDS</p>
-            <h2>Start from the project, not a random catalog list</h2>
+            <h2>Project Lighting Requirements and Buyer Intent</h2>
             <ul className="category-check-list">
               {page.buyerNeeds.map((item) => <li key={item}>{item}</li>)}
             </ul>
           </div>
           <div>
             <p className="section-label">PRODUCT MIX</p>
+            <h2>Recommended Ceiling Lighting Areas</h2>
             <div className="catalog-feature-grid one-col">
               {page.productMix.map((item) => (
                 <div className="catalog-feature" key={item}><CheckCircle2 /><span>{item}</span></div>
@@ -88,7 +89,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
       <section className="section catalog-feature-band">
         <div className="container">
           <div className="section-heading">
-            <div><p className="section-label">PROJECT WORKFLOW</p><h2>How Growcean turns requirements into a quote</h2></div>
+            <div><p className="section-label">PROJECT WORKFLOW</p><h2>Product Options to Discuss with Growcean</h2></div>
             <p>Use this structure when sending drawings, room lists, sample requirements or wholesale range plans.</p>
           </div>
           <div className="catalog-home-products">
@@ -112,7 +113,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
           </div>
           <div id="solution-inquiry">
             <p className="section-label">PROJECT INQUIRY</p>
-            <h2>Send your lighting requirement</h2>
+            <h2>Information Buyers Should Prepare for a Quote</h2>
             <p className="catalog-body-copy">Share project type, quantity, target style, wattage, CCT, packaging needs and destination market. Growcean will reply with suitable model suggestions and quotation options.</p>
             <InquiryForm />
           </div>
