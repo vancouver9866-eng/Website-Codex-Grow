@@ -122,6 +122,15 @@ function createCeilingB2BCollection({
 
 export const productCollections: ProductCollection[] = [
   createCeilingB2BCollection({
+    slug: "led-ceiling-light-manufacturer",
+    targetKeyword: "led ceiling light manufacturer",
+    title: "LED Ceiling Light Manufacturer for Global B2B Buyers",
+    seoTitle: "LED Ceiling Light Manufacturer for B2B Projects | Growcean",
+    seoDescription:
+      "Growcean supports global B2B buyers sourcing led ceiling light manufacturer. Request a quote, catalog, or sample for ceiling lighting projects without unsupported claims.",
+    ctaLabel: "Contact Supplier",
+  }),
+  createCeilingB2BCollection({
     slug: "odm-ceiling-lamp-manufacturer",
     targetKeyword: "odm ceiling lamp manufacturer",
     title: "ODM Ceiling Lamp Manufacturer for Global B2B Buyers",

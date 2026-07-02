@@ -91,7 +91,88 @@ function createLightingTrendBlog({
   };
 }
 
+function createCeilingSourcingBlog({
+  slug,
+  targetKeyword,
+  title,
+  seoTitle,
+  description,
+  cta,
+  intro,
+}: {
+  slug: string;
+  targetKeyword: string;
+  title: string;
+  seoTitle: string;
+  description: string;
+  cta: string;
+  intro: string;
+}): BlogBriefPage {
+  return {
+    slug,
+    url: `/blog/${slug}`,
+    targetKeyword,
+    contentType: "Buying Guide",
+    title,
+    seoTitle,
+    description,
+    intro,
+    image: "/images/factory-optimized/growcean-lighting-export-packaging-1200.webp",
+    imageAlt: "Export packaging and LED ceiling light order planning for B2B buyers",
+    cta,
+    internalLinks: ["/products/", "/solutions/hotel-lighting/", "/solutions/apartment-lighting/", "/contact/"],
+    faq: [
+      `What should I confirm before sourcing ${targetKeyword}?`,
+      "Can Growcean support OEM or ODM ceiling light projects?",
+      "Can I request samples before bulk orders?",
+      "What information should I provide for a quotation?",
+      "Are these ceiling lights suitable for hotel, apartment, office, or retail projects?",
+    ],
+    sections: [
+      {
+        heading: "Buyer Search Intent",
+        paragraphs: [
+          `Buyers searching for ${targetKeyword} usually want to understand order planning before contacting a supplier. The real question is not only “what is the MOQ?” but also which model, packaging, customization, sample requirement and market expectation affect the order discussion.`,
+          "For importers, wholesalers, distributors and project buyers, MOQ should be reviewed together with product type, quantity forecast, target market, application scenario and whether the order is for samples, trial sales, wholesale distribution or project delivery.",
+        ],
+      },
+      {
+        heading: `How to Evaluate ${targetKeyword}`,
+        paragraphs: [
+          "MOQ can vary by product model, packaging requirement, customization request, color temperature, voltage configuration, label needs and production feasibility. Growcean does not publish unsupported fixed MOQ claims on this page because final terms should be confirmed by model and order details.",
+          "A practical buyer should ask whether the MOQ applies to one SKU, one size, one CCT, one color, one package design or a mixed model order. This helps avoid confusion when comparing quotations from different suppliers.",
+        ],
+      },
+      {
+        heading: "Product and Project Considerations",
+        paragraphs: [
+          "LED ceiling light orders for hotels, apartments, offices and retail programs may require different quantities and confirmation steps. A hotel project may need a room list and sample confirmation, while a distributor may need a balanced product range with several wattage and size options.",
+          "Before bulk ordering, buyers should confirm wattage, size, CCT, voltage, installation method, dimming or smart-control requirements, packaging details, label information and whether the product will be used for wholesale, private-label sales or a specific project.",
+        ],
+      },
+      {
+        heading: "Supplier Questions to Ask",
+        paragraphs: [
+          "Ask the supplier what information is needed for quotation, whether samples are available before bulk order, how OEM or ODM packaging is discussed, whether mixed models can be reviewed, and which product details must be confirmed before production.",
+          "When contacting Growcean, send your target product type, quantity, market, application, wattage or size requirement, CCT, voltage, packaging needs and any OEM or ODM request. Growcean can then help shortlist catalog-backed LED ceiling light options for quote or sample discussion.",
+        ],
+      },
+    ],
+  };
+}
+
 export const blogBriefPages: BlogBriefPage[] = [
+  createCeilingSourcingBlog({
+    slug: "led-ceiling-light-moq",
+    targetKeyword: "led ceiling light moq",
+    title: "LED Ceiling Light MOQ for Global B2B Buyers",
+    seoTitle: "LED Ceiling Light MOQ for B2B Projects | Growcean",
+    description:
+      "Growcean supports global B2B buyers sourcing led ceiling light moq. Request a quote, catalog, or sample for ceiling lighting projects without unsupported claims.",
+    cta: "Request a Quote",
+    intro:
+      "MOQ is one of the first questions B2B buyers ask when sourcing LED ceiling lights, but the right answer depends on model, quantity, customization, packaging and project requirements. This guide helps buyers prepare a clearer inquiry before requesting a quotation.",
+  }),
   createLightingTrendBlog({
     slug: "commercial-lighting-energy-savings-hvac-integration",
     targetKeyword: "commercial lighting energy savings with HVAC integration",
