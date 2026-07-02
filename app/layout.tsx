@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import { headers } from "next/headers";
+import { GoogleAnalytics } from "@/components/google-analytics";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 import "./globals.css";
 
@@ -21,6 +22,9 @@ export const metadata: Metadata = {
   title: "Growcean | B2B Ceiling Lighting Solutions",
   description:
     "Customizable LED ceiling lights and responsive export support for importers, wholesalers, distributors and project buyers.",
+  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+    : undefined,
 };
 
 export default async function RootLayout({
@@ -39,6 +43,7 @@ export default async function RootLayout({
       <body className={`${manrope.variable} ${inter.variable}`}>
         {children}
         <WhatsAppFloat />
+        <GoogleAnalytics />
       </body>
     </html>
   );
