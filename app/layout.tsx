@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import { headers } from "next/headers";
 import { GoogleAnalytics } from "@/components/google-analytics";
+import { MicrosoftClarity } from "@/components/microsoft-clarity";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 import "./globals.css";
 
@@ -44,6 +45,7 @@ export default async function RootLayout({
         {children}
         <WhatsAppFloat />
         <GoogleAnalytics />
+        <MicrosoftClarity />
       </body>
     </html>
   );
