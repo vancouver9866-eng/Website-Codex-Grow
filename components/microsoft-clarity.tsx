@@ -1,6 +1,7 @@
 import Script from "next/script";
 
-const CLARITY_PROJECT_ID = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
+const CLARITY_PROJECT_ID =
+  process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID ?? "xg5yrphq5n";
 
 export function MicrosoftClarity() {
   if (!CLARITY_PROJECT_ID) return null;
