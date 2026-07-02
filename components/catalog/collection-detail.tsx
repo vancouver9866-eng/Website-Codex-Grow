@@ -11,6 +11,7 @@ export function CollectionDetail({ collection, locale = "en" }: { collection: Pr
   const items = getCollectionProducts(collection);
   const hero = getCollectionHeroProduct(collection);
   const whatsappText = encodeURIComponent(`Hello Growcean, I want more information about ${collection.title}.`);
+  const ctaLabel = collection.ctaLabel ?? copy.whatsapp;
 
   return (
     <main className="catalog-page">
@@ -21,7 +22,8 @@ export function CollectionDetail({ collection, locale = "en" }: { collection: Pr
             <h1>{collection.title}</h1>
             <p className="catalog-lead">{collection.description}</p>
             <div className="catalog-actions">
-              <a className="button" href={`https://wa.me/8615602224748?text=${whatsappText}`}><MessageCircle size={18} />{copy.whatsapp}</a>
+              <a className="button" href="#collection-inquiry">{ctaLabel} <ArrowRight size={18} /></a>
+              <a className="button button-outline-dark" href={`https://wa.me/8615602224748?text=${whatsappText}`}><MessageCircle size={18} />{copy.whatsapp}</a>
               <a className="button button-outline-dark" href="#collection-skus">{copy.viewProduct}</a>
               <a className="button button-ghost" href="/Growcean-Product-Catalog.pdf"><Download size={18} />{copy.download}</a>
             </div>
@@ -33,6 +35,26 @@ export function CollectionDetail({ collection, locale = "en" }: { collection: Pr
           ) : null}
         </div>
       </section>
+
+      {collection.contentSections?.length ? (
+        <section className="section catalog-section">
+          <div className="container collection-seo-content">
+            {collection.contentSections.map((section) => (
+              <article className="collection-seo-card" key={section.heading}>
+                <h2>{section.heading}</h2>
+                {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              </article>
+            ))}
+            {collection.internalLinks?.length ? (
+              <nav className="collection-internal-links" aria-label="Related Growcean pages">
+                {collection.internalLinks.map((link) => (
+                  <a href={localizedPath(link.href.replace(/\/$/, ""), locale)} key={link.href}>{link.label} <ArrowRight size={15} /></a>
+                ))}
+              </nav>
+            ) : null}
+          </div>
+        </section>
+      ) : null}
 
       <section className="section catalog-section">
         <div className="container product-detail-layout">
@@ -89,8 +111,15 @@ export function CollectionDetail({ collection, locale = "en" }: { collection: Pr
               {collection.faq.map((faq) => <details key={faq.q}><summary>{faq.q}</summary><p>{faq.a}</p></details>)}
             </div>
           </div>
-          <div>
-            <p className="section-label">Related Products</p>
+          <div id="collection-inquiry">
+            <p className="section-label">B2B INQUIRY</p>
+            <h2>Send your ceiling lighting requirements</h2>
+            <p className="catalog-body-copy">Tell Growcean your target product type, quantity, wattage or size, CCT, voltage, application, packaging needs and destination market. We will help shortlist suitable catalog models for sample or quotation discussion.</p>
+            <div className="catalog-actions compact">
+              <a className="button" href={`https://wa.me/8615602224748?text=${whatsappText}`}><MessageCircle size={18} />{ctaLabel}</a>
+              <a className="button button-outline-dark" href="/Growcean-Product-Catalog.pdf"><Download size={18} />Get Catalog</a>
+            </div>
+            <p className="section-label related-products-label">Related Products</p>
             <div className="catalog-card-grid two-col">
               {items.slice(0, 2).map((product) => <CatalogProductCard key={product.id} product={product} locale={locale} />)}
             </div>

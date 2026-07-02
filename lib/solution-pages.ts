@@ -16,6 +16,56 @@ export type SolutionPage = {
 
 export const solutionPages: SolutionPage[] = [
   {
+    slug: "apartment-lighting",
+    title: "Apartment Lighting Solutions for B2B Projects",
+    seoTitle: "Apartment Lighting Solutions for B2B Projects | Growcean",
+    seoDescription:
+      "Apartment lighting sourcing support for importers, wholesalers and project buyers. Compare LED ceiling lights, flush mount lights and decorative options.",
+    eyebrow: "APARTMENT LIGHTING PROJECTS",
+    lead:
+      "Growcean helps apartment lighting buyers compare practical LED ceiling lights, flush mount ceiling lights, corridor lights and decorative ceiling lamps for residential projects, wholesale programs and private-label sourcing.",
+    image: "/images/catalog-products-clean/page-001.jpg",
+    primaryKeyword: "apartment lighting solutions",
+    relatedKeywords: [
+      "led ceiling lights for apartments",
+      "flush mount ceiling lights for residential projects",
+      "apartment ceiling light supplier",
+      "commercial apartment lighting sourcing",
+    ],
+    buyerNeeds: [
+      "Ceiling light models that match room size, ceiling height and apartment interior style",
+      "Practical wattage, CCT and size confirmation before bulk ordering",
+      "Options for bedrooms, living rooms, corridors and compact utility areas",
+      "Clear communication for samples, packaging, labels and export quotation details",
+    ],
+    productMix: [
+      "Slim LED ceiling lights for bedrooms and living rooms",
+      "Flush mount ceiling lights for low-profile residential interiors",
+      "Corridor lights for repeated hallway applications",
+      "Decorative ceiling lamps for differentiated apartment collections",
+    ],
+    process: [
+      "Share apartment room types, quantity, target style and market requirement",
+      "Shortlist catalog models by size, wattage, CCT, shape and installation type",
+      "Confirm samples for brightness, appearance, packaging and label details",
+      "Prepare quotation discussion for wholesale, project or private-label orders",
+    ],
+    faqs: [
+      {
+        q: "Can Growcean support apartment lighting projects?",
+        a: "Yes. Growcean can help B2B buyers compare ceiling lights, flush mount lights, corridor lights and decorative options for apartment projects or wholesale ranges.",
+      },
+      {
+        q: "What should I send for an apartment lighting quote?",
+        a: "Send room type, quantity, preferred style, wattage or room size, CCT, voltage, packaging needs and destination market.",
+      },
+      {
+        q: "Are samples recommended for apartment lighting orders?",
+        a: "Samples are recommended when buyers need to confirm brightness, size, finish, installation appearance or retail packaging before bulk order.",
+      },
+    ],
+  },
+  {
     slug: "hotel-lighting",
     title: "Hotel Lighting Solutions from Guest Rooms to Public Areas",
     seoTitle: "Hotel Lighting Manufacturer for Hospitality Projects | Growcean",

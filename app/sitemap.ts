@@ -28,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/factory-tour",
     "/quality-control",
+    "/contact",
     "/products",
     "/blog/how-to-choose-ceiling-lights",
     "/blog/how-to-choose-led-ceiling-lights-for-b2b-projects",

@@ -5,16 +5,160 @@ export type ProductCollection = {
   title: string;
   seoTitle?: string;
   seoDescription?: string;
+  ctaLabel?: string;
   eyebrow: string;
   description: string;
   heroModel: string;
   productPages: number[];
   features: string[];
   applications: string[];
+  contentSections?: Array<{ heading: string; paragraphs: string[] }>;
+  internalLinks?: Array<{ label: string; href: string }>;
   faq: Array<{ q: string; a: string }>;
 };
 
+function createCeilingB2BCollection({
+  slug,
+  targetKeyword,
+  title,
+  seoTitle,
+  seoDescription,
+  ctaLabel,
+  heroModel = "QS-XDD-2.7XB-080",
+}: {
+  slug: string;
+  targetKeyword: string;
+  title: string;
+  seoTitle: string;
+  seoDescription: string;
+  ctaLabel: string;
+  heroModel?: string;
+}): ProductCollection {
+  return {
+    slug,
+    title,
+    seoTitle,
+    seoDescription,
+    ctaLabel,
+    eyebrow: targetKeyword.toUpperCase(),
+    description:
+      `Growcean supports international B2B buyers sourcing ${targetKeyword} options for ceiling lighting projects. This page is designed for importers, wholesalers, lighting distributors, contractors and project buyers who need practical model selection, customization discussion and clear inquiry communication before ordering.`,
+    heroModel,
+    productPages: [1, 2, 4, 7, 8, 11, 12, 13, 57, 84, 86, 87],
+    features: [
+      "Catalog-backed LED ceiling light model selection",
+      "OEM / ODM discussion by model, quantity and market requirement",
+      "Quotation support for importers, wholesalers and project buyers",
+      "Application-based recommendations for commercial interiors",
+    ],
+    applications: ["Hotels", "Apartments", "Offices", "Retail spaces", "Commercial corridors", "Wholesale lighting programs"],
+    internalLinks: [
+      { label: "View all products", href: "/products/" },
+      { label: "Hotel lighting solutions", href: "/solutions/hotel-lighting/" },
+      { label: "Apartment lighting solutions", href: "/solutions/apartment-lighting/" },
+      { label: "Contact Growcean", href: "/contact/" },
+    ],
+    contentSections: [
+      {
+        heading: "LED Ceiling Lights for Wholesale and Project Buyers",
+        paragraphs: [
+          "For B2B sourcing, ceiling lights should be selected by application, model stability, installation style, wattage range, size, CCT requirement, packaging needs and target market. Growcean helps buyers compare catalog-backed LED ceiling light options before requesting a quotation.",
+          "Importers and distributors can use this page to prepare a clearer inquiry instead of sending only a generic product name. A useful request usually includes target country, quantity, application area, preferred shape, wattage or room size, voltage expectation and packaging requirements.",
+        ],
+      },
+      {
+        heading: "Custom Options for Commercial Ceiling Lighting",
+        paragraphs: [
+          "Customization should be discussed carefully by product model and order requirement. Possible discussion points may include logo, packaging, labeling, manual, color temperature, voltage configuration, control method, finish preference or product range planning.",
+          "Growcean does not present unsupported promises on this page. Final OEM or ODM feasibility, sample cost, lead time, packaging details and order terms should be confirmed after the buyer shares quantity, target market and model requirements.",
+        ],
+      },
+      {
+        heading: "Applications: Hotels, Apartments, Offices, and Retail Spaces",
+        paragraphs: [
+          "Ceiling lighting for hotels, apartments, offices and retail spaces needs different priorities. Hotels often care about visual consistency and sample confirmation. Apartments may need practical size and wattage matching. Offices usually require comfortable general lighting. Retail buyers often need stable product families for repeat sales.",
+          "Growcean can help shortlist LED ceiling lights, flush mount ceiling lights, smart ceiling lights, decorative ceiling lamps, waterproof lights and corridor lights based on the buyer's application and sourcing plan.",
+        ],
+      },
+      {
+        heading: "What Buyers Should Check Before Ordering",
+        paragraphs: [
+          "Before placing a bulk order, buyers should confirm product appearance, size, wattage, CCT, voltage, dimming or smart-control requirement, material, packaging, label information, sample approval and shipping plan. For project orders, a room list or application schedule is especially useful.",
+          "Samples are recommended when design appearance, lighting effect, finish, installation method or retail packaging is important. The quotation can be more accurate when the buyer provides target quantity and market requirements early.",
+        ],
+      },
+      {
+        heading: "Why Contact Growcean for Your Lighting Project",
+        paragraphs: [
+          "Growcean focuses on practical B2B sourcing communication for global lighting buyers. Instead of asking buyers to choose randomly from a large catalog, Growcean can help compare suitable models, clarify customization points and prepare quotation information for ceiling lighting projects.",
+          "Send your target product type, quantity, application, wattage or size requirement, CCT, voltage, packaging needs and destination market. Growcean will review the request and reply with suitable next steps for catalog, sample or quotation discussion.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: `What should I confirm before sourcing ${targetKeyword}?`,
+        a: "Confirm application, installation style, wattage or size expectation, CCT, voltage, quantity, packaging needs, sample requirement and destination market before requesting a quotation.",
+      },
+      {
+        q: "Can Growcean support OEM or ODM ceiling light projects?",
+        a: "OEM or ODM support can be discussed by model, quantity and market requirement. Buyers should provide customization details such as logo, packaging, labeling, CCT, voltage or control preferences for feasibility confirmation.",
+      },
+      {
+        q: "Can I request samples before bulk orders?",
+        a: "Yes. Samples are recommended when appearance, lighting effect, finish, installation method or packaging must be confirmed before a larger order.",
+      },
+      {
+        q: "What information should I provide for a quotation?",
+        a: "Please provide product type, target model if available, quantity, wattage or size requirement, CCT, voltage, application, packaging needs, destination market and any OEM or ODM requests.",
+      },
+      {
+        q: "Are these ceiling lights suitable for hotel, apartment, office, or retail projects?",
+        a: "Selected ceiling light models can be considered for hotels, apartments, offices and retail spaces after confirming size, wattage, CCT, installation method, visual style and project quantity.",
+      },
+    ],
+  };
+}
+
 export const productCollections: ProductCollection[] = [
+  createCeilingB2BCollection({
+    slug: "odm-ceiling-lamp-manufacturer",
+    targetKeyword: "odm ceiling lamp manufacturer",
+    title: "ODM Ceiling Lamp Manufacturer for Global B2B Buyers",
+    seoTitle: "ODM Ceiling Lamp Manufacturer for B2B Projects | Growcean",
+    seoDescription:
+      "Growcean supports global B2B buyers sourcing odm ceiling lamp manufacturer. Request a quote, catalog, or sample for ceiling lighting projects without unsupported claims.",
+    ctaLabel: "Contact Supplier",
+  }),
+  createCeilingB2BCollection({
+    slug: "custom-led-ceiling-light-manufacturer",
+    targetKeyword: "custom led ceiling light manufacturer",
+    title: "Custom LED Ceiling Light Manufacturer for Global B2B Buyers",
+    seoTitle: "Custom LED Ceiling Light Manufacturer for B2B Projects | Growcean",
+    seoDescription:
+      "Growcean supports global B2B buyers sourcing custom led ceiling light manufacturer. Request a quote, catalog, or sample for ceiling lighting projects without unsupported claims.",
+    ctaLabel: "Contact Supplier",
+  }),
+  createCeilingB2BCollection({
+    slug: "commercial-ceiling-lighting-supplier",
+    targetKeyword: "commercial ceiling lighting supplier",
+    title: "Commercial Ceiling Lighting Supplier for Global B2B Buyers",
+    seoTitle: "Commercial Ceiling Lighting Supplier for B2B Projects | Growcean",
+    seoDescription:
+      "Growcean supports global B2B buyers sourcing commercial ceiling lighting supplier. Request a quote, catalog, or sample for ceiling lighting projects without unsupported claims.",
+    ctaLabel: "Contact Supplier",
+    heroModel: "QS-XDD-XBCFG-092",
+  }),
+  createCeilingB2BCollection({
+    slug: "commercial-lighting-supplier-for-contractors",
+    targetKeyword: "commercial lighting supplier for contractors",
+    title: "Commercial Lighting Supplier For Contractors for Global B2B Buyers",
+    seoTitle: "Commercial Lighting Supplier For Contractors for B2B Projects | Growcean",
+    seoDescription:
+      "Growcean supports global B2B buyers sourcing commercial lighting supplier for contractors. Request a quote, catalog, or sample for ceiling lighting projects without unsupported claims.",
+    ctaLabel: "Get Project Lighting Plan",
+    heroModel: "QS-XDD-XBCFG-092",
+  }),
   {
     slug: "led-lighting",
     title: "LED Lighting Manufacturer",
