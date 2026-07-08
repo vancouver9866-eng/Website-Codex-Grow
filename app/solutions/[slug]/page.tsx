@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowRight, CheckCircle2, MessageCircle } from "lucide-react";
 import { InquiryForm } from "@/components/inquiry-form";
+import { createWhatsAppLink } from "@/lib/contact";
 import { getSolutionPage, solutionPages } from "@/lib/solution-pages";
 
 export function generateStaticParams() {
@@ -40,7 +41,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
   const page = getSolutionPage(slug);
   if (!page) notFound();
 
-  const whatsappText = encodeURIComponent(`Hello Growcean, I want to discuss ${page.title}.`);
+  const whatsappHref = createWhatsAppLink(`Hello Growcean Lighting, I want to discuss ${page.title}. My target market is [country].`);
 
   return (
     <main className="factory-page">
@@ -56,7 +57,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
             </div>
             <div className="catalog-actions">
               <a className="button" href="#solution-inquiry">Get Project Lighting Plan <ArrowRight size={18} /></a>
-              <a className="button button-outline-dark" href={`https://wa.me/8615602224748?text=${whatsappText}`}><MessageCircle size={18} />WhatsApp inquiry</a>
+              <a className="button button-outline-dark" href={whatsappHref} target="_blank" rel="noreferrer" data-event="whatsapp_click"><MessageCircle size={18} />WhatsApp inquiry</a>
             </div>
           </div>
           <div className="product-detail-image">

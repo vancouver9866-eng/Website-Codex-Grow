@@ -1,7 +1,8 @@
 "use client";
 
-import { CheckCircle2, Send } from "lucide-react";
+import { CheckCircle2, MessageCircle, Send } from "lucide-react";
 import { FormEvent, useState } from "react";
+import { createWhatsAppLink } from "@/lib/contact";
 
 const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/mike%40growcean.com";
 
@@ -9,7 +10,20 @@ export function ProductInquiryForm() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
-  if (submitted) return <div className="pd-form-success"><CheckCircle2 size={46} /><h3>Thank you for your inquiry.</h3><p>Our sales team will review your requirements and contact you.</p><button className="button" onClick={() => setSubmitted(false)}>Send another inquiry</button></div>;
+  const whatsappHref = createWhatsAppLink(
+    "Hello Growcean Lighting, I am interested in model QS-XDD-2.7XB-GLQD-090. My target market is [country]. Please recommend suitable configuration.",
+  );
+
+  if (submitted) {
+    return (
+      <div className="pd-form-success">
+        <CheckCircle2 size={46} />
+        <h3>Thank you.</h3>
+        <p>Growcean Lighting will contact you soon with suitable product recommendations.</p>
+        <button className="button" onClick={() => setSubmitted(false)}>Send another inquiry</button>
+      </div>
+    );
+  }
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -33,7 +47,7 @@ export function ProductInquiryForm() {
     payload.set("product", String(formData.get("model") || "Product inquiry"));
     payload.set("phone", String(formData.get("whatsapp") || ""));
     payload.set("source", window.location.href);
-    payload.set("_subject", `New Growcean product inquiry: ${formData.get("company") || formData.get("model") || "Website Lead"}`);
+    payload.set("_subject", `New Growcean product inquiry: ${formData.get("country") || formData.get("model") || "Website Lead"}`);
     payload.set("_template", "table");
     payload.set("_replyto", String(formData.get("email") || ""));
     payload.set("_captcha", "false");
@@ -63,36 +77,39 @@ export function ProductInquiryForm() {
   return (
     <form className="pd-inquiry-form" onSubmit={submit}>
       <input type="hidden" name="model" value="QS-XDD-2.7XB-GLQD-090" />
+      <h3>Tell Us What You Need</h3>
+      <p className="form-helper">No need to know all technical details. Tell us your market, quantity idea, and product style. We will help recommend suitable lighting models.</p>
       <label className="form-honeypot" aria-hidden="true">
         Website
         <input name="website" tabIndex={-1} autoComplete="off" />
       </label>
       <div className="field-row">
-        <label><span>Name *</span><input required name="name" placeholder="Your name" /></label>
-        <label><span>Company *</span><input required name="company" placeholder="Company name" /></label>
+        <label><span>Name *</span><input required name="name" placeholder="Your name" autoComplete="name" /></label>
+        <label><span>WhatsApp *</span><input required name="whatsapp" placeholder="Your WhatsApp number" autoComplete="tel" /></label>
       </div>
       <div className="field-row">
-        <label><span>Business email *</span><input required type="email" name="email" placeholder="name@company.com" /></label>
-        <label><span>Country / Region *</span><input required name="country" placeholder="Destination market" /></label>
+        <label><span>Country *</span><input required name="country" placeholder="Your country" autoComplete="country-name" /></label>
+        <label><span>Email</span><input type="email" name="email" placeholder="name@company.com" autoComplete="email" /></label>
       </div>
-      <div className="field-row">
-        <label><span>Estimated quantity *</span><input required name="quantity" placeholder="e.g. 500 pcs" /></label>
-        <label><span>WhatsApp</span><input name="whatsapp" placeholder="+00 000 000 000" /></label>
-      </div>
-      <div className="field-row">
-        <label><span>Wattage / size requirements</span><input name="wattage_size" placeholder="e.g. 36W, 48W, 300mm, 600mm" /></label>
-        <label><span>CCT requirement</span><select name="cct" defaultValue=""><option value="">To be confirmed</option><option>3000K warm white</option><option>4000K neutral white</option><option>6500K cool white</option><option>Three-color CCT</option></select></label>
-      </div>
-      <div className="field-row">
-        <label><span>Application</span><select name="application" defaultValue=""><option value="">Select application</option><option>Home</option><option>Hotel</option><option>Apartment</option><option>Office</option><option>Retail</option><option>Other</option></select></label>
-        <label><span>Need OEM packaging?</span><select name="oem_packaging" defaultValue=""><option value="">To be confirmed</option><option>Yes</option><option>No</option><option>Need logo / label / manual discussion</option></select></label>
-      </div>
-      <label><span>Requirements *</span><textarea required name="message" rows={4} defaultValue="I am interested in model QS-XDD-2.7XB-GLQD-090. Please share pricing, MOQ, available specifications and sample terms." /></label>
+      <label><span>Company</span><input name="company" placeholder="Company name" autoComplete="organization" /></label>
+      <label>
+        <span>What are you looking for? *</span>
+        <textarea
+          required
+          name="message"
+          rows={4}
+          defaultValue="I am interested in model QS-XDD-2.7XB-GLQD-090. Please share suitable configuration, MOQ, sample discussion and quotation steps."
+        />
+      </label>
       {error && <p className="form-error" role="alert">{error}</p>}
-      <button className="button submit-button" type="submit" disabled={submitting}>
-        {submitting ? "Sending..." : "Request Product Quote"} <Send size={18} />
-      </button>
-      <p className="form-note">Your inquiry will be sent securely to the Growcean sales team.</p>
+      <div className="form-actions-row">
+        <button className="button submit-button" type="submit" disabled={submitting} data-event="inquiry_form_submit">
+          {submitting ? "Sending..." : "Send Inquiry"} <Send size={18} />
+        </button>
+        <a className="button button-outline-blue" href={whatsappHref} target="_blank" rel="noreferrer" data-event="whatsapp_click">
+          <MessageCircle size={18} /> Contact on WhatsApp
+        </a>
+      </div>
     </form>
   );
 }

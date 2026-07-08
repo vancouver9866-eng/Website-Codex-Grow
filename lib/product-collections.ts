@@ -170,16 +170,16 @@ export const productCollections: ProductCollection[] = [
   }),
   {
     slug: "led-lighting",
-    title: "LED Lighting Manufacturer",
-    seoTitle: "LED Lighting Manufacturer and Supplier | Growcean",
+    title: "Lighting Sourcing & Quality-Control Partner",
+    seoTitle: "Lighting Sourcing & Quality-Control Partner | Growcean",
     seoDescription:
-      "Growcean supplies LED lighting for B2B projects, wholesale buyers and commercial spaces. Compare ceiling light ranges, OEM options and request a quote.",
-    eyebrow: "LED LIGHTING MANUFACTURER",
+      "Growcean supports LED lighting sourcing for B2B projects, wholesale buyers and commercial spaces through selected manufacturing partners, quality communication and export support.",
+    eyebrow: "LIGHTING SOURCING PARTNER",
     description:
-      "LED lighting selections for importers, wholesalers, distributors and project buyers who need stable product ranges, OEM/ODM support and export-ready quotation communication. This collection focuses on ceiling light models that can support commercial projects, retail programs and private-label sourcing.",
+      "Lighting selections for importers, wholesalers, distributors and project buyers who need stable product ranges, OEM/ODM support and export-ready quotation communication. Growcean works with selected manufacturing partners and focuses on model selection, sample discussion, quality-control communication and export support.",
     heroModel: "QS-XDD-2.7XB-080",
     productPages: [1, 2, 4, 7, 8, 9, 11, 12, 23, 27, 28, 29],
-    features: ["Factory-direct LED ceiling light supply", "Multiple wattage, size and shape options", "OEM/ODM packaging and label support", "Model selection for wholesale and project buyers"],
+    features: ["Sourcing support through selected manufacturing partners", "Multiple wattage, size and shape options", "OEM/ODM packaging and label support", "Model selection for wholesale and project buyers"],
     applications: ["Wholesale distribution", "Commercial interiors", "Apartments", "Hotels", "Retail lighting programs"],
     faq: [
       { q: "Is Growcean an LED lighting manufacturer or supplier?", a: "Growcean supports B2B LED lighting sourcing through selected manufacturing partners, catalog-backed model selection, OEM/ODM communication and export order follow-up." },

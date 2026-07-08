@@ -34,17 +34,17 @@ export async function POST(request: Request) {
       source: clean(body.source, 500),
     };
 
-    if (!fields.name || !fields.company || !fields.email || !fields.country || !fields.message) {
+    if (!fields.name || !fields.phone || !fields.country || !fields.message) {
       return NextResponse.json({ error: "Please complete all required fields." }, { status: 400 });
     }
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email)) {
+    if (fields.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email)) {
       return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
     }
 
     const payload = new URLSearchParams({
       ...fields,
-      _subject: `New Growcean inquiry: ${fields.company}`,
+      _subject: `New Growcean inquiry: ${fields.country}`,
       _template: "table",
       _replyto: fields.email,
       _captcha: "false",

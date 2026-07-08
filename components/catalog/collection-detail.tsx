@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2, Download, MessageCircle } from "lucide-react"
 import { CatalogProductCard } from "@/components/catalog/product-card";
 import { ProductListing } from "@/components/catalog/product-listing";
 import { catalogCopy, localizedPath } from "@/lib/catalog";
+import { createWhatsAppLink } from "@/lib/contact";
 import type { Locale } from "@/lib/i18n";
 import { getCollectionHeroProduct, getCollectionProducts, type ProductCollection } from "@/lib/product-collections";
 
@@ -10,7 +11,7 @@ export function CollectionDetail({ collection, locale = "en" }: { collection: Pr
   const copy = catalogCopy[locale];
   const items = getCollectionProducts(collection);
   const hero = getCollectionHeroProduct(collection);
-  const whatsappText = encodeURIComponent(`Hello Growcean, I want more information about ${collection.title}.`);
+  const whatsappHref = createWhatsAppLink(`Hello Growcean Lighting, I want more information about ${collection.title}. My target market is [country].`);
   const ctaLabel = collection.ctaLabel ?? copy.whatsapp;
 
   return (
@@ -23,7 +24,7 @@ export function CollectionDetail({ collection, locale = "en" }: { collection: Pr
             <p className="catalog-lead">{collection.description}</p>
             <div className="catalog-actions">
               <a className="button" href="#collection-inquiry">{ctaLabel} <ArrowRight size={18} /></a>
-              <a className="button button-outline-dark" href={`https://wa.me/8615602224748?text=${whatsappText}`}><MessageCircle size={18} />{copy.whatsapp}</a>
+              <a className="button button-outline-dark" href={whatsappHref} target="_blank" rel="noreferrer" data-event="whatsapp_click"><MessageCircle size={18} />{copy.whatsapp}</a>
               <a className="button button-outline-dark" href="#collection-skus">{copy.viewProduct}</a>
               <a className="button button-ghost" href="/Growcean-Product-Catalog.pdf"><Download size={18} />{copy.download}</a>
             </div>
@@ -116,7 +117,7 @@ export function CollectionDetail({ collection, locale = "en" }: { collection: Pr
             <h2>Send your ceiling lighting requirements</h2>
             <p className="catalog-body-copy">Tell Growcean your target product type, quantity, wattage or size, CCT, voltage, application, packaging needs and destination market. We will help shortlist suitable catalog models for sample or quotation discussion.</p>
             <div className="catalog-actions compact">
-              <a className="button" href={`https://wa.me/8615602224748?text=${whatsappText}`}><MessageCircle size={18} />{ctaLabel}</a>
+              <a className="button" href={whatsappHref} target="_blank" rel="noreferrer" data-event="whatsapp_click"><MessageCircle size={18} />{ctaLabel}</a>
               <a className="button button-outline-dark" href="/Growcean-Product-Catalog.pdf"><Download size={18} />Get Catalog</a>
             </div>
             <p className="section-label related-products-label">Related Products</p>

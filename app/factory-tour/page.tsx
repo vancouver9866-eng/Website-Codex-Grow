@@ -3,12 +3,13 @@ import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 import { FactoryGallerySection } from "@/components/sections/FactoryGallerySection";
 import { QualityControlProcess } from "@/components/sections/QualityControlProcess";
+import { createWhatsAppLink } from "@/lib/contact";
 import { factoryImages } from "@/lib/factoryImages";
 
 export const metadata: Metadata = {
-  title: "Factory Tour | China Lighting Manufacturing Partner | Growcean Lighting",
+  title: "Supply Chain View | Lighting Sourcing & Quality Control | Growcean Lighting",
   description:
-    "Explore Growcean Lighting’s factory tour, production process, quality control, packaging, and export preparation for B2B lighting buyers.",
+    "Explore Growcean Lighting’s selected manufacturing partner facilities, production follow-up, quality control, packaging, and export preparation for B2B lighting buyers.",
   alternates: { canonical: "/factory-tour" },
 };
 
@@ -27,7 +28,7 @@ export default function FactoryTourPage() {
     logo: "https://growcean.com/images/growcean-logo.png",
     description: "China-based B2B lighting export brand working with selected manufacturing partners and supervised quality control.",
   };
-  const whatsappText = encodeURIComponent("Hello Growcean, I want to request factory capability and lighting quotation.");
+  const whatsappHref = createWhatsAppLink("Hello Growcean Lighting, I want to request supply support and lighting quotation.");
 
   return (
     <main className="factory-page">
@@ -37,12 +38,12 @@ export default function FactoryTourPage() {
         <Image src="/images/factory-optimized/growcean-lighting-showroom-wall-1600.webp" alt="Growcean Lighting showroom wall for factory tour" fill priority sizes="100vw" />
         <div className="factory-hero-overlay" />
         <div className="container factory-hero-content">
-          <p className="section-label light">FACTORY TOUR</p>
-          <h1>Factory Tour & Quality Control</h1>
+          <p className="section-label light">SUPPLY CHAIN VIEW</p>
+          <h1>Supply Chain View & Quality Control</h1>
           <p>From selected manufacturing facilities to pre-shipment inspection, Growcean focuses on reliable lighting supply for international B2B buyers.</p>
           <div className="factory-hero-actions">
-            <a className="button" href="/#inquiry">Request Factory Capability</a>
-            <a className="button button-outline" href={`https://wa.me/8615602224748?text=${whatsappText}`}><MessageCircle size={18} />WhatsApp Inquiry</a>
+            <a className="button" href="/#inquiry">Request Supply Support</a>
+            <a className="button button-outline" href={whatsappHref} target="_blank" rel="noreferrer" data-event="whatsapp_click"><MessageCircle size={18} />WhatsApp Inquiry</a>
           </div>
         </div>
       </section>
@@ -65,8 +66,8 @@ export default function FactoryTourPage() {
             <p>Share your product type, quantity, target market, wattage, CCT and packaging requirements. Growcean will help confirm suitable models and supplier communication.</p>
           </div>
           <div className="catalog-cta-panel">
-            <a className="button" href="/#inquiry">Request Factory Capability</a>
-            <a className="button button-outline" href={`https://wa.me/8615602224748?text=${whatsappText}`}>WhatsApp Inquiry</a>
+            <a className="button" href="/#inquiry">Request Product Sourcing Support</a>
+            <a className="button button-outline" href={whatsappHref} target="_blank" rel="noreferrer" data-event="whatsapp_click">WhatsApp Inquiry</a>
           </div>
         </div>
       </section>

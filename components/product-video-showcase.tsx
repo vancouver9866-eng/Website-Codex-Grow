@@ -1,39 +1,45 @@
 import { ArrowRight, CheckCircle2, Play } from "lucide-react";
+import { createWhatsAppLink } from "@/lib/contact";
 import type { Locale } from "@/lib/i18n";
 
 const copy = {
   en: {
-    label: "PRODUCT IN MOTION",
-    title: "See the lighting details before you shortlist a model",
+    label: "DESIGN VISUALIZATION",
+    title: "Design Visualization",
     intro:
-      "A closer vertical view of the product appearance, light output and real-world presentation for overseas buyers.",
+      "This video is a design visualization created to show the lighting style, atmosphere, and application idea. For real product confirmation, Growcean can provide showroom photos, sample photos, lighting test videos, and a live video call from Guangzhou.",
     points: [
-      "Review the product form and visible finish",
-      "Use the video during internal sourcing discussions",
-      "Send us your target size, wattage and quantity",
+      "Visual reference for style and application idea",
+      "Request real product photos or sample confirmation",
+      "Book a live video call from Guangzhou",
     ],
-    cta: "Discuss This Product",
-    videoLabel: "Growcean ceiling light product demonstration",
-    note: "Product video · Tap play to view with controls",
+    realPhotos: "Request Real Product Photos",
+    videoCall: "Book a Live Video Call",
+    whatsapp: "Contact on WhatsApp",
+    videoLabel: "Growcean ceiling light design visualization",
+    note: "Visual reference only. Real product photos and sample confirmation are available on request.",
   },
   es: {
-    label: "PRODUCTO EN MOVIMIENTO",
-    title: "Vea los detalles de iluminación antes de seleccionar un modelo",
+    label: "VISUALIZACIÓN DE DISEÑO",
+    title: "Visualización de diseño",
     intro:
-      "Una vista vertical más cercana de la apariencia, la salida de luz y la presentación real del producto para compradores internacionales.",
+      "Este video es una visualización de diseño creada para mostrar el estilo de iluminación, la atmósfera y la idea de aplicación. Para confirmar el producto real, Growcean puede proporcionar fotos de showroom, fotos de muestra, videos de prueba de iluminación y una videollamada en vivo desde Guangzhou.",
     points: [
-      "Revise la forma del producto y su acabado visible",
-      "Utilice el video en sus reuniones internas de compra",
-      "Envíenos el tamaño, la potencia y la cantidad requeridos",
+      "Referencia visual para estilo e idea de aplicación",
+      "Solicite fotos reales o confirmación de muestra",
+      "Reserve una videollamada desde Guangzhou",
     ],
-    cta: "Consultar Este Producto",
-    videoLabel: "Demostración de producto de iluminación Growcean",
-    note: "Video del producto · Pulse reproducir para verlo",
+    realPhotos: "Solicitar fotos reales",
+    videoCall: "Reservar videollamada",
+    whatsapp: "Contactar por WhatsApp",
+    videoLabel: "Visualización de diseño de iluminación Growcean",
+    note: "Referencia visual únicamente. Fotos reales y confirmación de muestra disponibles bajo solicitud.",
   },
 } as const;
 
 export function ProductVideoShowcase({ locale = "en" }: { locale?: Locale }) {
   const content = locale === "es" ? copy.es : copy.en;
+  const whatsappHref = createWhatsAppLink("Hello Growcean Lighting, please send real product photos and help me confirm suitable lighting models.");
 
   return (
     <section className="product-video-section" aria-labelledby="product-video-title">
@@ -53,10 +59,19 @@ export function ProductVideoShowcase({ locale = "en" }: { locale?: Locale }) {
               </li>
             ))}
           </ul>
-          <a className="product-video-cta" href="#inquiry">
-            {content.cta}
-            <ArrowRight size={18} aria-hidden="true" />
-          </a>
+          <div className="product-video-actions">
+            <a className="product-video-cta" href="#inquiry" data-event="request_real_photos_click">
+              {content.realPhotos}
+              <ArrowRight size={18} aria-hidden="true" />
+            </a>
+            <a className="product-video-cta secondary" href="#inquiry" data-event="book_video_call_click">
+              {content.videoCall}
+              <ArrowRight size={18} aria-hidden="true" />
+            </a>
+            <a className="product-video-cta secondary" href={whatsappHref} target="_blank" rel="noreferrer" data-event="whatsapp_click">
+              {content.whatsapp}
+            </a>
+          </div>
         </div>
 
         <div className="product-video-stage">

@@ -16,9 +16,9 @@ export async function generateMetadata({
   if (!isLocale(locale) || locale === "en") return {};
   if (locale === "es") {
     return {
-      title: "LED Lighting Manufacturer and Supplier | Growcean",
+      title: "Growcean Lighting | Socio de abastecimiento y control de calidad en China",
       description:
-        "Growcean is an LED lighting manufacturer and supplier for importers, wholesalers, distributors and project buyers sourcing ceiling lights, commercial fixtures and OEM lighting support.",
+        "Growcean Lighting ayuda a compradores globales a abastecer luces de techo, luminarias decorativas, luces de pasillo y soluciones de iluminación interior desde socios de fabricación seleccionados en China.",
       alternates: {
         canonical: "/es",
         languages: {
@@ -31,9 +31,9 @@ export async function generateMetadata({
   }
 
   return {
-    title: "LED Lighting Manufacturer and Supplier | Growcean",
+    title: "Growcean Lighting | China Lighting Sourcing & Quality-Control Partner",
     description:
-      "Growcean is an LED lighting manufacturer and supplier for importers, wholesalers, distributors and project buyers sourcing ceiling lights, commercial fixtures and OEM lighting support.",
+      "Growcean Lighting helps global buyers source ceiling lights, decorative lights, corridor lights, and indoor lighting solutions from selected manufacturing partners in China with quality-control and export support.",
     alternates: {
       canonical: `/${locale}`,
       languages: {

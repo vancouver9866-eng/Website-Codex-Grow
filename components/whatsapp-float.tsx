@@ -1,5 +1,6 @@
-const whatsappUrl =
-  "https://wa.me/8615602224748?text=Hello%2C%20I%20am%20interested%20in%20your%20products.%20Please%20send%20me%20more%20details.";
+import { createWhatsAppLink } from "@/lib/contact";
+
+const whatsappUrl = createWhatsAppLink();
 
 export function WhatsAppFloat() {
   return (
@@ -8,6 +9,7 @@ export function WhatsAppFloat() {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
+      data-event="whatsapp_click"
       aria-label="Contact Growcean on WhatsApp"
       title="Chat with Growcean on WhatsApp"
     >

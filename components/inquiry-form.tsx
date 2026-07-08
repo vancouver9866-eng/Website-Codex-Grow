@@ -1,16 +1,144 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { CheckCircle2, Send } from "lucide-react";
+import { CheckCircle2, MessageCircle, Send } from "lucide-react";
+import { createWhatsAppLink } from "@/lib/contact";
 import { type Locale } from "@/lib/i18n";
 
-const formText = {
-  en: ["Name", "Your name", "Company", "Company name", "Business email", "WhatsApp", "Country / Region", "Your market", "Product type", "Select a category", "Message", "Tell us the product, quantity, size, wattage, application and customization needed.", "Send Inquiry", "Thank you for your inquiry.", "Our sales team will review your requirements and contact you.", "Send another inquiry"],
-  es: ["Nombre", "Su nombre", "Empresa", "Nombre de empresa", "Correo empresarial", "WhatsApp / Teléfono", "País / Región", "Su mercado", "Producto de interés", "Seleccione una categoría", "Requisitos", "Indique producto, cantidad, tamaño, potencia, aplicación y personalización.", "Enviar consulta", "Gracias por su consulta.", "Nuestro equipo comercial revisará sus requisitos y le contactará.", "Enviar otra consulta"],
-  fr: ["Nom", "Votre nom", "Entreprise", "Nom de l’entreprise", "E-mail professionnel", "WhatsApp / Téléphone", "Pays / Région", "Votre marché", "Produit recherché", "Choisir une catégorie", "Besoins", "Précisez produit, quantité, dimensions, puissance, application et personnalisation.", "Envoyer la demande", "Merci pour votre demande.", "Notre équipe commerciale étudiera vos besoins et vous contactera.", "Envoyer une autre demande"],
-  ar: ["الاسم", "اسمك", "الشركة", "اسم الشركة", "البريد الإلكتروني للعمل", "واتساب / الهاتف", "الدولة / المنطقة", "السوق المستهدف", "المنتج المطلوب", "اختر فئة", "المتطلبات", "اذكر المنتج والكمية والمقاس والقدرة والاستخدام والتخصيص.", "إرسال الاستفسار", "شكراً لاستفسارك.", "سيراجع فريق المبيعات متطلباتك ويتواصل معك.", "إرسال استفسار آخر"],
-  ru: ["Имя", "Ваше имя", "Компания", "Название компании", "Рабочий e-mail", "WhatsApp / Телефон", "Страна / Регион", "Ваш рынок", "Интересующий продукт", "Выберите категорию", "Требования", "Укажите продукт, объем, размер, мощность, применение и кастомизацию.", "Отправить запрос", "Спасибо за запрос.", "Отдел продаж изучит требования и свяжется с вами.", "Отправить еще один запрос"],
-} as const;
+type FormCopy = {
+  title: string;
+  helper: string;
+  name: string;
+  namePlaceholder: string;
+  whatsapp: string;
+  whatsappPlaceholder: string;
+  country: string;
+  countryPlaceholder: string;
+  email: string;
+  emailPlaceholder: string;
+  company: string;
+  companyPlaceholder: string;
+  message: string;
+  messagePlaceholder: string;
+  submit: string;
+  whatsappCta: string;
+  successTitle: string;
+  successText: string;
+  reset: string;
+};
+
+const formText: Record<Locale, FormCopy> = {
+  en: {
+    title: "Tell Us What You Need",
+    helper:
+      "No need to know all technical details. Tell us your market, quantity idea, and product style. We will help recommend suitable lighting models.",
+    name: "Name",
+    namePlaceholder: "Your name",
+    whatsapp: "WhatsApp",
+    whatsappPlaceholder: "Your WhatsApp number",
+    country: "Country",
+    countryPlaceholder: "Your country",
+    email: "Email",
+    emailPlaceholder: "name@company.com",
+    company: "Company",
+    companyPlaceholder: "Company name",
+    message: "What are you looking for?",
+    messagePlaceholder: "Example: ceiling lights for Chile market, 50 pcs trial order, modern style",
+    submit: "Send Inquiry",
+    whatsappCta: "Contact on WhatsApp",
+    successTitle: "Thank you.",
+    successText: "Growcean Lighting will contact you soon with suitable product recommendations.",
+    reset: "Send another inquiry",
+  },
+  es: {
+    title: "Cuéntenos qué necesita",
+    helper:
+      "No necesita conocer todos los detalles técnicos. Cuéntenos su mercado, cantidad estimada y estilo de producto. Le ayudaremos a recomendar modelos adecuados.",
+    name: "Nombre",
+    namePlaceholder: "Su nombre",
+    whatsapp: "WhatsApp",
+    whatsappPlaceholder: "Su número de WhatsApp",
+    country: "País",
+    countryPlaceholder: "Su país",
+    email: "Email",
+    emailPlaceholder: "nombre@empresa.com",
+    company: "Empresa",
+    companyPlaceholder: "Nombre de empresa",
+    message: "¿Qué está buscando?",
+    messagePlaceholder: "Ejemplo: luces de techo para Chile, pedido de prueba 50 piezas, estilo moderno",
+    submit: "Enviar consulta",
+    whatsappCta: "Contactar por WhatsApp",
+    successTitle: "Gracias.",
+    successText: "Growcean Lighting le contactará pronto con recomendaciones de productos adecuados.",
+    reset: "Enviar otra consulta",
+  },
+  fr: {
+    title: "Décrivez votre besoin",
+    helper:
+      "Vous n’avez pas besoin de connaître tous les détails techniques. Indiquez votre marché, une idée de quantité et le style recherché. Nous vous aiderons à sélectionner des modèles adaptés.",
+    name: "Nom",
+    namePlaceholder: "Votre nom",
+    whatsapp: "WhatsApp",
+    whatsappPlaceholder: "Votre numéro WhatsApp",
+    country: "Pays",
+    countryPlaceholder: "Votre pays",
+    email: "E-mail",
+    emailPlaceholder: "nom@entreprise.com",
+    company: "Entreprise",
+    companyPlaceholder: "Nom de l’entreprise",
+    message: "Que recherchez-vous ?",
+    messagePlaceholder: "Exemple : plafonniers pour le Chili, commande test 50 pcs, style moderne",
+    submit: "Envoyer la demande",
+    whatsappCta: "Contacter sur WhatsApp",
+    successTitle: "Merci.",
+    successText: "Growcean Lighting vous contactera bientôt avec des recommandations adaptées.",
+    reset: "Envoyer une autre demande",
+  },
+  ar: {
+    title: "أخبرنا بما تحتاجه",
+    helper:
+      "لا تحتاج إلى معرفة كل التفاصيل التقنية. أخبرنا بالسوق والكمية المتوقعة ونمط المنتج، وسنساعدك في اختيار النماذج المناسبة.",
+    name: "الاسم",
+    namePlaceholder: "اسمك",
+    whatsapp: "واتساب",
+    whatsappPlaceholder: "رقم واتساب",
+    country: "الدولة",
+    countryPlaceholder: "دولتك",
+    email: "البريد الإلكتروني",
+    emailPlaceholder: "name@company.com",
+    company: "الشركة",
+    companyPlaceholder: "اسم الشركة",
+    message: "ما الذي تبحث عنه؟",
+    messagePlaceholder: "مثال: مصابيح سقف لسوق تشيلي، طلب تجريبي 50 قطعة، نمط حديث",
+    submit: "إرسال الاستفسار",
+    whatsappCta: "تواصل عبر واتساب",
+    successTitle: "شكراً لك.",
+    successText: "ستتواصل معك Growcean Lighting قريباً بتوصيات منتجات مناسبة.",
+    reset: "إرسال استفسار آخر",
+  },
+  ru: {
+    title: "Расскажите, что вам нужно",
+    helper:
+      "Не обязательно знать все технические детали. Укажите рынок, примерный объем и стиль продукта. Мы поможем подобрать подходящие модели.",
+    name: "Имя",
+    namePlaceholder: "Ваше имя",
+    whatsapp: "WhatsApp",
+    whatsappPlaceholder: "Ваш номер WhatsApp",
+    country: "Страна",
+    countryPlaceholder: "Ваша страна",
+    email: "Email",
+    emailPlaceholder: "name@company.com",
+    company: "Компания",
+    companyPlaceholder: "Название компании",
+    message: "Что вы ищете?",
+    messagePlaceholder: "Например: потолочные светильники для Чили, пробный заказ 50 шт., современный стиль",
+    submit: "Отправить запрос",
+    whatsappCta: "Связаться в WhatsApp",
+    successTitle: "Спасибо.",
+    successText: "Growcean Lighting скоро свяжется с вами и предложит подходящие модели.",
+    reset: "Отправить еще один запрос",
+  },
+};
 
 const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/mike%40growcean.com";
 
@@ -19,8 +147,7 @@ export function InquiryForm({ locale = "en" }: { locale?: Locale }) {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const f = formText[locale];
-  const productTypes = ["LED ceiling lights", "Flush mount lights", "Smart ceiling lights", "Decorative ceiling lamps", "Waterproof lights", "Corridor lights", "Package sets"];
-  const applications = ["Home", "Hotel", "Apartment", "Office", "Retail", "Other"];
+  const whatsappHref = createWhatsAppLink();
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -42,7 +169,7 @@ export function InquiryForm({ locale = "en" }: { locale?: Locale }) {
       payload.append(key, String(value));
     });
     payload.set("source", window.location.href);
-    payload.set("_subject", `New Growcean inquiry: ${formData.get("company") || "Website Lead"}`);
+    payload.set("_subject", `New Growcean inquiry: ${formData.get("country") || "Website Lead"}`);
     payload.set("_template", "table");
     payload.set("_replyto", String(formData.get("email") || ""));
     payload.set("_captcha", "false");
@@ -73,45 +200,40 @@ export function InquiryForm({ locale = "en" }: { locale?: Locale }) {
     return (
       <div className="form-success" role="status">
         <CheckCircle2 size={48} />
-        <h3>{f[13]}</h3>
-        <p>{f[14]}</p>
-        <button className="button" onClick={() => setSubmitted(false)}>{f[15]}</button>
+        <h3>{f.successTitle}</h3>
+        <p>{f.successText}</p>
+        <button className="button" onClick={() => setSubmitted(false)}>{f.reset}</button>
       </div>
     );
   }
 
   return (
     <form className="inquiry-form" onSubmit={submit}>
+      <h3>{f.title}</h3>
+      <p className="form-helper">{f.helper}</p>
       <label className="form-honeypot" aria-hidden="true">
         Website
         <input name="website" tabIndex={-1} autoComplete="off" />
       </label>
       <div className="field-row">
-        <label><span>{f[0]} *</span><input required name="name" autoComplete="name" placeholder={f[1]} /></label>
-        <label><span>{f[2]} *</span><input required name="company" autoComplete="organization" placeholder={f[3]} /></label>
+        <label><span>{f.name} *</span><input required name="name" autoComplete="name" placeholder={f.namePlaceholder} /></label>
+        <label><span>{f.whatsapp} *</span><input required name="whatsapp" autoComplete="tel" placeholder={f.whatsappPlaceholder} /></label>
       </div>
       <div className="field-row">
-        <label><span>{f[4]} *</span><input required type="email" name="email" autoComplete="email" placeholder="name@company.com" /></label>
-        <label><span>{f[5]}</span><input name="phone" autoComplete="tel" placeholder="+00 000 000 000" /></label>
+        <label><span>{f.country} *</span><input required name="country" autoComplete="country-name" placeholder={f.countryPlaceholder} /></label>
+        <label><span>{f.email}</span><input type="email" name="email" autoComplete="email" placeholder={f.emailPlaceholder} /></label>
       </div>
-      <div className="field-row">
-        <label><span>{f[6]} *</span><input required name="country" autoComplete="country-name" placeholder={f[7]} /></label>
-        <label><span>{f[8]} *</span><select required name="product" defaultValue=""><option value="" disabled>{f[9]}</option>{productTypes.map((item) => <option key={item}>{item}</option>)}</select></label>
-      </div>
-      <div className="field-row">
-        <label><span>Target quantity</span><input name="quantity" placeholder="e.g. 500 pcs / 1 container / project quantity" /></label>
-        <label><span>Wattage / size requirements</span><input name="wattage_size" placeholder="e.g. 24W, 36W, 300mm, 600mm" /></label>
-      </div>
-      <div className="field-row">
-        <label><span>CCT requirement</span><select name="cct" defaultValue=""><option value="">To be confirmed</option><option>3000K warm white</option><option>4000K neutral white</option><option>6500K cool white</option><option>Three-color CCT</option><option>Other / mixed</option></select></label>
-        <label><span>Application</span><select name="application" defaultValue=""><option value="">Select application</option>{applications.map((item) => <option key={item}>{item}</option>)}</select></label>
-      </div>
-      <label><span>Need OEM packaging?</span><select name="oem_packaging" defaultValue=""><option value="">To be confirmed</option><option>Yes</option><option>No</option><option>Need logo / label / manual discussion</option></select></label>
-      <label><span>{f[10]} *</span><textarea required name="message" rows={4} placeholder={f[11]} /></label>
+      <label><span>{f.company}</span><input name="company" autoComplete="organization" placeholder={f.companyPlaceholder} /></label>
+      <label><span>{f.message} *</span><textarea required name="message" rows={4} placeholder={f.messagePlaceholder} /></label>
       {error && <p className="form-error" role="alert">{error}</p>}
-      <button className="button submit-button" type="submit" disabled={submitting}>
-        {submitting ? "Sending..." : f[12]} <Send size={18} />
-      </button>
+      <div className="form-actions-row">
+        <button className="button submit-button" type="submit" disabled={submitting} data-event="inquiry_form_submit">
+          {submitting ? "Sending..." : f.submit} <Send size={18} />
+        </button>
+        <a className="button button-outline-blue" href={whatsappHref} target="_blank" rel="noreferrer" data-event="whatsapp_click">
+          <MessageCircle size={18} /> {f.whatsappCta}
+        </a>
+      </div>
     </form>
   );
 }

@@ -23,6 +23,7 @@ import { MobileMenu } from "@/components/mobile-menu";
 import { ProductConfigurator } from "@/components/product-configurator";
 import { ProductFaq } from "@/components/product-faq";
 import { ProductInquiryForm } from "@/components/product-inquiry-form";
+import { BuyerTrustMiniBlock } from "@/components/sections/BuyerTrustMiniBlock";
 import { SocialLinks } from "@/components/social-links";
 
 export const metadata: Metadata = {
@@ -115,7 +116,7 @@ export default function UltraThinProductPage() {
         <div className="pd-related-grid">{[["Smart Ceiling Light","/images/smart.jpg"],["Modern Decorative Light","/images/modern.jpg"],["Vintage Wood-Finish Light","/images/vintage.jpg"]].map(([name,src])=><a href="#product-inquiry" key={name}><div><Image src={src} alt={name} fill loading="eager" sizes="33vw"/></div><h3>{name}</h3><span>Request details <ArrowRight size={14}/></span></a>)}</div>
       </div></section>
 
-      <section className="pd-inquiry" id="product-inquiry"><div className="container pd-inquiry-grid"><div><p className="section-label light">MODEL QS-XDD-2.7XB-GLQD-090</p><h2>Request pricing, MOQ and sample terms</h2><p>Share your market and expected quantity. We will confirm suitable specifications and available customization.</p><ul><li><CheckCircle2/>Product-specific response</li><li><CheckCircle2/>Specification confirmation</li><li><CheckCircle2/>Sample and packaging discussion</li></ul></div><ProductInquiryForm /></div></section>
+      <section className="pd-inquiry" id="product-inquiry"><div className="container pd-inquiry-grid"><div><p className="section-label light">MODEL QS-XDD-2.7XB-GLQD-090</p><h2>Need this model for your market?</h2><p>Share your market and expected quantity. MOQ starts from 50 pcs for many standard models, while final MOQ, sample details, production schedule and packaging are confirmed by model and quantity.</p><BuyerTrustMiniBlock /></div><ProductInquiryForm /></div></section>
 
       <footer className="footer">
         <div className="container pd-footer-social">

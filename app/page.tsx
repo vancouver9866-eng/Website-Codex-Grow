@@ -32,14 +32,17 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import { ProductVideoShowcase } from "@/components/product-video-showcase";
 import { FactoryTrustSection } from "@/components/sections/FactoryTrustSection";
 import { QualityControlProcess } from "@/components/sections/QualityControlProcess";
+import { CommercialInfoSection } from "@/components/sections/CommercialInfoSection";
+import { SafeBuyingSection } from "@/components/sections/SafeBuyingSection";
 import { SocialLinks } from "@/components/social-links";
+import { createWhatsAppLink, growceanWhatsAppDisplay } from "@/lib/contact";
 import { getTranslations, type Locale } from "@/lib/i18n";
 import { categoryDefinitions, categoryNameByLocale, localizedPath, products as catalogProducts } from "@/lib/catalog";
 
 export const metadata: Metadata = {
-  title: "LED Lighting Manufacturer and Supplier | Growcean",
+  title: "Growcean Lighting | China Lighting Sourcing & Quality-Control Partner",
   description:
-    "Growcean is an LED lighting manufacturer and supplier for importers, wholesalers, distributors and project buyers sourcing ceiling lights, commercial fixtures and OEM lighting support.",
+    "Growcean Lighting helps global buyers source ceiling lights, decorative lights, corridor lights, and indoor lighting solutions from selected manufacturing partners in China with quality-control and export support.",
   alternates: {
     canonical: "/",
     languages: {
@@ -103,16 +106,17 @@ const applications = [
 ];
 
 const process = [
-  { icon: MessageCircle, title: "Inquiry & Consultation", text: "Share your market, product and application requirements." },
-  { icon: Lightbulb, title: "Product Selection", text: "We shortlist suitable models, sizes and lighting options." },
-  { icon: Palette, title: "Customization Review", text: "Confirm branding, specifications, packaging and sample details." },
-  { icon: PackageCheck, title: "Sample & Order Follow-up", text: "Coordinate samples, order updates, packing and export documents." },
-  { icon: Globe2, title: "Delivery Coordination", text: "Support shipping communication and keep your team informed." },
-  { icon: Headphones, title: "Ongoing Support", text: "Stay connected for repeat orders and new product requirements." },
+  { icon: MessageCircle, title: "Quick Inquiry", text: "Send your target product, country, quantity idea, or reference photos." },
+  { icon: Lightbulb, title: "Product Recommendation", text: "We recommend suitable models based on your market, application, budget, and shipping needs." },
+  { icon: Palette, title: "Sample First", text: "Samples can be discussed before bulk orders so you can check real product quality, finish, brightness, and packaging." },
+  { icon: PackageCheck, title: "Order Confirmation", text: "Confirm model, quantity, color, voltage, packaging, and order details before production." },
+  { icon: Globe2, title: "Photos Before Shipment", text: "Growcean can provide product photos, lighting test photos or videos, packaging photos, and shipment preparation updates." },
+  { icon: Headphones, title: "Shipment & After-Sales Support", text: "We support export packaging coordination, shipment follow-up, and practical after-sales communication." },
 ];
 
 export function GrowceanHome({ locale = "en" }: { locale?: Locale }) {
   const t = getTranslations(locale);
+  const whatsappHref = createWhatsAppLink();
   return (
     <main>
       <header className="site-header">
@@ -143,7 +147,7 @@ export function GrowceanHome({ locale = "en" }: { locale?: Locale }) {
           <p className="hero-copy">{t.heroCopy}</p>
           <div className="hero-actions">
             <a className="button" href="#inquiry">{t.quote} <ArrowRight size={18} /></a>
-            <a className="button button-outline" href="#products">{t.viewProducts}</a>
+            <a className="button button-outline" href={whatsappHref} target="_blank" rel="noreferrer" data-event="whatsapp_click">{t.whatsappCta}</a>
           </div>
         </div>
         <div className="wave" aria-hidden="true" />
@@ -227,9 +231,13 @@ export function GrowceanHome({ locale = "en" }: { locale?: Locale }) {
         </div>
       </section>
 
+      <CommercialInfoSection locale={locale} />
+
       <FactoryTrustSection locale={locale} />
 
       <QualityControlProcess compact />
+
+      <SafeBuyingSection locale={locale} />
 
       <section className="section custom-section" id="custom">
         <div className="container custom-layout">
@@ -342,7 +350,7 @@ export function GrowceanHome({ locale = "en" }: { locale?: Locale }) {
             <h2>{t.inquiryTitle}</h2>
             <p>{t.inquiryIntro}</p>
             <div className="contact-list">
-              <a href="https://wa.me/8615602224748"><MessageCircle /> WhatsApp: +86 156 0222 4748</a>
+              <a href={whatsappHref} target="_blank" rel="noreferrer" data-event="whatsapp_click"><MessageCircle /> WhatsApp: {growceanWhatsAppDisplay}</a>
               <a href="mailto:mike@growcean.com"><Mail /> mike@growcean.com</a>
               <span>
                 <MapPin />
@@ -389,7 +397,7 @@ export function GrowceanHome({ locale = "en" }: { locale?: Locale }) {
         </div>
         <div className="container footer-bottom">
           <span>© 2026 Guangzhou Wortianlan Business Co., Ltd.</span>
-          <span>Growcean · LIGHTING THE FUTURE.</span>
+          <span>Growcean Lighting · China Lighting Sourcing & Quality-Control Partner</span>
         </div>
       </footer>
     </main>

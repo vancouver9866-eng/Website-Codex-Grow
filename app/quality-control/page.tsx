@@ -40,7 +40,7 @@ export default function QualityControlPage() {
           <p className="catalog-eyebrow">QUALITY CONTROL</p>
           <h1>Quality Control for Export Lighting Orders</h1>
           <p className="catalog-lead">Growcean Lighting combines selected manufacturing resources with practical inspection steps to support stable B2B lighting supply.</p>
-          <div className="catalog-category-pills"><a href="/factory-tour">Factory Tour</a><a href="/#inquiry">Get a Quote</a></div>
+          <div className="catalog-category-pills"><a href="/factory-tour">Supply Chain View</a><a href="/#inquiry">Get a Quote</a></div>
         </div>
       </section>
       <section className="section catalog-section">
@@ -95,7 +95,7 @@ export default function QualityControlPage() {
           </div>
           <div className="catalog-cta-panel">
             <a className="button" href="/#inquiry"><Lightbulb size={18} />Request QC Support</a>
-            <a className="button button-outline" href="/factory-tour"><Boxes size={18} />View Factory Tour</a>
+            <a className="button button-outline" href="/factory-tour"><Boxes size={18} />View Supply Chain</a>
             <a className="button button-outline" href="/products"><PackageCheck size={18} />View Products</a>
           </div>
         </div>

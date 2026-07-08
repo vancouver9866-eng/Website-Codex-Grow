@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { CheckCircle2, Factory, Globe2, PackageCheck, Plane, ShieldCheck, Truck } from "lucide-react";
+import { CheckCircle2, Globe2, PackageCheck, Plane, ShieldCheck, Sparkles, Truck } from "lucide-react";
 import { AdsLeadForm } from "@/components/ads-lead-form";
 
 export const metadata: Metadata = {
-  title: "LED Ceiling Lights Manufacturer | Get Quote",
+  title: "LED Ceiling Lights Sourcing Partner | Get Quote",
   description: "Google Ads landing page for LED ceiling light inquiries from importers, wholesalers and project buyers.",
   robots: {
     index: false,
@@ -17,11 +17,11 @@ export const metadata: Metadata = {
 };
 
 const advantages = [
-  { icon: Factory, title: "Factory Price", text: "Direct sourcing support for importers and wholesalers." },
+  { icon: Sparkles, title: "Practical Sourcing Cost", text: "Clear sourcing discussion for importers and wholesalers." },
   { icon: Truck, title: "Fast Delivery", text: "Clear sampling and order follow-up for urgent programs." },
   { icon: PackageCheck, title: "OEM/ODM Support", text: "Logo, packaging, labels and market-ready product ranges." },
   { icon: Plane, title: "Global Shipping", text: "Export coordination for Mexico, Chile, Peru, Colombia and Spain." },
-  { icon: ShieldCheck, title: "Professional Manufacturer", text: "Ceiling light supplier focused on practical B2B orders." },
+  { icon: ShieldCheck, title: "Sourcing & QC Partner", text: "Ceiling light supply support focused on practical B2B orders." },
 ];
 
 export default function AdsLedCeilingLightsPage() {
@@ -32,8 +32,8 @@ export default function AdsLedCeilingLightsPage() {
           <div className="ads-hero-copy">
             <Image src="/images/growcean-logo.png" alt="Growcean" width={180} height={48} priority />
             <p className="ads-eyebrow">B2B LED CEILING LIGHT SUPPLIER</p>
-            <h1>LED Ceiling Lights Manufacturer</h1>
-            <p className="ads-value">Factory-direct ceiling lights for importers, wholesalers and project buyers.</p>
+            <h1>LED Ceiling Lights Sourcing Partner</h1>
+            <p className="ads-value">China lighting sourcing support for importers, wholesalers and project buyers.</p>
             <div className="ads-selling-points">
               <span><CheckCircle2 /> OEM/ODM support</span>
               <span><CheckCircle2 /> Fast quotation</span>
@@ -93,7 +93,7 @@ export default function AdsLedCeilingLightsPage() {
         <div className="ads-shell ads-trust-grid">
           <div><Globe2 /><strong>Export Markets</strong><span>Mexico · Chile · Peru · Colombia · Spain</span></div>
           <div><ShieldCheck /><strong>Certifications</strong><span>CE · RoHS · market documents by order</span></div>
-          <div><Factory /><strong>B2B Experience</strong><span>OEM, wholesale and project order support</span></div>
+          <div><Sparkles /><strong>B2B Support</strong><span>OEM, wholesale and project order communication</span></div>
         </div>
       </section>
 

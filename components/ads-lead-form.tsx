@@ -31,7 +31,7 @@ export function AdsLeadForm({ compact = false }: { compact?: boolean }) {
     });
     payload.set("company", String(formData.get("company") || "Google Ads landing page lead"));
     payload.set("country", String(formData.get("country") || "Not provided"));
-    payload.set("product", "LED Ceiling Lights Manufacturer - Google Ads");
+    payload.set("product", "LED Ceiling Lights Sourcing Partner - Google Ads");
     payload.set("source", window.location.href);
     payload.set("_subject", `New Growcean Google Ads lead: ${formData.get("name") || "Website Lead"}`);
     payload.set("_template", "table");

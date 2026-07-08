@@ -20,9 +20,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://growcean.com"),
-  title: "Growcean | B2B Ceiling Lighting Solutions",
+  title: "Growcean Lighting | China Lighting Sourcing & Quality-Control Partner",
   description:
-    "Customizable LED ceiling lights and responsive export support for importers, wholesalers, distributors and project buyers.",
+    "Growcean Lighting helps global buyers source ceiling lights, decorative lights, corridor lights and waterproof lights from selected manufacturing partners in China with quality-control and export support.",
   verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
     ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
     : undefined,

@@ -176,7 +176,7 @@ export const solutionPages: SolutionPage[] = [
   {
     slug: "restaurant-lighting",
     title: "Restaurant Lighting for Dining Areas, Bars and Commercial Interiors",
-    seoTitle: "Restaurant Lighting Manufacturer and Supplier | Growcean",
+    seoTitle: "Restaurant Lighting Sourcing Support | Growcean",
     seoDescription:
       "Restaurant lighting sourcing support for dining areas, bars and commercial interiors. Compare decorative fixtures, LED ceiling lights and B2B quote options.",
     eyebrow: "RESTAURANT LIGHTING PROJECTS",

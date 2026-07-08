@@ -1,5 +1,6 @@
 import { ArrowRight, BadgeCheck, Boxes, Factory, FileText, MessageCircle, PackageCheck } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
+import { createWhatsAppLink } from "@/lib/contact";
 import { trustCopy } from "@/lib/factoryImages";
 import { FactoryGallerySection } from "./FactoryGallerySection";
 
@@ -33,7 +34,7 @@ const cards = [
 
 export function FactoryTrustSection({ locale = "en" }: { locale?: Locale }) {
   const copy = trustCopy[locale];
-  const whatsappText = encodeURIComponent("Hello Growcean, I want to learn about factory capability, quality control and lighting quotation.");
+  const whatsappHref = createWhatsAppLink("Hello Growcean Lighting, I want to learn about lighting sourcing support, quality control and quotation.");
 
   return (
     <section className="section factory-trust-section" id="factory-capability">
@@ -58,7 +59,7 @@ export function FactoryTrustSection({ locale = "en" }: { locale?: Locale }) {
         <div className="factory-trust-actions">
           <a className="button" href="/factory-tour">{copy.factoryTour} <ArrowRight size={18} /></a>
           <a className="button button-outline-blue" href="#inquiry">{copy.quote}</a>
-          <a className="button button-ghost-blue" href={`https://wa.me/8615602224748?text=${whatsappText}`}><MessageCircle size={18} />{copy.whatsapp}</a>
+          <a className="button button-ghost-blue" href={whatsappHref} target="_blank" rel="noreferrer" data-event="whatsapp_click"><MessageCircle size={18} />{copy.whatsapp}</a>
         </div>
       </div>
     </section>

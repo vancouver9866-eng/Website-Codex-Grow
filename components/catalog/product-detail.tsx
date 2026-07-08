@@ -11,11 +11,13 @@ import {
 import type { Locale } from "@/lib/i18n";
 import { CatalogProductCard } from "./product-card";
 import { TrustBadges } from "@/components/sections/TrustBadges";
+import { BuyerTrustMiniBlock } from "@/components/sections/BuyerTrustMiniBlock";
+import { createWhatsAppLink } from "@/lib/contact";
 
 export function ProductDetail({ product, locale }: { product: Product; locale: Locale }) {
   const copy = catalogCopy[locale];
   const related = getRelatedProducts(product);
-  const whatsappText = encodeURIComponent(`Hello Growcean, I want a quotation for ${product.model} ${product.name}.`);
+  const whatsappHref = createWhatsAppLink(`Hello Growcean Lighting, I want a quotation for ${product.model} ${product.name}. My target market is [country].`);
   const faqs = productFaq(product, locale);
   const productTitle = locale === "en" ? `${product.name} LED Ceiling Light for Wholesale and Project Buyers` : product.name;
   const safe = (value?: string) => value && value.trim() ? value : "To be confirmed";
@@ -31,7 +33,7 @@ export function ProductDetail({ product, locale }: { product: Product; locale: L
             <h1>{productTitle}</h1>
             <p className="catalog-lead">{product.model} is positioned for importers, wholesalers, distributors and project buyers who need clear product data, customization discussion and reliable quotation support.</p>
             <div className="catalog-actions">
-              <a className="button" href={`https://wa.me/8615602224748?text=${whatsappText}`}><MessageCircle size={18} />{copy.whatsapp}</a>
+              <a className="button" href={whatsappHref} target="_blank" rel="noreferrer" data-event="whatsapp_click"><MessageCircle size={18} />{copy.whatsapp}</a>
               <a className="button button-outline-dark" href="#product-inquiry">{copy.quote}</a>
               <a className="button button-ghost" href="/Growcean-Product-Catalog.pdf"><Download size={18} />{copy.download}</a>
             </div>
@@ -60,7 +62,7 @@ export function ProductDetail({ product, locale }: { product: Product; locale: L
                   <tr><th>Series</th><td>{product.series}</td></tr>
                   <tr><th>{copy.material}</th><td>{safe(product.material)}</td></tr>
                   <tr><th>Voltage</th><td>{safe(product.voltage)}</td></tr>
-                  <tr><th>MOQ</th><td>To be confirmed</td></tr>
+                  <tr><th>MOQ</th><td>Starts from 50 pcs for many standard models; final MOQ is confirmed by model, finish, packaging, and customization requirements.</td></tr>
                   <tr><th>Customization</th><td>Size, wattage, CCT, dimming, logo and packaging requirements can be confirmed by model and quantity.</td></tr>
                   <tr><th>CRI / RA</th><td>{product.ra || "To be confirmed"}</td></tr>
                   <tr><th>Blue light</th><td>{product.blue_light || "To be confirmed"}</td></tr>
@@ -157,9 +159,14 @@ export function ProductDetail({ product, locale }: { product: Product; locale: L
 
       <section className="pd-inquiry" id="product-inquiry">
         <div className="container pd-inquiry-grid">
-          <div><p className="section-label light">{product.model}</p><h2>{copy.quote}</h2><p>Send us your target size, wattage, CCT, quantity and market requirements. Our team will help you select suitable ceiling light models for your project or wholesale range.</p></div>
+          <div>
+            <p className="section-label light">{product.model}</p>
+            <h2>Need this model for your market?</h2>
+            <p>Send us your target wattage, size, voltage, quantity, and market. We will help match the suitable configuration.</p>
+            <BuyerTrustMiniBlock />
+          </div>
           <div className="catalog-cta-panel">
-            <a className="button" href={`https://wa.me/8615602224748?text=${whatsappText}`}>{copy.whatsapp}</a>
+            <a className="button" href={whatsappHref} target="_blank" rel="noreferrer" data-event="whatsapp_click">{copy.whatsapp}</a>
             <a className="button button-outline" href="mailto:mike@growcean.com">{copy.quote}</a>
             <a className="button button-outline" href="/Growcean-Product-Catalog.pdf">{copy.download}</a>
           </div>

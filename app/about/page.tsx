@@ -17,7 +17,7 @@ export default function AboutPage() {
           <p className="catalog-eyebrow">ABOUT GROWCEAN LIGHTING</p>
           <h1>From China’s Lighting Supply Chain to Global Markets</h1>
           <p className="catalog-lead">Growcean Lighting is a China-based lighting export brand serving international B2B buyers. We work with selected manufacturing partners and focus on product sourcing, quality control, export communication, and long-term supply support.</p>
-          <div className="catalog-category-pills"><a href="/factory-tour">Factory Tour</a><a href="/quality-control">Quality Control</a><a href="/#inquiry">Contact Us</a></div>
+          <div className="catalog-category-pills"><a href="/factory-tour">Supply Chain View</a><a href="/quality-control">Quality Control</a><a href="/#inquiry">Contact Us</a></div>
         </div>
       </section>
       <section className="section catalog-section">
