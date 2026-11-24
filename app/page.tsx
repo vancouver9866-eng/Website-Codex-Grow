@@ -3,6 +3,7 @@ import Image from "next/image";
 import {
   ArrowRight,
   Box,
+  Building2,
   Check,
   ChevronRight,
   CircleGauge,
@@ -13,7 +14,6 @@ import {
   Layers3,
   Lightbulb,
   Mail,
-  MapPin,
   MessageCircle,
   PackageCheck,
   Palette,
@@ -35,7 +35,7 @@ import { QualityControlProcess } from "@/components/sections/QualityControlProce
 import { CommercialInfoSection } from "@/components/sections/CommercialInfoSection";
 import { SafeBuyingSection } from "@/components/sections/SafeBuyingSection";
 import { SocialLinks } from "@/components/social-links";
-import { createWhatsAppLink, growceanWhatsAppDisplay } from "@/lib/contact";
+import { createWhatsAppLink, growceanEmail, growceanOfficeAddress, growceanWhatsAppDisplay } from "@/lib/contact";
 import { getTranslations, type Locale } from "@/lib/i18n";
 import { categoryDefinitions, categoryNameByLocale, localizedPath, products as catalogProducts } from "@/lib/catalog";
 
@@ -308,22 +308,13 @@ export function GrowceanHome({ locale = "en" }: { locale?: Locale }) {
         </div>
       </section>
 
-      <section className="section founder-section" id="resources">
-        <div className="container founder-layout">
-          <div className="founder-photo">
-            <Image src="/images/founder-michael.jpg" alt="Michael, Growcean contact" fill sizes="35vw" />
-          </div>
-          <div className="founder-copy">
+      <section className="section contact-intro-section" id="resources" aria-labelledby="contact-intro-title">
+        <div className="container contact-intro-card">
+          <div className="contact-intro-copy">
             <p className="section-label">{t.contactLabel}</p>
-            <h2>{t.contactTitle}</h2>
-            <p className="quote">
-              “My role is to help buyers clarify requirements, compare suitable lighting
-              options and keep each export project moving with fewer communication gaps.”
-            </p>
-            <p>
-              Michael supports international inquiries for Guangzhou Wortianlan Business
-              Co., Ltd., with a focus on product sourcing, OEM coordination and project follow-up.
-            </p>
+            <h2 id="contact-intro-title">{t.contactTitle}</h2>
+            <p className="contact-intro-quote">“{t.contactQuote}”</p>
+            <p>{t.contactText}</p>
             <a className="text-link" href="#inquiry">{t.talk} <ArrowRight size={17} /></a>
           </div>
         </div>
@@ -351,33 +342,11 @@ export function GrowceanHome({ locale = "en" }: { locale?: Locale }) {
             <p>{t.inquiryIntro}</p>
             <div className="contact-list">
               <a href={whatsappHref} target="_blank" rel="noreferrer" data-event="whatsapp_click"><MessageCircle /> WhatsApp: {growceanWhatsAppDisplay}</a>
-              <a href="mailto:mike@growcean.com"><Mail /> mike@growcean.com</a>
+              <a href={`mailto:${growceanEmail}`}><Mail /> {growceanEmail}</a>
               <span>
-                <MapPin />
-                2nd Floor, Jinyue Building, No. 183 Nanzhou Road,
-                Haizhu District, Guangzhou, Guangdong, China
+                <Building2 aria-hidden="true" />
+                <bdi lang="en" dir="ltr">{growceanOfficeAddress}</bdi>
               </span>
-            </div>
-            <div className="osm-map-card">
-              <iframe
-                title="Growcean office location on OpenStreetMap"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=113.275%2C23.045%2C113.305%2C23.075&layer=mapnik&marker=23.06%2C113.29"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-              <div className="osm-map-caption">
-                <div>
-                  <strong>{t.office}</strong>
-                  <span>23.06° N, 113.29° E</span>
-                </div>
-                <a
-                  href="https://www.openstreetmap.org/?mlat=23.06&mlon=113.29#map=16/23.06/113.29"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {t.map}
-                </a>
-              </div>
             </div>
           </div>
           <InquiryForm locale={locale} />

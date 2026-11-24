@@ -1,4 +1,5 @@
 export const growceanEmail = "mike@growcean.com";
+export const growceanOfficeAddress = "Room 201, Building B, No. 61 Dongpu Erma Road, Tianhe District, Guangzhou";
 export const growceanWhatsAppDisplay = "+86 13533372025";
 export const growceanWhatsAppDigits = "8613533372025";
 

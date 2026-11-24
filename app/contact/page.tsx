@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Mail, MapPin, MessageCircle } from "lucide-react";
+import { Building2, Mail, MessageCircle } from "lucide-react";
 import { InquiryForm } from "@/components/inquiry-form";
 import { BuyerTrustMiniBlock } from "@/components/sections/BuyerTrustMiniBlock";
 import { SafeBuyingSection } from "@/components/sections/SafeBuyingSection";
-import { createWhatsAppLink, growceanEmail, growceanWhatsAppDisplay } from "@/lib/contact";
+import { createWhatsAppLink, growceanEmail, growceanOfficeAddress, growceanWhatsAppDisplay } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Contact Growcean Lighting | Request a B2B Lighting Quote",
@@ -48,7 +48,7 @@ export default function ContactPage() {
             <div className="contact-detail-list">
               <span><MessageCircle size={18} /> WhatsApp: {growceanWhatsAppDisplay}</span>
               <span><Mail size={18} /> {growceanEmail}</span>
-              <span><MapPin size={18} /> 2nd Floor, Jinyue Building, No. 183 Nanzhou Road, Haizhu District, Guangzhou, Guangdong, China</span>
+              <span><Building2 size={18} aria-hidden="true" /><bdi lang="en" dir="ltr">{growceanOfficeAddress}</bdi></span>
             </div>
             <BuyerTrustMiniBlock />
           </div>

@@ -65,7 +65,7 @@ const translations = {
     contactLabel: "YOUR CONTACT AT GROWCEAN",
     contactTitle: "Direct, Practical Communication",
     contactQuote: "My role is to help buyers clarify requirements, compare suitable lighting options and keep each export project moving with fewer communication gaps.",
-    contactText: "Michael supports international inquiries for Guangzhou Wortianlan Business Co., Ltd., focusing on product sourcing, OEM coordination and project follow-up.",
+    contactText: "Michael supports international inquiries for Guangzhou Wortianlan Business Co., Ltd., with a focus on product sourcing, OEM coordination and project follow-up.",
     talk: "Talk with Michael",
     faqLabel: "BUYER QUESTIONS",
     faqTitle: "Frequently Asked Questions",
@@ -74,8 +74,6 @@ const translations = {
     inquiryLabel: "START A CONVERSATION",
     inquiryTitle: "Ready to Source Your Next Ceiling Light Range?",
     inquiryIntro: "Tell us your market, quantity idea, preferred style, or reference photos. We will help recommend suitable lighting models and explain the next steps clearly.",
-    office: "Growcean Guangzhou Office",
-    map: "View on OpenStreetMap",
     footerText: "China lighting sourcing and quality-control support for global buyers working with selected manufacturing partners.",
     footerHeads: ["Products", "Solutions", "Company"],
   },
@@ -99,7 +97,7 @@ const translations = {
     process: [["Consulta rápida","Envíe producto objetivo, país, cantidad estimada o fotos de referencia."],["Recomendación de productos","Recomendamos modelos según mercado, aplicación, presupuesto y necesidades de envío."],["Muestra primero","Las muestras se pueden discutir antes de pedidos grandes para revisar calidad real, acabado, brillo y embalaje."],["Confirmación del pedido","Confirmamos modelo, cantidad, color, voltaje, embalaje y detalles del pedido antes de producción."],["Fotos antes del envío","Growcean puede enviar fotos del producto, pruebas de iluminación, embalaje y preparación del envío."],["Envío y soporte posterior","Apoyamos la coordinación de embalaje de exportación, seguimiento de envío y comunicación postventa práctica."]],
     contactLabel: "SU CONTACTO EN GROWCEAN", contactTitle: "Comunicación directa y práctica", contactQuote: "Ayudo a los compradores a definir requisitos, comparar opciones y avanzar cada proyecto de exportación con menos barreras de comunicación.", contactText: "Michael atiende consultas internacionales, abastecimiento, coordinación OEM y seguimiento de proyectos.", talk: "Hablar con Michael",
     faqLabel: "PREGUNTAS DE COMPRADORES", faqTitle: "Preguntas frecuentes", faqIntro: "Respuestas rápidas sobre compras. Los detalles finales se confirman por producto y pedido.", catalog: "Descargar catálogo",
-    inquiryLabel: "INICIEMOS UNA CONVERSACIÓN", inquiryTitle: "¿Listo para comprar su próxima gama de luces de techo?", inquiryIntro: "Cuéntenos su mercado, cantidad estimada, estilo preferido o fotos de referencia. Le recomendaremos modelos adecuados y próximos pasos claros.", office: "Oficina de Growcean en Guangzhou", map: "Ver en OpenStreetMap",
+    inquiryLabel: "INICIEMOS UNA CONVERSACIÓN", inquiryTitle: "¿Listo para comprar su próxima gama de luces de techo?", inquiryIntro: "Cuéntenos su mercado, cantidad estimada, estilo preferido o fotos de referencia. Le recomendaremos modelos adecuados y próximos pasos claros.",
     footerText: "Soporte de abastecimiento y control de calidad de iluminación en China para compradores globales con socios de fabricación seleccionados.", footerHeads: ["Productos","Soluciones","Empresa"],
   },
   fr: {
@@ -117,7 +115,7 @@ const translations = {
     process: [["Demande et conseil","Partagez votre marché, produit et application."],["Sélection produit","Nous ciblons modèles, tailles et options."],["Étude sur mesure","Validation de la marque, des spécifications et échantillons."],["Échantillon et commande","Coordination des échantillons, du suivi et des documents."],["Livraison","Accompagnement de la communication logistique."],["Suivi continu","Support pour commandes récurrentes et nouveautés."]],
     contactLabel: "VOTRE CONTACT GROWCEAN", contactTitle: "Une communication directe et concrète", contactQuote: "J’aide les acheteurs à préciser leurs besoins, comparer les solutions et faire avancer chaque projet export avec moins de friction.", contactText: "Michael accompagne les demandes internationales, le sourcing, la coordination OEM et le suivi des projets.", talk: "Parler avec Michael",
     faqLabel: "QUESTIONS ACHETEURS", faqTitle: "Questions fréquentes", faqIntro: "Réponses rapides aux questions de sourcing. Les détails sont confirmés selon le produit et la commande.", catalog: "Télécharger le catalogue",
-    inquiryLabel: "ÉCHANGEONS", inquiryTitle: "Prêt à sourcer votre prochaine gamme de plafonniers ?", inquiryIntro: "Décrivez votre besoin. Nous étudierons marché, produit, quantité et personnalisation.", office: "Bureau Growcean de Guangzhou", map: "Voir sur OpenStreetMap",
+    inquiryLabel: "ÉCHANGEONS", inquiryTitle: "Prêt à sourcer votre prochaine gamme de plafonniers ?", inquiryIntro: "Décrivez votre besoin. Nous étudierons marché, produit, quantité et personnalisation.",
     footerText: "Fourniture B2B de plafonniers et coordination OEM/ODM pour acheteurs internationaux.", footerHeads: ["Produits","Solutions","Entreprise"],
   },
   ar: {
@@ -135,7 +133,7 @@ const translations = {
     process: [["الاستفسار والاستشارة","شاركنا السوق والمنتج والاستخدام."],["اختيار المنتج","نرشح النماذج والمقاسات المناسبة."],["مراجعة التخصيص","تأكيد العلامة والمواصفات والتغليف والعينة."],["العينة والطلب","تنسيق العينات والتحديثات والمستندات."],["تنسيق التسليم","دعم التواصل المتعلق بالشحن."],["دعم مستمر","متابعة الطلبات المتكررة والمنتجات الجديدة."]],
     contactLabel: "جهة اتصالك في GROWCEAN", contactTitle: "تواصل مباشر وعملي", contactQuote: "أساعد المشترين على توضيح المتطلبات ومقارنة الخيارات وتحريك مشاريع التصدير بكفاءة.", contactText: "يدعم مايكل الاستفسارات الدولية والتوريد وتنسيق OEM ومتابعة المشاريع.", talk: "تحدث مع مايكل",
     faqLabel: "أسئلة المشترين", faqTitle: "الأسئلة الشائعة", faqIntro: "إجابات سريعة عن التوريد، مع تأكيد التفاصيل حسب المنتج والطلب.", catalog: "تحميل كتالوج المنتجات",
-    inquiryLabel: "ابدأ المحادثة", inquiryTitle: "هل أنت مستعد لتوريد مجموعة إضاءة السقف التالية؟", inquiryIntro: "أخبرنا باحتياجاتك وسنراجع السوق ونوع المنتج والكمية والتخصيص.", office: "مكتب Growcean في قوانغتشو", map: "عرض على OpenStreetMap",
+    inquiryLabel: "ابدأ المحادثة", inquiryTitle: "هل أنت مستعد لتوريد مجموعة إضاءة السقف التالية؟", inquiryIntro: "أخبرنا باحتياجاتك وسنراجع السوق ونوع المنتج والكمية والتخصيص.",
     footerText: "توريد إضاءة سقفية B2B وتنسيق OEM/ODM للمشترين الدوليين.", footerHeads: ["المنتجات","الحلول","الشركة"],
   },
   ru: {
@@ -153,7 +151,7 @@ const translations = {
     process: [["Запрос и консультация","Расскажите о рынке, продукте и применении."],["Подбор продукта","Подберем модели, размеры и опции."],["Кастомизация","Согласуем бренд, характеристики, упаковку и образец."],["Образец и заказ","Координируем образцы, статус и документы."],["Доставка","Поддерживаем коммуникацию по логистике."],["Дальнейшая поддержка","Сопровождаем повторные заказы и новинки."]],
     contactLabel: "ВАШ КОНТАКТ В GROWCEAN", contactTitle: "Прямая деловая коммуникация", contactQuote: "Я помогаю уточнить требования, сравнить решения и продвигать экспортный проект без лишних коммуникационных барьеров.", contactText: "Майкл сопровождает международные запросы, поиск продукции, OEM и проекты.", talk: "Связаться с Майклом",
     faqLabel: "ВОПРОСЫ ПОКУПАТЕЛЕЙ", faqTitle: "Частые вопросы", faqIntro: "Краткие ответы о закупках. Финальные условия зависят от продукта и заказа.", catalog: "Скачать каталог",
-    inquiryLabel: "НАЧНЕМ ОБСУЖДЕНИЕ", inquiryTitle: "Готовы заказать новую линейку потолочных светильников?", inquiryIntro: "Расскажите о задаче. Мы рассмотрим рынок, продукт, объем и кастомизацию.", office: "Офис Growcean в Гуанчжоу", map: "Открыть в OpenStreetMap",
+    inquiryLabel: "НАЧНЕМ ОБСУЖДЕНИЕ", inquiryTitle: "Готовы заказать новую линейку потолочных светильников?", inquiryIntro: "Расскажите о задаче. Мы рассмотрим рынок, продукт, объем и кастомизацию.",
     footerText: "B2B-поставка потолочного освещения и OEM/ODM для международных покупателей.", footerHeads: ["Продукция","Решения","Компания"],
   },
 };
